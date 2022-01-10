@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nginx-svc
+  name: bitcoin-svc
   labels:
     app: fullnode
 spec:
