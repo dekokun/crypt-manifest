@@ -1,0 +1,4 @@
+namespace: bitcoin
+resources:
+  - ./namespace.yaml
+  - ./bitcoin.yaml
