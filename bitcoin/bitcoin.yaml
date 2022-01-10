@@ -1,10 +1,11 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: bitcoin-fullnode
   labels:
     app: fullnode
 spec:
+  serviceName: "bitcoin-service"
   replicas: 1
   selector:
     matchLabels:
@@ -15,10 +16,27 @@ spec:
         app: fullnode
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: bitcoin-core
+        image: ruimarinho/bitcoin-core:22
+        args: ["-printtoconsole", "-externalip=bitcoin.dekokun.info", "-dbcache=2000", "-prune=30000"]
+        env:
+        - name: BITCOIN_DATA
+          value: "/var/lib/bitcoin"
         ports:
-        - containerPort: 80
+        - containerPort: 8333
+        volumeMounts:
+        - name: bitcoinclaim
+          mountPath: /var/lib/bitcoin
+  volumeClaimTemplates:
+  - metadata:
+      name: bitcoinclaim
+    spec:
+      storageClassName: "oci-bv"
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 50Gi
 ---
 apiVersion: v1
 kind: Service
