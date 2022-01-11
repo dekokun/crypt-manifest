@@ -15,10 +15,12 @@ spec:
       labels:
         app: fullnode
     spec:
+      imagePullSecrets:
+      - name: aws-ecr
       containers:
       - name: bitcoin-core
         image: ruimarinho/bitcoin-core:22
-        args: ["-printtoconsole", "-externalip=bitcoin.dekokun.info", "-dbcache=2000", "-prune=30000"]
+        args: ["-printtoconsole", "-externalip=bitcoin.dekokun.info", "-dbcache=2000", "-prune=30000", "-rpcallowip=127.0.0.1", "-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3"]
         env:
         - name: BITCOIN_DATA
           value: "/var/lib/bitcoin"
@@ -27,6 +29,51 @@ spec:
         volumeMounts:
         - name: bitcoinclaim
           mountPath: /var/lib/bitcoin
+        resources:
+          requests:
+            cpu: 0.512
+            memory: 4000Mi
+          limits:
+            memory: 10000Mi
+      - name: mackerel-container-agent
+        image: 185743233732.dkr.ecr.ap-northeast-1.amazonaws.com/mackerel-agent-arm-bitcoin:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 0.004
+            memory: 17Mi
+          limits:
+            memory: 128Mi
+        env:
+        - name: MACKEREL_KUBERNETES_KUBELET_READ_ONLY_PORT
+          value: '0'
+        - name: MACKEREL_CONTAINER_PLATFORM
+          value: kubernetes
+        - name: MACKEREL_HOST_STATUS_ON_START
+          value: working
+        - name: MACKEREL_AGENT_CONFIG
+          value: /etc/mackerel/mackerel.yaml
+        - name: MACKEREL_KUBERNETES_KUBELET_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: MACKEREL_KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MACKEREL_KUBERNETES_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MACKEREL_ROLES
+          value: bitcoin:full-node
+        - name: MACKEREL_APIKEY
+          valueFrom:
+            secretKeyRef:
+              name: mackerel
+              key: apikey
+        envFrom:
+      terminationGracePeriodSeconds: 60
   volumeClaimTemplates:
   - metadata:
       name: bitcoinclaim
@@ -54,3 +101,29 @@ spec:
     nodePort: 30333
   selector:
     app: fullnode
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mackerel-container-agent-clusterrole
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes/proxy
+  - nodes/stats
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: bitcoin-with-mackerel-agent-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mackerel-container-agent-clusterrole
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: bitcoin
