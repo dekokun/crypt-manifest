@@ -1,0 +1,12 @@
+installCRDs: false
+global:
+  image:
+    repository:
+      alinbalutoiu/argocd
+    tag:
+      v2.2.2
+dex:
+  enabled: false
+server:
+  extraArgs:
+    - --insecure
