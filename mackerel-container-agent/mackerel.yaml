@@ -1,0 +1,7 @@
+plugin:
+  metrics:
+    bitcoin:
+      command:
+        - /usr/local/bin/mackerel-agent-bitcoin
+      timeoutSeconds: 30
+
