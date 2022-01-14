@@ -8,7 +8,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 RUN curl -o bitcoin.tar.gz https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-aarch64-linux-gnu.tar.gz \
  && tar xvf bitcoin.tar.gz \
- && install -m 0755 -o root -g root -t /usr/bin bitcoin-22.0/bin/* \
+ && install -m 0755 -o root -g root -t /usr/bin bitcoin-22.0/bin/bitcoin-cli \
  && rm -rf bitcoin-22.0/
 
 COPY mackerel.yaml /etc/mackerel/mackerel.yaml
