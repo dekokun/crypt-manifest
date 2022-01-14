@@ -1,4 +1,4 @@
-FROM mackerel/mackerel-container-agent:v0.5.1-plugins@sha256:12c13395ab8df09e15d19a38a685901e552d8d612172f3411d59b48aabb75872
+FROM mackerel/mackerel-container-agent:v0.5.1
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
