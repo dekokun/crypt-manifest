@@ -20,7 +20,7 @@ spec:
       containers:
       - name: bitcoin-core
         image: ruimarinho/bitcoin-core:22
-        args: ["-printtoconsole", "-externalip=bitcoin.dekokun.info", "-dbcache=2000", "-prune=30000", "-rpcallowip=127.0.0.1", "-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3"]
+        args: ["-printtoconsole", "-externalip=168.138.219.140", "-dbcache=2000", "-prune=30000", "-rpcallowip=127.0.0.1", "-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3"]
         env:
         - name: BITCOIN_DATA
           value: "/var/lib/bitcoin"
