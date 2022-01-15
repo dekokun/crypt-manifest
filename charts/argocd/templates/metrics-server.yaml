@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/dekokun/crypt-manifest.git
     targetRevision: HEAD
-    path: metrics-server
+    path: charts/metrics-server
   destination:
     server: https://kubernetes.default.svc
     namespace: default

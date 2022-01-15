@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bitcoin
+  name: argocd
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/dekokun/crypt-manifest.git
     targetRevision: HEAD
-    path: bitcoin
+    path: charts/argocd
   destination:
     server: https://kubernetes.default.svc
-    namespace: bitcoin
+    namespace: argocd
