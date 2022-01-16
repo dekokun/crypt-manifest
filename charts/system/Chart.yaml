@@ -1,7 +1,10 @@
 apiVersion: v2
-name: metrics-server
+name: system
 version: 1.0.0
 dependencies:
   - name: metrics-server
     version: 3.7.0
     repository: https://kubernetes-sigs.github.io/metrics-server/
+  - name: sealed-secrets
+    version: 2.1.0
+    repository: https://bitnami-labs.github.io/sealed-secrets/
