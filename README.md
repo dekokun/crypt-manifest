@@ -6,8 +6,10 @@
 $ helm dep build charts/argocd
 $ helm upgrade --install argocd ./argocd/ -n argocd
 $ kubectl port-forward svc/argocd-server -n argocd 8080:80
-
-access http://localhost:8080 and sync all apps.
+$ argocd login localhost:8080
+ user: admin
+ password: $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo)
+$ argocd app sync -l argocd.argoproj.io/instance=argocd
 ```
 
 ## how to make secret
