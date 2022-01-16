@@ -2,5 +2,8 @@ dependencies:
 - name: metrics-server
   repository: https://kubernetes-sigs.github.io/metrics-server/
   version: 3.7.0
-digest: sha256:99fd2361e84c1ef3fdf831b70100770f44e56c75c1c139db8bba4981c30175a9
-generated: "2022-01-14T14:49:54.75792+09:00"
+- name: sealed-secrets
+  repository: https://bitnami-labs.github.io/sealed-secrets/
+  version: 2.1.0
+digest: sha256:360324bafd6f45d54db0a005776aace370ebbe1ca14950d6ba15e55192072791
+generated: "2022-01-16T13:40:26.633+09:00"
