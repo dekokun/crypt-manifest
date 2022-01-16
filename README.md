@@ -13,6 +13,8 @@ access http://localhost:8080 and sync all apps.
 ## how to make secret
 
 ```
-$ echo -n <your mackerel api key> | kubectl create secret generic mackerel --dry-run=client --from-file=apikey=/dev/stdin -o json -n bitcoin > mackerel.json
-$ kubeseal --controller-name=system-sealed-secrets -o yaml <mackerel.json > charts/bitcoin/templates/sealedsecret.yaml
+$ echo -n <your mackerel api key> | kubectl create secret generic mackerel --dry-run=client --from-file=apikey=/dev/stdin -o json -n bitcoin kubeseal --controller-name=system-sealed-secrets -o yaml > charts/bitcoin/templates/sealedsecret.yaml
+$ echo -n your mackerel api key \
+| kubectl create secret generic mackerel --dry-run=client --from-file=apikey=/dev/stdin -o json -n bitcoin \
+| kubeseal --controller-name=system-sealed-secrets -o yaml > charts/bitcoin/templates/sealedsecret.yaml
 ```
