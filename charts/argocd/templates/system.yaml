@@ -11,4 +11,4 @@ spec:
     path: charts/system
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: kube-system
