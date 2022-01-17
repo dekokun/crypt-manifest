@@ -1034,7 +1034,7 @@ spec:
         - name: MACKEREL_HOST_STATUS_ON_START
           value: working
         - name: MACKEREL_AGENT_CONFIG
-          value: /etc/mackerel/mackerel.yaml
+          value: /etc/mackerel/config
         - name: MACKEREL_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
@@ -1054,8 +1054,15 @@ spec:
             secretKeyRef:
               name: mackerel
               key: apikey
-        envFrom:
+        volumeMounts:
+          - mountPath: \\"/etc/mackerel\\"
+            name: mackerel-config
+            readOnly: true
       terminationGracePeriodSeconds: 60
+      volumes:
+        - name: mackerel-config
+          secret:
+            secretName: mackerel
   volumeClaimTemplates:
   - metadata:
       name: bitcoinclaim
