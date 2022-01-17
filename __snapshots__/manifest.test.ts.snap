@@ -198,7 +198,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -219,7 +219,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-server
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -330,7 +330,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -351,7 +351,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-server
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/service.yaml
 apiVersion: v1
@@ -1130,7 +1130,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: RELEASE-NAME-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1249,7 +1249,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: RELEASE-NAME-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/metrics-server/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1269,7 +1269,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: RELEASE-NAME-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/cluster-role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1290,14 +1290,14 @@ subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
     name: RELEASE-NAME-sealed-secrets
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: RELEASE-NAME-sealed-secrets-key-admin
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1326,7 +1326,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: RELEASE-NAME-sealed-secrets-service-proxier
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1364,14 +1364,14 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: RELEASE-NAME-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: RELEASE-NAME-sealed-secrets-key-admin
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1386,14 +1386,14 @@ subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
     name: RELEASE-NAME-sealed-secrets
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: RELEASE-NAME-sealed-secrets-service-proxier
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1436,7 +1436,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: RELEASE-NAME-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1526,7 +1526,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: RELEASE-NAME-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.0
@@ -1599,7 +1599,7 @@ spec:
   insecureSkipTLSVerify: true
   service:
     name: RELEASE-NAME-metrics-server
-    namespace: bitcoin
+    namespace: default
   version: v1beta1
   versionPriority: 100
 "
