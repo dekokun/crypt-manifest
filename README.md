@@ -17,8 +17,7 @@ $ argocd app sync -l argocd.argoproj.io/instance=argocd
 ## how to make secret
 
 ```
-$ echo -n <your mackerel api key> | kubectl create secret generic mackerel --dry-run=client --from-file=apikey=/dev/stdin -o json -n bitcoin kubeseal --controller-name=system-sealed-secrets -o yaml > charts/bitcoin/templates/sealedsecret.yaml
-$ echo -n your mackerel api key \
-| kubectl create secret generic mackerel --dry-run=client --from-file=apikey=/dev/stdin -o json -n bitcoin \
+vi ./mackerel-container-agent/mackerel-config-template
+$ kubectl create secret generic mackerel --dry-run=client --from-file=config=./mackerel-container-agent/mackerel-config-template --from-literal=apikey=<your api key> -o json -n bitcoin \
 | kubeseal --controller-name=system-sealed-secrets -o yaml > charts/bitcoin/templates/sealedsecret.yaml
 ```
