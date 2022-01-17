@@ -1,18 +1,21 @@
 FROM mackerel/mackerel-container-agent:v0.5.1
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-    jq \
-    curl \
- && apt-get -y clean \
- && rm -rf /var/lib/apt/lists/*
-RUN curl -o bitcoin.tar.gz https://bitcoin.org/bin/bitcoin-core-22.0/bitcoin-22.0-aarch64-linux-gnu.tar.gz \
- && tar xvf bitcoin.tar.gz \
- && install -m 0755 -o root -g root -t /usr/bin bitcoin-22.0/bin/bitcoin-cli \
- && rm -rf bitcoin-22.0/
+RUN apt-get update -yq \
+   && apt-get install -yq --no-install-recommends \
+   jq \
+   curl \
+   gnupg2 \
+   && apt-get -y clean \
+   && rm -rf /var/lib/apt/lists
 
-COPY mackerel.yaml /etc/mackerel/mackerel.yaml
-COPY mackerel-agent-bitcoin /usr/local/bin/mackerel-agent-bitcoin
-RUN chmod 755 /usr/local/bin/mackerel-agent-bitcoin
+RUN echo "deb [arch=amd64,arm64] http://apt.mackerel.io/v2/ mackerel contrib" > /etc/apt/sources.list.d/mackerel.list
+RUN curl -LfsS https://mackerel.io/file/cert/GPG-KEY-mackerel-v2 | apt-key add -
+
+RUN apt-get update -yq && \
+   apt-get install -yq --no-install-recommends mkr && \
+   rm -rf /var/lib/apt/lists
+RUN mkr plugin install dekokun/mackerel-plugin-bitcoin-core
+
+ENV PATH $PATH:/opt/mackerel-agent/plugins/bin
 
 ENTRYPOINT ["/usr/local/bin/mackerel-container-agent"]

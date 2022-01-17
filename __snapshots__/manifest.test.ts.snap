@@ -932,7 +932,7 @@ spec:
         - name: MACKEREL_HOST_STATUS_ON_START
           value: working
         - name: MACKEREL_AGENT_CONFIG
-          value: /etc/mackerel/mackerel.yaml
+          value: /etc/mackerel/config
         - name: MACKEREL_KUBERNETES_KUBELET_HOST
           valueFrom:
             fieldRef:
@@ -952,8 +952,15 @@ spec:
             secretKeyRef:
               name: mackerel
               key: apikey
-        envFrom:
+        volumeMounts:
+          - mountPath: \\"/etc/mackerel\\"
+            name: mackerel-config
+            readOnly: true
       terminationGracePeriodSeconds: 60
+      volumes:
+        - name: mackerel-config
+          secret:
+            secretName: mackerel
   volumeClaimTemplates:
   - metadata:
       name: bitcoinclaim
@@ -1069,7 +1076,8 @@ metadata:
   namespace: bitcoin
 spec:
   encryptedData:
-    apikey: AgDF1woVBrbnG2I8pzOfgS7Yq6QKKxuaMDnIwxol+s6J5AQ6Ac5Ncb/TZN18Svpo608/3IEXjM7SC4Tysdu1KlDvKfm/k4Gt8E04Ob6pGXq+jPfjZGrzAz7NrJL24jnKyBZ5uG9fozVLYRbmWi+dOsmd82zoSUz1xMDBZ9rr2U74MB4CXIcaiBcy3TcnQL6bXydE0L+g2EYUxpWQewbp/SGW69U6cZ9EjVQkUFLJTztHCp0+T7rljPfZ4xkzKGvBXheMJ67ucLn99YJpicesLOX9aUOC2sqaWy/7QI4+MQEkmAPaAgvpadsre33GT83UhgRNzccDorTNLHnb3zEIq3sJZP3mwtAV1wVqQdNmDdvTQkeD+EEH/aDNZAL4DY2Ar7t+7ZAYgSLnTVjzrZPnZbivKqRa1uWd+Q0wl9ReTt0GcG5SrYB4JaImj2zlMyy4G5omptJwP9wsH1Ey8DUm+yydoD6fVqWWd8AIfa5MrdLZbz5qybShujKF+P8b/g52wcVd9Yy43T3qprsNkDXdS1Y9zHDkfiF7SFwKckHbgz1SGbHXG/n/l6Mjm56gYvo3R7jE99XRfUPdnR9VL6SCy28WUP8YPS0fZqWUH1ZGbVacQ/40NmUfJEVmis4CnNcVYBzOyxpElHlwuuAGoVtkcWPf4e6HNvKeviCu1iAF+y/qtC2M5ztopuE2RYvbGZC9U3i8DCtIk1i98hopIV8+y/ht+vFnxT5crgdj1Iokkccpbls8qxTehoU2YAPxhw==
+    apikey: AgAtTeWxpInUSJRbH0kLwD+H14Vzvkh839OD9Gpyjwd/8Cr1HucMqQ9O8H1R6RrE7dIJ4HRroacNXL1DaK5E0G2vaMsYMUUbGKdP31lKmAi6q4b99asvE/snxjZ38L7VpCophwv9POKO1MPgb/Bul/Sn3djX4ZY122Blka3dRemtJ+Bx5tlk8YQ65q2g5ZvvKeznOTS4HOvujWoLp2+gE2WXxOQoGjmqmyIvKIY+S8H76Vd2TTk8s9Mm1RkGTHMN/CFBfIdX/5COoE/MI6Jk5ri2Wghd6eQKxblyt13JTWdOcdR3s/f15ZlQrZxeD78ybBoVeGwJ6d3orXZhFY9rxX3zksvyZggP5UPSPMR9HkksWFBdBTs2kd0DSH1L0cwmyIuhR9zIB1OC574jBo9eD3bFvQdFaYYTVBzpPeA5CwGdI4Nq8FjLD6/r6JTVkSnvURyUBFTbXTUjPjkijB2Br/lzJr3dF7bJcTb3ULKG9FcPfSw5nzrtwDtUr8Suj4YUdY8kvbmqtVj/D1dA9sVYm4FUZUedtIkK83qCPYnDxJLvtYbOyCe8D2xJ/LNFmIc2q9JogJsaAn+dW+jhkHYwNHBCRMvxCmXoZhZQUYaHsNa+WU6106XAzLyV4ksooTYQtlXyshGCH4woD/nit5O5Cu2+F4jCABzGkVJmjK2GDhBDr5ZaMLH11ZzU8IEtr/0rlUQLc8+YMbVHu6dMMt3R+FKhe52qwmOTqdEwtOs/HQZan3cvqmEwIi7grJFOvw==
+    config: AgCvkVwQFgutCp58Y2YY9w+h7J87YncYJCrvADHLfywseFyBf/J9BbwcBf/ln38/p3kpiFaSi6aHpfoVPdcAnNSZI2k+afKKmy55GkH3AEGiepuL8lQPKmgyqH11vanPppdDFDauDz4SKXtvqTC4lv1Z41rWQxyOrKolbPBIM0SSd5WuJXop2nPETUVErnJFR6xzvPHU7TfrKjfpzpc7isA8vFk/pTRYAikFBYJj4joSRIxpGamUVWJEBd0NfEvvTDTPP2JWYLXN95IOum3iDoWE0AjIHbx8IyfOHTjO50oig71/cN2LRasTlhDdZT3bdzrxnENGP81Nn5aOdbYCLmmyJxzaNECbzlS258GENh9KaHqEaVG9uKnP7RFBA1Ivk53Ya1aqwZTgIuhrVp556S9TKGyma7sZeD5KGnig4VTYD+1CNfKG1j+1wd1mfI3So6f35QZu1eOsidytji6sfVkqyjhAdIa0OKCMD15oH8ooIXpy1BpX972yKkdWouiJDW1+EH6ovUeSMcJu4c+yAKU6ppsqDrgA0DLPX1KDcYg81dlQ8Bj088jVoH2jCnw7XAWwbDnfIflppLnYKpTfDzBUTGA6TIZHzFwSlOfEXu/wo7XEWsMElMiyZn+PSUikHVqNOiSBhg41CCCwiIEziTY1RfWTt1evJr7fEjcXNfM7sR8VEE9+X2r380Ua3ebjuGQl25ZyTK3G+bzvMucuVqLUA5R1R0/6E//bdvU22qvAFby038HW6nSWuaQ2ShZtaaF2NwthZJw8ONseFFut/FHUEN1Q5dlQcK8h6eZ3qWo3l7nAwfvi0inNAzW/NdSvXPXq8JKHQ6vjMvTPa3qnfZpC1MFXdzPGhJmk9JJgWQ5EvY25Zu7KfZTV5clngqKQWjpIB9K8oQDPZo9uSVab2SyMLfI2K7zWR4Kydh73cplvGzwCTrF/8zM0xogutKnqPTumCB1c0aRo4DVc3cXqWFUadnW3IPwduYWHbSXyPy2ofPs7DALFErR2DipbL7pB+q3HrHmb9KBX+mAcjPiKmws4HFW9+QvYwyz2u2M4spZint2vBVl7ZFz0ApOTmc/t
   template:
     data: null
     metadata:
