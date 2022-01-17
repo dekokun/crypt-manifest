@@ -10,3 +10,26 @@ jobs:
         uses: WyriHaximus/github-action-helm3@v2
         with:
           exec: helm lint ./charts/*
+  snapthot-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: setup node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.22.9'
+    # https://github.com/actions/cache/blob/master/examples.md#node---npm
+    - uses: azure/setup-helm@v1
+      with:
+        version: v3.7.1
+    - uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      run: npm install
+    - name: test
+      run: npm run test
