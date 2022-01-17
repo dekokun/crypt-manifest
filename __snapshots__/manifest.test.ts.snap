@@ -1,0 +1,1606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for k8s manifest ./charts/argocd 1`] = `
+"---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+automountServiceAccountToken: true
+metadata:
+  name: argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+automountServiceAccountToken: true
+metadata:
+  name: argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argocd-secret
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-secret
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+type: Opaque
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+data:
+    application.instanceLabelKey: argocd.argoproj.io/instance
+    url: https://argocd.example.com
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-gpg-keys-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-gpg-keys-cm
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-gpg-keys-cm
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-rbac-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-ssh-known-hosts-cm.yaml
+apiVersion: v1
+data:
+  ssh_known_hosts: |
+    bitbucket.org ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAubiN81eDcafrgMeLzaFPsw2kNvEcqTKl/VqLat/MaB33pZy0y3rJZtnqwR2qOOvbwKZYKiEO1O6VqNEBxKvJJelCq0dTXWT5pbO2gDXC6h6QDXCaHo6pOHGPUy+YBaGQRGuSusMEASYiWunYN0vCAI8QaXnWMXNMdFP3jHAJH0eDsoiGnLPBlBp4TNm6rYI74nMzgz3B9IikW4WVK+dc8KZJZWYjAuORU3jc1c/NPskD2ASinf8v3xnfXeukU0sJ5N6m5E8VLjObPEO+mN2t/FZTMZLiFqPWc/ALSqnMnnhwrNi2rbfg/rd/IpL8Le3pSBne8+seeFVBoGqzHM9yXw==
+    github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+    gitlab.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFSMqzJeV9rUzU4kWitGjeR4PWSa29SPqJ1fVkhtj3Hw9xjLVXVYrU9QlYWrOLXBpQ6KWjbjTDTdDkoohFzgbEY=
+    gitlab.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAfuCHKVTjquxvt6CM6tdG4SLp1Btn/nOeHHE5UOzRdf
+    gitlab.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsj2bNKTBSpIYDEGk9KxsGh3mySTRgMtXL583qmBpzeQ+jqCMRgBqB98u3z++J1sKlXHWfM9dyhSevkMwSbhoR8XIq/U0tCNyokEi/ueaBMCvbcTHhO7FcwzY92WK4Yt0aGROY5qX2UKSeOvuP4D6TPqKF1onrSzH9bx9XUf2lEdWT/ia1NEKjunUqu1xOB/StKDHMoX4/OKyIzuS0q/T1zOATthvasJFoPrAjkohTyaDUz2LN5JoH839hViyEG82yB+MjcFV5MU3N1l1QL3cVUCh93xSaua1N85qivl+siMkPGbO5xR/En4iEY6K2XPASUEMaieWVNTRCtJ4S8H+9
+    ssh.dev.azure.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7Hr1oTWqNqOlzGJOfGJ4NakVyIzf1rXYd4d7wo6jBlkLvCA4odBlL0mDUyZ0/QUfTTqeu+tm22gOsv+VrVTMk6vwRU75gY/y9ut5Mb3bR5BV58dKXyq9A9UeB5Cakehn5Zgm6x1mKoVyf+FFn26iYqXJRgzIZZcZ5V6hrE0Qg39kZm4az48o0AUbf6Sp4SLdvnuMa2sVNwHBboS7EJkm57XQPVU3/QpyNLHbWDdzwtrlS+ez30S3AdYhLKEOxAG8weOnyrtLJAUen9mTkol8oII1edf7mWWbWVf0nBmly21+nZcmCTISQBtdcyPaEno7fFQMDD26/s0lfKob4Kw8H
+    vs-ssh.visualstudio.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7Hr1oTWqNqOlzGJOfGJ4NakVyIzf1rXYd4d7wo6jBlkLvCA4odBlL0mDUyZ0/QUfTTqeu+tm22gOsv+VrVTMk6vwRU75gY/y9ut5Mb3bR5BV58dKXyq9A9UeB5Cakehn5Zgm6x1mKoVyf+FFn26iYqXJRgzIZZcZ5V6hrE0Qg39kZm4az48o0AUbf6Sp4SLdvnuMa2sVNwHBboS7EJkm57XQPVU3/QpyNLHbWDdzwtrlS+ez30S3AdYhLKEOxAG8weOnyrtLJAUen9mTkol8oII1edf7mWWbWVf0nBmly21+nZcmCTISQBtdcyPaEno7fFQMDD26/s0lfKob4Kw8H
+kind: ConfigMap
+metadata:
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-ssh-known-hosts-cm
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-ssh-known-hosts-cm
+---
+# Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-tls-certs-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-tls-certs-cm
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-tls-certs-cm
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- nonResourceURLs:
+  - '*'
+  verbs:
+  - '*'
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+rules:
+  - apiGroups:
+      - '*'
+    resources:
+      - '*'
+    verbs:
+      - delete
+      - get
+      - patch
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - events
+    verbs:
+      - list
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - pods
+      - pods/log
+    verbs:
+      - get
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: RELEASE-NAME-argocd-application-controller
+subjects:
+- kind: ServiceAccount
+  name: argocd-application-controller
+  namespace: bitcoin
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: RELEASE-NAME-argocd-server
+subjects:
+- kind: ServiceAccount
+  name: argocd-server
+  namespace: bitcoin
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+rules:
+- apiGroups:
+  - \\"\\"
+  resources:
+  - secrets
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  - appprojects
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - \\"\\"
+  resources:
+  - events
+  verbs:
+  - create
+  - list
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+rules:
+- apiGroups:
+  - \\"\\"
+  resources:
+  - secrets
+  - configmaps
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  - appprojects
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - delete
+  - patch
+- apiGroups:
+  - \\"\\"
+  resources:
+  - events
+  verbs:
+  - create
+  - list
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: RELEASE-NAME-argocd-application-controller
+subjects:
+- kind: ServiceAccount
+  name: argocd-application-controller
+  namespace: bitcoin
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: RELEASE-NAME-argocd-server
+subjects:
+- kind: ServiceAccount
+  name: argocd-server
+  namespace: bitcoin
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+spec:
+  ports:
+  - name: https-controller
+    port: 8082
+    targetPort: 8082
+  selector:
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: argocd/charts/argo-cd/templates/argocd-repo-server/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: repo-server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+  name: RELEASE-NAME-argocd-repo-server
+spec:
+  ports:
+  - name: https-repo-server
+    protocol: TCP
+    port: 8081
+    targetPort: repo-server
+  selector:
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: server
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: server
+  selector:
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: argocd/charts/argo-cd/templates/redis/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: RELEASE-NAME-argocd-redis
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+spec:
+  ports:
+  - port: 6379
+    targetPort: 6379
+  selector:
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-argocd-application-controller
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: \\"v2.2.2\\"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-application-controller
+      app.kubernetes.io/instance: RELEASE-NAME
+  revisionHistoryLimit: 5
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: argo-cd-3.13.0
+        app.kubernetes.io/name: argocd-application-controller
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/component: application-controller
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: argocd
+        app.kubernetes.io/version: \\"v2.2.2\\"
+    spec:
+      containers:
+      - command:
+        - argocd-application-controller
+        - --status-processors
+        - \\"20\\"
+        - --operation-processors
+        - \\"10\\"
+        - --app-resync
+        - \\"180\\"
+        - --self-heal-timeout-seconds
+        - \\"5\\"
+        - --repo-server
+        - RELEASE-NAME-argocd-repo-server:8081
+        - --logformat
+        - text
+        - --loglevel
+        - info
+        - --redis
+        - RELEASE-NAME-argocd-redis:6379
+        image: alinbalutoiu/argocd:v2.2.2
+        imagePullPolicy: IfNotPresent
+        name: application-controller
+        ports:
+        - name: controller
+          containerPort: 8082
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8082
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 8082
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        volumeMounts:
+        - mountPath: /app/config/controller/tls
+          name: argocd-repo-server-tls
+        resources:
+          {}
+      serviceAccountName: argocd-application-controller
+      volumes:
+      - name: argocd-repo-server-tls
+        secret:
+          items:
+          - key: tls.crt
+            path: tls.crt
+          - key: tls.key
+            path: tls.key
+          - key: ca.crt
+            path: ca.crt
+          optional: true
+          secretName: argocd-repo-server-tls
+---
+# Source: argocd/charts/argo-cd/templates/argocd-repo-server/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-argocd-repo-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: repo-server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: \\"v2.2.2\\"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-repo-server
+      app.kubernetes.io/instance: RELEASE-NAME
+  revisionHistoryLimit: 5
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: argo-cd-3.13.0
+        app.kubernetes.io/name: argocd-repo-server
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/component: repo-server
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: argocd
+        app.kubernetes.io/version: \\"v2.2.2\\"
+    spec:
+      containers:
+      - name: repo-server
+        image: alinbalutoiu/argocd:v2.2.2
+        imagePullPolicy: IfNotPresent
+        args:
+        - argocd-repo-server
+        - --redis
+        - RELEASE-NAME-argocd-redis:6379
+        - --logformat
+        - text
+        - --loglevel
+        - info
+        volumeMounts:
+        - mountPath: /app/config/gpg/source
+          name: gpg-keys
+        - mountPath: /app/config/gpg/keys
+          name: gpg-keyring
+        - mountPath: /app/config/ssh
+          name: ssh-known-hosts
+        - mountPath: /app/config/reposerver/tls
+          name: argocd-repo-server-tls
+        - mountPath: /tmp
+          name: tmp-dir
+        ports:
+        - name: repo-server
+          containerPort: 8081
+          protocol: TCP
+        
+        livenessProbe:
+          tcpSocket:
+            port: 8081
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 8081
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        resources:
+          {}
+      serviceAccountName: default
+      volumes:
+      - name: gpg-keys
+        configMap:
+          name: argocd-gpg-keys-cm
+      - emptyDir: {}
+        name: gpg-keyring
+      - configMap:
+          name: argocd-ssh-known-hosts-cm
+        name: ssh-known-hosts
+      - name: argocd-repo-server-tls
+        secret:
+          items:
+          - key: tls.crt
+            path: tls.crt
+          - key: tls.key
+            path: tls.key
+          - key: ca.crt
+            path: ca.crt
+          optional: true
+          secretName: argocd-repo-server-tls
+      - emptyDir: {}
+        name: tmp-dir
+---
+# Source: argocd/charts/argo-cd/templates/argocd-server/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-argocd-server
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: \\"v2.2.2\\"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-server
+      app.kubernetes.io/instance: RELEASE-NAME
+  revisionHistoryLimit: 5
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: argo-cd-3.13.0
+        app.kubernetes.io/name: argocd-server
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/component: server
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: argocd
+        app.kubernetes.io/version: \\"v2.2.2\\"
+    spec:
+      containers:
+      - name: server
+        image: alinbalutoiu/argocd:v2.2.2
+        imagePullPolicy: IfNotPresent
+        command:
+        - argocd-server
+        - --repo-server
+        - RELEASE-NAME-argocd-repo-server:8081
+        - --logformat
+        - text
+        - --loglevel
+        - info
+        - --redis
+        - RELEASE-NAME-argocd-redis:6379
+        - --insecure
+        volumeMounts:
+        - mountPath: /app/config/ssh
+          name: ssh-known-hosts
+        - mountPath: /app/config/server/tls
+          name: argocd-repo-server-tls
+        - mountPath: /tmp
+          name: tmp-dir
+        ports:
+        - name: server
+          containerPort: 8080
+          protocol: TCP
+        
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        resources:
+          {}
+      serviceAccountName: argocd-server
+      volumes:
+      - emptyDir: {}
+        name: static-files
+      - emptyDir: {}
+        name: tmp-dir
+      - configMap:
+          name: argocd-ssh-known-hosts-cm
+        name: ssh-known-hosts
+      - name: argocd-repo-server-tls
+        secret:
+          items:
+          - key: tls.crt
+            path: tls.crt
+          - key: tls.key
+            path: tls.key
+          - key: ca.crt
+            path: ca.crt
+          optional: true
+          secretName: argocd-repo-server-tls
+---
+# Source: argocd/charts/argo-cd/templates/redis/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-argocd-redis
+  labels:
+    helm.sh/chart: argo-cd-3.13.0
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: \\"6.2.4-alpine\\"
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-redis
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: argo-cd-3.13.0
+        app.kubernetes.io/name: argocd-redis
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/component: redis
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: argocd
+        app.kubernetes.io/version: \\"6.2.4-alpine\\"
+    spec:
+      automountServiceAccountToken: false
+      serviceAccountName: default
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+      containers:
+      - name: RELEASE-NAME-argocd-redis
+        args:
+        - --save
+        - \\"\\"
+        - --appendonly
+        - \\"no\\"
+        image: redis:6.2.4-alpine
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+          name: redis
+        resources:
+          {}
+---
+# Source: argocd/templates/argocd.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dekokun/crypt-manifest.git
+    targetRevision: HEAD
+    path: charts/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+---
+# Source: argocd/templates/bitcoin.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bitcoin
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dekokun/crypt-manifest.git
+    targetRevision: HEAD
+    path: charts/bitcoin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bitcoin
+---
+# Source: argocd/templates/clusterrole.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: clusterrole
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dekokun/crypt-manifest.git
+    targetRevision: HEAD
+    path: charts/clusterrole
+  destination:
+    server: https://kubernetes.default.svc
+---
+# Source: argocd/templates/system.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dekokun/crypt-manifest.git
+    targetRevision: HEAD
+    path: charts/system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+"
+`;
+
+exports[`snapshot test for k8s manifest ./charts/bitcoin 1`] = `
+"---
+# Source: bitcoin/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bitcoin-svc
+  labels:
+    app: fullnode
+spec:
+  type: NodePort
+  ports:
+  - port: 8333
+    protocol: \\"TCP\\"
+    name: \\"bitcoin-port\\"
+    targetPort: 8333
+    nodePort: 30333
+  selector:
+    app: fullnode
+---
+# Source: bitcoin/templates/statefulset-perfect.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bitcoin-fullnode-perfect
+  labels:
+    app: fullnode-perfect
+spec:
+  serviceName: \\"bitcoin-service\\"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fullnode
+  template:
+    metadata:
+      labels:
+        app: fullnode
+    spec:
+      imagePullSecrets:
+      - name: aws-ecr
+      containers:
+      - name: bitcoin-core
+        image: ruimarinho/bitcoin-core:22
+        args: [
+          \\"-printtoconsole\\",
+          \\"-externalip=168.138.219.140\\",
+          \\"-dbcache=2000\\",
+          \\"-rpcallowip=127.0.0.1\\",
+          \\"-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3\\"
+        ]
+        env:
+        - name: BITCOIN_DATA
+          value: \\"/var/lib/bitcoin\\"
+        ports:
+        - containerPort: 8333
+        volumeMounts:
+        - name: bitcoinclaim
+          mountPath: /var/lib/bitcoin
+        resources:
+          requests:
+            cpu: 0.512
+            memory: 4000Mi
+          limits:
+            memory: 10000Mi
+      - name: mackerel-container-agent
+        image: 185743233732.dkr.ecr.ap-northeast-1.amazonaws.com/mackerel-agent-arm-bitcoin:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 0.004
+            memory: 17Mi
+          limits:
+            memory: 128Mi
+        env:
+        - name: MACKEREL_KUBERNETES_KUBELET_READ_ONLY_PORT
+          value: '0'
+        - name: MACKEREL_CONTAINER_PLATFORM
+          value: kubernetes
+        - name: MACKEREL_HOST_STATUS_ON_START
+          value: working
+        - name: MACKEREL_AGENT_CONFIG
+          value: /etc/mackerel/mackerel.yaml
+        - name: MACKEREL_KUBERNETES_KUBELET_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: MACKEREL_KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MACKEREL_KUBERNETES_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MACKEREL_ROLES
+          value: bitcoin:full-node
+        - name: MACKEREL_APIKEY
+          valueFrom:
+            secretKeyRef:
+              name: mackerel
+              key: apikey
+        envFrom:
+      terminationGracePeriodSeconds: 60
+  volumeClaimTemplates:
+  - metadata:
+      name: bitcoinclaim
+    spec:
+      storageClassName: \\"oci-bv\\"
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 450Gi
+---
+# Source: bitcoin/templates/statefulset.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bitcoin-fullnode
+  labels:
+    app: fullnode
+spec:
+  serviceName: \\"bitcoin-service\\"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fullnode
+  template:
+    metadata:
+      labels:
+        app: fullnode
+    spec:
+      imagePullSecrets:
+      - name: aws-ecr
+      containers:
+      - name: bitcoin-core
+        image: ruimarinho/bitcoin-core:22
+        args: [
+          \\"-printtoconsole\\",
+          \\"-externalip=168.138.219.140\\",
+          \\"-dbcache=2000\\",
+          \\"-prune=30000\\",
+          \\"-rpcallowip=127.0.0.1\\",
+          \\"-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3\\"
+        ]
+        env:
+        - name: BITCOIN_DATA
+          value: \\"/var/lib/bitcoin\\"
+        ports:
+        - containerPort: 8333
+        volumeMounts:
+        - name: bitcoinclaim
+          mountPath: /var/lib/bitcoin
+        resources:
+          requests:
+            cpu: 0.512
+            memory: 4000Mi
+          limits:
+            memory: 10000Mi
+      - name: mackerel-container-agent
+        image: 185743233732.dkr.ecr.ap-northeast-1.amazonaws.com/mackerel-agent-arm-bitcoin:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 0.004
+            memory: 17Mi
+          limits:
+            memory: 128Mi
+        env:
+        - name: MACKEREL_KUBERNETES_KUBELET_READ_ONLY_PORT
+          value: '0'
+        - name: MACKEREL_CONTAINER_PLATFORM
+          value: kubernetes
+        - name: MACKEREL_HOST_STATUS_ON_START
+          value: working
+        - name: MACKEREL_AGENT_CONFIG
+          value: /etc/mackerel/mackerel.yaml
+        - name: MACKEREL_KUBERNETES_KUBELET_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: MACKEREL_KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MACKEREL_KUBERNETES_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MACKEREL_ROLES
+          value: bitcoin:full-node
+        - name: MACKEREL_APIKEY
+          valueFrom:
+            secretKeyRef:
+              name: mackerel
+              key: apikey
+        envFrom:
+      terminationGracePeriodSeconds: 60
+  volumeClaimTemplates:
+  - metadata:
+      name: bitcoinclaim
+    spec:
+      storageClassName: \\"oci-bv\\"
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 50Gi
+---
+# Source: bitcoin/templates/sealedsecret.yaml
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: mackerel
+  namespace: bitcoin
+spec:
+  encryptedData:
+    apikey: AgDF1woVBrbnG2I8pzOfgS7Yq6QKKxuaMDnIwxol+s6J5AQ6Ac5Ncb/TZN18Svpo608/3IEXjM7SC4Tysdu1KlDvKfm/k4Gt8E04Ob6pGXq+jPfjZGrzAz7NrJL24jnKyBZ5uG9fozVLYRbmWi+dOsmd82zoSUz1xMDBZ9rr2U74MB4CXIcaiBcy3TcnQL6bXydE0L+g2EYUxpWQewbp/SGW69U6cZ9EjVQkUFLJTztHCp0+T7rljPfZ4xkzKGvBXheMJ67ucLn99YJpicesLOX9aUOC2sqaWy/7QI4+MQEkmAPaAgvpadsre33GT83UhgRNzccDorTNLHnb3zEIq3sJZP3mwtAV1wVqQdNmDdvTQkeD+EEH/aDNZAL4DY2Ar7t+7ZAYgSLnTVjzrZPnZbivKqRa1uWd+Q0wl9ReTt0GcG5SrYB4JaImj2zlMyy4G5omptJwP9wsH1Ey8DUm+yydoD6fVqWWd8AIfa5MrdLZbz5qybShujKF+P8b/g52wcVd9Yy43T3qprsNkDXdS1Y9zHDkfiF7SFwKckHbgz1SGbHXG/n/l6Mjm56gYvo3R7jE99XRfUPdnR9VL6SCy28WUP8YPS0fZqWUH1ZGbVacQ/40NmUfJEVmis4CnNcVYBzOyxpElHlwuuAGoVtkcWPf4e6HNvKeviCu1iAF+y/qtC2M5ztopuE2RYvbGZC9U3i8DCtIk1i98hopIV8+y/ht+vFnxT5crgdj1Iokkccpbls8qxTehoU2YAPxhw==
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: mackerel
+      namespace: bitcoin
+"
+`;
+
+exports[`snapshot test for k8s manifest ./charts/clusterrole 1`] = `
+"---
+# Source: clusterrole/templates/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mackerel-container-agent-clusterrole
+rules:
+- apiGroups:
+  - \\"\\"
+  resources:
+  - nodes/proxy
+  - nodes/stats
+  verbs:
+  - get
+---
+# Source: clusterrole/templates/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: bitcoin-with-mackerel-agent-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mackerel-container-agent-clusterrole
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: bitcoin
+"
+`;
+
+exports[`snapshot test for k8s manifest ./charts/system 1`] = `
+"---
+# Source: system/charts/metrics-server/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: RELEASE-NAME-metrics-server
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+---
+# Source: system/charts/sealed-secrets/templates/service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: RELEASE-NAME-sealed-secrets
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+---
+# Source: system/charts/metrics-server/templates/clusterrole-aggregated-reader.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: system:metrics-server-aggregated-reader
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+    rbac.authorization.k8s.io/aggregate-to-admin: \\"true\\"
+    rbac.authorization.k8s.io/aggregate-to-edit: \\"true\\"
+    rbac.authorization.k8s.io/aggregate-to-view: \\"true\\"
+rules:
+  - apiGroups:
+      - metrics.k8s.io
+    resources:
+      - pods
+      - nodes
+    verbs:
+      - get
+      - list
+      - watch
+---
+# Source: system/charts/metrics-server/templates/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: system:RELEASE-NAME-metrics-server
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+rules:
+  - apiGroups:
+    - \\"\\"
+    resources:
+      - pods
+      - nodes
+      - nodes/stats
+      - namespaces
+      - configmaps
+    verbs:
+      - get
+      - list
+      - watch
+---
+# Source: system/charts/sealed-secrets/templates/cluster-role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: secrets-unsealer
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+rules:
+  - apiGroups:
+      - bitnami.com
+    resources:
+      - sealedsecrets
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - bitnami.com
+    resources:
+      - sealedsecrets/status
+    verbs:
+      - update
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - secrets
+    verbs:
+      - get
+      - create
+      - update
+      - delete
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+---
+# Source: system/charts/metrics-server/templates/clusterrolebinding-auth-delegator.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: RELEASE-NAME-metrics-server:system:auth-delegator
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+  - kind: ServiceAccount
+    name: RELEASE-NAME-metrics-server
+    namespace: bitcoin
+---
+# Source: system/charts/metrics-server/templates/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system:RELEASE-NAME-metrics-server
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:RELEASE-NAME-metrics-server
+subjects:
+  - kind: ServiceAccount
+    name: RELEASE-NAME-metrics-server
+    namespace: bitcoin
+---
+# Source: system/charts/sealed-secrets/templates/cluster-role-binding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: RELEASE-NAME-sealed-secrets
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: secrets-unsealer
+subjects:
+  - apiGroup: \\"\\"
+    kind: ServiceAccount
+    name: RELEASE-NAME-sealed-secrets
+    namespace: bitcoin
+---
+# Source: system/charts/sealed-secrets/templates/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: RELEASE-NAME-sealed-secrets-key-admin
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+rules:
+  - apiGroups:
+      - \\"\\"
+    resourceNames:
+      - sealed-secrets-key
+    resources:
+      - secrets
+    verbs:
+      - get
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - secrets
+    verbs:
+      - create
+      - list
+---
+# Source: system/charts/sealed-secrets/templates/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: RELEASE-NAME-sealed-secrets-service-proxier
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+rules:
+- apiGroups:
+  - \\"\\"
+  resourceNames:
+  - 'http:RELEASE-NAME-sealed-secrets:'
+  - RELEASE-NAME-sealed-secrets
+  resources:
+  - services/proxy
+  verbs:
+  - create
+  - get
+---
+# Source: system/charts/metrics-server/templates/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: RELEASE-NAME-metrics-server-auth-reader
+  namespace: kube-system
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: extension-apiserver-authentication-reader
+subjects:
+  - kind: ServiceAccount
+    name: RELEASE-NAME-metrics-server
+    namespace: bitcoin
+---
+# Source: system/charts/sealed-secrets/templates/role-binding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: RELEASE-NAME-sealed-secrets-key-admin
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: RELEASE-NAME-sealed-secrets-key-admin
+subjects:
+  - apiGroup: \\"\\"
+    kind: ServiceAccount
+    name: RELEASE-NAME-sealed-secrets
+    namespace: bitcoin
+---
+# Source: system/charts/sealed-secrets/templates/role-binding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: RELEASE-NAME-sealed-secrets-service-proxier
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: RELEASE-NAME-sealed-secrets-service-proxier
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: system:authenticated
+---
+# Source: system/charts/metrics-server/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: RELEASE-NAME-metrics-server
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: https
+  selector:
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: system/charts/sealed-secrets/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: RELEASE-NAME-sealed-secrets
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      nodePort: null
+  selector:
+    app.kubernetes.io/name: sealed-secrets
+    app.kubernetes.io/instance: RELEASE-NAME
+---
+# Source: system/charts/metrics-server/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-metrics-server
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: metrics-server
+      app.kubernetes.io/instance: RELEASE-NAME
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: metrics-server
+        app.kubernetes.io/instance: RELEASE-NAME
+    spec:
+      serviceAccountName: RELEASE-NAME-metrics-server
+      priorityClassName: \\"system-cluster-critical\\"
+      containers:
+        - name: metrics-server
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+          image: k8s.gcr.io/metrics-server/metrics-server:v0.5.2
+          imagePullPolicy: IfNotPresent
+          args:
+            - --secure-port=4443
+            - --cert-dir=/tmp
+            - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+            - --kubelet-use-node-status-port
+            - --metric-resolution=15s
+          ports:
+          - name: https
+            protocol: TCP
+            containerPort: 4443
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /livez
+              port: https
+              scheme: HTTPS
+            initialDelaySeconds: 0
+            periodSeconds: 10
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readyz
+              port: https
+              scheme: HTTPS
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+# Source: system/charts/sealed-secrets/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RELEASE-NAME-sealed-secrets
+  namespace: bitcoin
+  labels:
+    app.kubernetes.io/name: sealed-secrets
+    helm.sh/chart: sealed-secrets-2.1.0
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v0.17.2
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: sealed-secrets
+      app.kubernetes.io/instance: RELEASE-NAME
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: sealed-secrets
+        app.kubernetes.io/instance: RELEASE-NAME
+    spec:
+      securityContext:
+        fsGroup: 65534
+      serviceAccountName: RELEASE-NAME-sealed-secrets
+      containers:
+        - name: controller
+          command:
+            - controller
+          args:
+            - --update-status
+            - --key-prefix
+            - \\"sealed-secrets-key\\"
+          image: quay.io/bitnami/sealed-secrets-controller:v0.17.2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+              name: http
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          resources:
+            limits: {}
+            requests: {}
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1001
+          volumeMounts:
+            - mountPath: /tmp
+              name: tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+# Source: system/charts/metrics-server/templates/apiservice.yaml
+apiVersion: apiregistration.k8s.io/v1
+kind: APIService
+metadata:
+  name: v1beta1.metrics.k8s.io
+  labels:
+    helm.sh/chart: metrics-server-3.7.0
+    app.kubernetes.io/name: metrics-server
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: \\"0.5.2\\"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  group: metrics.k8s.io
+  groupPriorityMinimum: 100
+  insecureSkipTLSVerify: true
+  service:
+    name: RELEASE-NAME-metrics-server
+    namespace: bitcoin
+  version: v1beta1
+  versionPriority: 100
+"
+`;
