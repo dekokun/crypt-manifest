@@ -853,6 +853,36 @@ spec:
 
 exports[`snapshot test for k8s manifest ./charts/bitcoin 1`] = `
 "---
+# Source: bitcoin/templates/configmap.yaml
+apiVersion: v1
+data:
+  bitnodes-script: |+
+    #!/bin/bash
+
+    set -eu
+
+    IP=$1
+    PORT=$2
+    HOSTNAME=$3
+
+    HOST_ID=$(mkr hosts --name \\"$HOSTNAME\\" | jq -r '.[0].id')
+    (
+        leaderboard=$(curl \\"https://bitnodes.io/api/v1/nodes/leaderboard/\${IP}-\${PORT}\\"/ 2>/dev/null)
+        timestamp=$(date +%s)
+        rank=$(echo \\"$leaderboard\\" | jq '.rank')
+        echo  -e \\"bitcoin.bitnodes.rank\\\\t\${rank}\\\\t\${timestamp}\\"
+        names=(ai bi dli dui hi mli mui ni nsi peer_index pi si vi wli wui)
+        for name in \\"\${names[@]}\\"
+        do
+          echo  -e \\"bitcoin.bitnodes_score.\${name}\\\\t$(echo \\"$leaderboard\\" | jq -r \\".\${name}\\")\\\\t\${timestamp}\\"
+        done
+    ) | mkr throw --host \\"$HOST_ID\\"
+
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: mackerel
+---
 # Source: bitcoin/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -1071,6 +1101,41 @@ spec:
       resources:
         requests:
           storage: 50Gi
+---
+# Source: bitcoin/templates/cronjob.yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mackerel-throw-bitnodes-bitcoin-fullnode-0
+spec:
+  schedule: \\"* * * * *\\"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: mkr
+            image: dekokun/mackerel-container-agent-bitcoin
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: MACKEREL_APIKEY
+                valueFrom:
+                  secretKeyRef:
+                    name: mackerel
+                    key: apikey
+            command:
+              - /usr/local/bin/mackerel/bitnodes-script
+              - 168.138.219.140
+              - \\"8333\\"
+              - bitcoin-fullnode-0
+            volumeMounts:
+              - name: mackerel-volume
+                mountPath: /usr/local/bin/mackerel
+          restartPolicy: OnFailure
+          volumes:
+            - name: mackerel-volume
+              configMap:
+                name: mackerel
 ---
 # Source: bitcoin/templates/sealedsecret.yaml
 apiVersion: bitnami.com/v1alpha1
