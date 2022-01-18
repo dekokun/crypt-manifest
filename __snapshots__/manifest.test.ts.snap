@@ -1108,7 +1108,10 @@ kind: CronJob
 metadata:
   name: mackerel-throw-bitnodes-bitcoin-fullnode-0
 spec:
-  schedule: \\"* * * * *\\"
+  schedule: \\"*/30 * * * *\\"
+  startingDeadlineSeconds: 300
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:
@@ -1124,6 +1127,7 @@ spec:
                     name: mackerel
                     key: apikey
             command:
+              - /bin/bash
               - /usr/local/bin/mackerel/bitnodes-script
               - 168.138.219.140
               - \\"8333\\"
