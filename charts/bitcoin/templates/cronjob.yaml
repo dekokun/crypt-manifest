@@ -4,6 +4,9 @@ metadata:
   name: mackerel-throw-bitnodes-bitcoin-fullnode-0
 spec:
   schedule: "*/30 * * * *"
+  startingDeadlineSeconds: 300
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
   jobTemplate:
     spec:
       template:
