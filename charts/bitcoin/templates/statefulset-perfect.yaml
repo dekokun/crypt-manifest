@@ -42,8 +42,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: 185743233732.dkr.ecr.ap-northeast-1.amazonaws.com/mackerel-agent-arm-bitcoin:latest
-        imagePullPolicy: Always
+        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
         resources:
           requests:
             cpu: 0.004
