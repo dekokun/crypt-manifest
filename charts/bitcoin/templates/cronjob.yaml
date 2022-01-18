@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mackerel-throw-bitnodes-bitcoin-fullnode-0
+spec:
+  schedule: "*/30 * * * *"
+  startingDeadlineSeconds: 300
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: mkr
+            image: dekokun/mackerel-container-agent-bitcoin
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: MACKEREL_APIKEY
+                valueFrom:
+                  secretKeyRef:
+                    name: mackerel
+                    key: apikey
+            command:
+              - /bin/bash
+              - /usr/local/bin/mackerel/bitnodes-script
+              - 168.138.219.140
+              - "8333"
+              - bitcoin-fullnode-0
+            volumeMounts:
+              - name: mackerel-volume
+                mountPath: /usr/local/bin/mackerel
+          restartPolicy: OnFailure
+          volumes:
+            - name: mackerel-volume
+              configMap:
+                name: mackerel
