@@ -791,7 +791,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd
-  namespace: argocd
 spec:
   project: default
   source:
@@ -807,7 +806,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bitcoin
-  namespace: argocd
 spec:
   project: default
   source:
@@ -823,7 +821,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: clusterrole
-  namespace: argocd
 spec:
   project: default
   source:
@@ -838,7 +835,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: system
-  namespace: argocd
 spec:
   project: default
   source:
@@ -1078,7 +1074,6 @@ kind: SealedSecret
 metadata:
   creationTimestamp: null
   name: mackerel
-  namespace: bitcoin
 spec:
   encryptedData:
     apikey: AgAtTeWxpInUSJRbH0kLwD+H14Vzvkh839OD9Gpyjwd/8Cr1HucMqQ9O8H1R6RrE7dIJ4HRroacNXL1DaK5E0G2vaMsYMUUbGKdP31lKmAi6q4b99asvE/snxjZ38L7VpCophwv9POKO1MPgb/Bul/Sn3djX4ZY122Blka3dRemtJ+Bx5tlk8YQ65q2g5ZvvKeznOTS4HOvujWoLp2+gE2WXxOQoGjmqmyIvKIY+S8H76Vd2TTk8s9Mm1RkGTHMN/CFBfIdX/5COoE/MI6Jk5ri2Wghd6eQKxblyt13JTWdOcdR3s/f15ZlQrZxeD78ybBoVeGwJ6d3orXZhFY9rxX3zksvyZggP5UPSPMR9HkksWFBdBTs2kd0DSH1L0cwmyIuhR9zIB1OC574jBo9eD3bFvQdFaYYTVBzpPeA5CwGdI4Nq8FjLD6/r6JTVkSnvURyUBFTbXTUjPjkijB2Br/lzJr3dF7bJcTb3ULKG9FcPfSw5nzrtwDtUr8Suj4YUdY8kvbmqtVj/D1dA9sVYm4FUZUedtIkK83qCPYnDxJLvtYbOyCe8D2xJ/LNFmIc2q9JogJsaAn+dW+jhkHYwNHBCRMvxCmXoZhZQUYaHsNa+WU6106XAzLyV4ksooTYQtlXyshGCH4woD/nit5O5Cu2+F4jCABzGkVJmjK2GDhBDr5ZaMLH11ZzU8IEtr/0rlUQLc8+YMbVHu6dMMt3R+FKhe52qwmOTqdEwtOs/HQZan3cvqmEwIi7grJFOvw==
@@ -1088,7 +1083,6 @@ spec:
     metadata:
       creationTimestamp: null
       name: mackerel
-      namespace: bitcoin
 "
 `;
 
