@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: mackerel-throw-bitnodes-bitcoin-fullnode-0
 spec:
-  schedule: "* * * * *"
+  schedule: "*/30 * * * *"
   jobTemplate:
     spec:
       template:
