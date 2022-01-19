@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/dekokun/crypt-manifest/actions/workflows/ci.yaml/badge.svg)](https://github.com/dekokun/crypt-manifest/actions/workflows/ci.yaml)
 
+kubenetes manifests for Cryptocurrency full nodes
+
 ## build
 
 ```
