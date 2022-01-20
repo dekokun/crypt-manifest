@@ -977,7 +977,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: dekokun/mackerel-container-agent-bitcoin:v0.0.7
+        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
         resources:
           requests:
             cpu: 0.004
@@ -1078,7 +1078,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: dekokun/mackerel-container-agent-bitcoin:v0.0.7
+        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
         resources:
           requests:
             cpu: 0.004
