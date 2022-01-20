@@ -942,7 +942,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
+        image: dekokun/mackerel-container-agent-bitcoin:v0.0.7
         resources:
           requests:
             cpu: 0.004
@@ -1043,7 +1043,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
+        image: dekokun/mackerel-container-agent-bitcoin:v0.0.7
         resources:
           requests:
             cpu: 0.004
@@ -1114,7 +1114,7 @@ spec:
         spec:
           containers:
           - name: mkr
-            image: dekokun/mackerel-container-agent-bitcoin
+            image: mackerel/mkr
             imagePullPolicy: IfNotPresent
             env:
               - name: MACKEREL_APIKEY
@@ -1124,6 +1124,7 @@ spec:
                     key: apikey
             command:
               - /bin/bash
+            args:
               - /usr/local/bin/mackerel/bitnodes-script
               - 168.138.219.140
               - \\"8333\\"
