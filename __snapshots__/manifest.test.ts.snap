@@ -1149,7 +1149,7 @@ spec:
         spec:
           containers:
           - name: mkr
-            image: mackerel/mkr
+            image: dekokun/mackerel-container-agent-bitcoin
             imagePullPolicy: IfNotPresent
             env:
               - name: MACKEREL_APIKEY
@@ -1159,7 +1159,6 @@ spec:
                     key: apikey
             command:
               - /bin/bash
-            args:
               - /usr/local/bin/mackerel/bitnodes-script
               - 168.138.219.140
               - \\"8333\\"
