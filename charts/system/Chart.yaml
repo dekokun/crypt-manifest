@@ -6,5 +6,5 @@ dependencies:
     version: 3.7.0
     repository: https://kubernetes-sigs.github.io/metrics-server/
   - name: sealed-secrets
-    version: 2.1.0
+    version: 2.1.1
     repository: https://bitnami-labs.github.io/sealed-secrets/
