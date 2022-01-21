@@ -835,6 +835,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 ---
 # Source: argocd/templates/bitcoin.yaml
 apiVersion: argoproj.io/v1alpha1
@@ -850,6 +854,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: bitcoin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 ---
 # Source: argocd/templates/clusterrole.yaml
 apiVersion: argoproj.io/v1alpha1
@@ -864,6 +872,10 @@ spec:
     path: charts/clusterrole
   destination:
     server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 ---
 # Source: argocd/templates/system.yaml
 apiVersion: argoproj.io/v1alpha1
@@ -879,6 +891,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 "
 `;
 
