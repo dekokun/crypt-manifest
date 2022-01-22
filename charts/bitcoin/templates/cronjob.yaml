@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
           - name: mkr
-            image: dekokun/mackerel-container-agent-bitcoin
+            image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
             imagePullPolicy: IfNotPresent
             env:
               - name: MACKEREL_APIKEY
