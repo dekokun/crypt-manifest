@@ -22,8 +22,8 @@ spec:
                     name: mackerel
                     key: apikey
             command:
-              - /bin/bash
               - /usr/local/bin/mackerel/bitnodes-script
+            args:
               - 168.138.219.140
               - "8333"
               - bitcoin-fullnode-0
@@ -35,3 +35,4 @@ spec:
             - name: mackerel-volume
               configMap:
                 name: mackerel
+                defaultMode: 0700
