@@ -42,7 +42,7 @@ spec:
           limits:
             memory: 10000Mi
       - name: mackerel-container-agent
-        image: dekokun/mackerel-container-agent-bitcoin:v0.0.5
+        image: dekokun/mackerel-container-agent-bitcoin:{{.Values.mackerel.image.tag}}
         resources:
           requests:
             cpu: 0.004
