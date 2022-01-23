@@ -12,7 +12,7 @@ spec:
     protocol: "TCP"
     name: "bitcoin-port"
     targetPort: 8333
-    nodePort: 30333
+    nodePort: {{.Values.service.nodePort}}
   selector:
     app: fullnode
 
