@@ -1,0 +1,5 @@
+mackerel:
+  image:
+    tag: v0.0.5
+service:
+  nodePort: 30334
