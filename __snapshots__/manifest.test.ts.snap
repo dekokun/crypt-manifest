@@ -9,7 +9,7 @@ automountServiceAccountToken: true
 metadata:
   name: argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -23,7 +23,7 @@ automountServiceAccountToken: true
 metadata:
   name: argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -36,7 +36,7 @@ kind: Secret
 metadata:
   name: argocd-secret
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -50,7 +50,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -65,7 +65,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/managed-by: Helm
@@ -78,7 +78,7 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -101,7 +101,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -114,7 +114,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -128,7 +128,7 @@ kind: ClusterRole
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -152,7 +152,7 @@ kind: ClusterRole
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -187,7 +187,7 @@ kind: ClusterRoleBinding
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -208,7 +208,7 @@ kind: ClusterRoleBinding
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -229,7 +229,7 @@ kind: Role
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -272,7 +272,7 @@ kind: Role
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -319,7 +319,7 @@ kind: RoleBinding
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -340,7 +340,7 @@ kind: RoleBinding
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -361,7 +361,7 @@ kind: Service
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -381,7 +381,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: repo-server
@@ -404,7 +404,7 @@ kind: Service
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -431,7 +431,7 @@ kind: Service
 metadata:
   name: RELEASE-NAME-argocd-redis
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: redis
@@ -452,7 +452,7 @@ kind: Deployment
 metadata:
   name: RELEASE-NAME-argocd-application-controller
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: application-controller
@@ -469,7 +469,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-3.31.0
+        helm.sh/chart: argo-cd-3.31.1
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/component: application-controller
@@ -552,7 +552,7 @@ kind: Deployment
 metadata:
   name: RELEASE-NAME-argocd-repo-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: repo-server
@@ -569,7 +569,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-3.31.0
+        helm.sh/chart: argo-cd-3.31.1
         app.kubernetes.io/name: argocd-repo-server
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/component: repo-server
@@ -672,7 +672,7 @@ kind: Deployment
 metadata:
   name: RELEASE-NAME-argocd-server
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: server
@@ -689,7 +689,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-3.31.0
+        helm.sh/chart: argo-cd-3.31.1
         app.kubernetes.io/name: argocd-server
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/component: server
@@ -779,7 +779,7 @@ kind: Deployment
 metadata:
   name: RELEASE-NAME-argocd-redis
   labels:
-    helm.sh/chart: argo-cd-3.31.0
+    helm.sh/chart: argo-cd-3.31.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: RELEASE-NAME
     app.kubernetes.io/component: redis
@@ -793,7 +793,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-3.31.0
+        helm.sh/chart: argo-cd-3.31.1
         app.kubernetes.io/name: argocd-redis
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/component: redis
