@@ -1,4 +1,4 @@
-name: CI
+name: Snapshot auto update for renovate
 on:
   pull_request:
     branches:
