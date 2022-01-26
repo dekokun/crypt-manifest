@@ -988,6 +988,8 @@ metadata:
   name: bitcoin-fullnode-perfect
   labels:
     app: fullnode-perfect
+  annotations:
+    reloader.stakater.com/search: \\"true\\"
 spec:
   serviceName: \\"bitcoin-service\\"
   replicas: 1
@@ -1088,6 +1090,8 @@ metadata:
   name: bitcoin-fullnode
   labels:
     app: fullnode
+  annotations:
+    reloader.stakater.com/search: \\"true\\"
 spec:
   serviceName: \\"bitcoin-service\\"
   replicas: 1
@@ -1291,6 +1295,22 @@ metadata:
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 ---
+# Source: system/charts/reloader/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    meta.helm.sh/release-namespace: \\"default\\"
+    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+  labels:
+    app: RELEASE-NAME-reloader
+    chart: \\"reloader-v0.0.104\\"
+    release: \\"RELEASE-NAME\\"
+    heritage: \\"Helm\\"
+    app.kubernetes.io/managed-by: \\"Helm\\"
+  name: RELEASE-NAME-reloader
+  namespace: default
+---
 # Source: system/charts/sealed-secrets/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -1353,6 +1373,54 @@ rules:
       - get
       - list
       - watch
+---
+# Source: system/charts/reloader/templates/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+
+kind: ClusterRole
+metadata:
+  annotations:
+    meta.helm.sh/release-namespace: \\"default\\"
+    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+  labels:
+    app: RELEASE-NAME-reloader
+    chart: \\"reloader-v0.0.104\\"
+    release: \\"RELEASE-NAME\\"
+    heritage: \\"Helm\\"
+    app.kubernetes.io/managed-by: \\"Helm\\"
+  name: RELEASE-NAME-reloader-role
+  namespace: default
+rules:
+  - apiGroups:
+      - \\"\\"
+    resources:
+      - secrets
+      - configmaps
+    verbs:
+      - list
+      - get
+      - watch
+  - apiGroups:
+      - \\"apps\\"
+    resources:
+      - deployments
+      - daemonsets
+      - statefulsets
+    verbs:
+      - list
+      - get
+      - update
+      - patch
+  - apiGroups:
+      - \\"extensions\\"
+    resources:
+      - deployments
+      - daemonsets
+    verbs:
+      - list
+      - get
+      - update
+      - patch
 ---
 # Source: system/charts/sealed-secrets/templates/cluster-role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1436,6 +1504,31 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: RELEASE-NAME-metrics-server
+    namespace: default
+---
+# Source: system/charts/reloader/templates/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    meta.helm.sh/release-namespace: \\"default\\"
+    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+  labels:
+    app: RELEASE-NAME-reloader
+    chart: \\"reloader-v0.0.104\\"
+    release: \\"RELEASE-NAME\\"
+    heritage: \\"Helm\\"
+    app.kubernetes.io/managed-by: \\"Helm\\"
+  name: RELEASE-NAME-reloader-role-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: RELEASE-NAME-reloader-role
+subjects:
+  - kind: ServiceAccount
+    name: RELEASE-NAME-reloader
     namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/cluster-role-binding.yaml
@@ -1693,6 +1786,72 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
+---
+# Source: system/charts/reloader/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    meta.helm.sh/release-namespace: \\"default\\"
+    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+  labels:
+    app: RELEASE-NAME-reloader
+    chart: \\"reloader-v0.0.104\\"
+    release: \\"RELEASE-NAME\\"
+    heritage: \\"Helm\\"
+    app.kubernetes.io/managed-by: \\"Helm\\"
+    group: com.stakater.platform
+    provider: stakater
+    version: v0.0.104
+  name: RELEASE-NAME-reloader
+  namespace: default
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: RELEASE-NAME-reloader
+      release: \\"RELEASE-NAME\\"
+  template:
+    metadata:
+      labels:
+        app: RELEASE-NAME-reloader
+        chart: \\"reloader-v0.0.104\\"
+        release: \\"RELEASE-NAME\\"
+        heritage: \\"Helm\\"
+        app.kubernetes.io/managed-by: \\"Helm\\"
+        group: com.stakater.platform
+        provider: stakater
+        version: v0.0.104
+    spec:
+      containers:
+      - image: \\"stakater/reloader:v0.0.104\\"
+        imagePullPolicy: IfNotPresent
+        name: RELEASE-NAME-reloader
+
+        ports:
+        - name: http
+          containerPort: 9090
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: http
+          timeoutSeconds: 5
+          failureThreshold: 5
+          periodSeconds: 10
+          successThreshold: 1
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: http
+          timeoutSeconds: 5
+          failureThreshold: 5
+          periodSeconds: 10
+          successThreshold: 1
+      securityContext: 
+        runAsNonRoot: true
+        runAsUser: 65534
+      serviceAccountName: RELEASE-NAME-reloader
 ---
 # Source: system/charts/sealed-secrets/templates/deployment.yaml
 apiVersion: apps/v1

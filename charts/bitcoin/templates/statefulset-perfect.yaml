@@ -4,6 +4,8 @@ metadata:
   name: bitcoin-fullnode-perfect
   labels:
     app: fullnode-perfect
+  annotations:
+    reloader.stakater.com/search: "true"
 spec:
   serviceName: "bitcoin-service"
   replicas: 1
