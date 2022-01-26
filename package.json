@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "update-snapshot": "jest --update-snapshot"
   },
   "repository": {
     "type": "git",

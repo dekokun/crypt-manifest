@@ -1,0 +1,32 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - 'releases/**'
+jobs:
+  update-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      # https://github.com/actions/cache/blob/master/examples.md#node---npm
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Dependencies
+        run: npm ci
+      - name: test
+        run: npm run update-snapshot
+      - name: Commit report
+        run: |
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+          git add __snapshots__/
+          git commit -am "update snapshot"
+          git push
