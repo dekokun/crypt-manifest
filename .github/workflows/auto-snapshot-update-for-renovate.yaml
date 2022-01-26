@@ -21,7 +21,7 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install Dependencies
         run: npm ci
-      - name: test
+      - name: Update snapshot
         run: npm run update-snapshot
       - name: Commit report
         run: |
