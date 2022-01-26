@@ -5,7 +5,7 @@ metadata:
   labels:
     app: fullnode-perfect
   annotations:
-    reloader.stakater.com/search: "true"
+    reloader.stakater.com/auto: "true"
 spec:
   serviceName: "bitcoin-service"
   replicas: 1
