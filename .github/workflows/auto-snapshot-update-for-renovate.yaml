@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          persist-credentials: false # to trigger subsequent workflow
+          token: ${{ secrets.FOR_TRIGGER_WORKFLOW }}
       - name: setup node.js
         uses: actions/setup-node@v2
         with:
