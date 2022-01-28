@@ -2,7 +2,7 @@ name: Snapshot auto update for renovate
 on:
   pull_request:
     branches:
-      - 'releases/**'
+      - 'renovate/**'
 jobs:
   update-snapshot:
     runs-on: ubuntu-latest
