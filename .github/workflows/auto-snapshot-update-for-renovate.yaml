@@ -29,7 +29,7 @@ jobs:
         id: changes
         run: |
           git add -N . # mark untracked file
-          echo "::set-output name=count::$(git diff --name-only | wc -l)"
+          echo "::set-output name=count::$(git diff --name-only __snapshots__/| wc -l)"
       - name: Commit report
         if: steps.changes.outputs.count > 0 # avoid 'no changes added to commit' error
         run: |
