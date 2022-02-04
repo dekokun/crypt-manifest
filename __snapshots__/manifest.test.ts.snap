@@ -11,7 +11,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -25,7 +25,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -38,7 +38,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-secret
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -52,7 +52,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-cm
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -67,7 +67,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-gpg-keys-cm
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
   name: argocd-gpg-keys-cm
@@ -80,7 +80,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-rbac-cm
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -103,7 +103,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -116,7 +116,7 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-tls-certs-cm
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -126,11 +126,11 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -150,11 +150,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -185,18 +185,18 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
@@ -206,18 +206,18 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
 subjects:
 - kind: ServiceAccount
   name: argocd-server
@@ -227,11 +227,11 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -270,11 +270,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -317,18 +317,18 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
@@ -338,18 +338,18 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
 subjects:
 - kind: ServiceAccount
   name: argocd-server
@@ -359,11 +359,11 @@ subjects:
 apiVersion: v1
 kind: Service
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -374,7 +374,7 @@ spec:
     targetPort: 8082
   selector:
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-repo-server/service.yaml
 apiVersion: v1
@@ -383,11 +383,11 @@ metadata:
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-repo-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-  name: RELEASE-NAME-argocd-repo-server
+  name: argocd-snapshot-test-repo-server
 spec:
   ports:
   - name: https-repo-server
@@ -396,17 +396,17 @@ spec:
     targetPort: repo-server
   selector:
     app.kubernetes.io/name: argocd-repo-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -423,17 +423,17 @@ spec:
     targetPort: server
   selector:
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
 ---
 # Source: argocd/charts/argo-cd/templates/redis/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: RELEASE-NAME-argocd-redis
+  name: argocd-snapshot-test-redis
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-redis
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -444,17 +444,17 @@ spec:
     targetPort: 6379
   selector:
     app.kubernetes.io/name: argocd-redis
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-argocd-application-controller
+  name: argocd-snapshot-test-application-controller
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-application-controller
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -463,7 +463,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-application-controller
-      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/instance: argocd-snapshot-test
   revisionHistoryLimit: 5
   replicas: 1
   template:
@@ -471,7 +471,7 @@ spec:
       labels:
         helm.sh/chart: argo-cd-3.33.1
         app.kubernetes.io/name: argocd-application-controller
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
@@ -489,7 +489,7 @@ spec:
         - --self-heal-timeout-seconds
         - \\"5\\"
         - --repo-server
-        - RELEASE-NAME-argocd-repo-server:8081
+        - argocd-snapshot-test-repo-server:8081
         - --repo-server-timeout-seconds
         - \\"60\\"
         - --logformat
@@ -497,7 +497,7 @@ spec:
         - --loglevel
         - info
         - --redis
-        - RELEASE-NAME-argocd-redis:6379
+        - argocd-snapshot-test-redis:6379
         image: alinbalutoiu/argocd:v2.2.2
         imagePullPolicy: IfNotPresent
         name: application-controller
@@ -550,11 +550,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-argocd-repo-server
+  name: argocd-snapshot-test-repo-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-repo-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -563,7 +563,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-repo-server
-      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/instance: argocd-snapshot-test
   revisionHistoryLimit: 5
   replicas: 1
   template:
@@ -571,7 +571,7 @@ spec:
       labels:
         helm.sh/chart: argo-cd-3.33.1
         app.kubernetes.io/name: argocd-repo-server
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: repo-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
@@ -584,7 +584,7 @@ spec:
         args:
         - argocd-repo-server
         - --redis
-        - RELEASE-NAME-argocd-redis:6379
+        - argocd-snapshot-test-redis:6379
         - --logformat
         - text
         - --loglevel
@@ -681,11 +681,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-argocd-server
+  name: argocd-snapshot-test-server
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -694,7 +694,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-server
-      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/instance: argocd-snapshot-test
   revisionHistoryLimit: 5
   replicas: 1
   template:
@@ -702,7 +702,7 @@ spec:
       labels:
         helm.sh/chart: argo-cd-3.33.1
         app.kubernetes.io/name: argocd-server
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
@@ -719,13 +719,13 @@ spec:
         - /shared/app
         
         - --repo-server
-        - RELEASE-NAME-argocd-repo-server:8081
+        - argocd-snapshot-test-repo-server:8081
         - --logformat
         - text
         - --loglevel
         - info
         - --redis
-        - RELEASE-NAME-argocd-redis:6379
+        - argocd-snapshot-test-redis:6379
         - --insecure
         volumeMounts:
         - mountPath: /app/config/ssh
@@ -788,11 +788,11 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-argocd-redis
+  name: argocd-snapshot-test-redis
   labels:
     helm.sh/chart: argo-cd-3.33.1
     app.kubernetes.io/name: argocd-redis
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
@@ -806,7 +806,7 @@ spec:
       labels:
         helm.sh/chart: argo-cd-3.33.1
         app.kubernetes.io/name: argocd-redis
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
@@ -818,7 +818,7 @@ spec:
         runAsNonRoot: true
         runAsUser: 999
       containers:
-      - name: RELEASE-NAME-argocd-redis
+      - name: argocd-snapshot-test-redis
         args:
         - --save
         - \\"\\"
@@ -1210,11 +1210,11 @@ exports[`snapshot test for k8s manifest ./charts/system 1`] = `
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: RELEASE-NAME-metrics-server
+  name: system-snapshot-test-metrics-server
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 ---
@@ -1224,26 +1224,26 @@ kind: ServiceAccount
 metadata:
   annotations:
     meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+    meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
-    app: RELEASE-NAME-reloader
+    app: system-snapshot-test-reloader
     chart: \\"reloader-v0.0.104\\"
-    release: \\"RELEASE-NAME\\"
+    release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
-  name: RELEASE-NAME-reloader
+  name: system-snapshot-test-reloader
   namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: RELEASE-NAME-sealed-secrets
+  name: system-snapshot-test-sealed-secrets
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 ---
@@ -1255,7 +1255,7 @@ metadata:
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
     rbac.authorization.k8s.io/aggregate-to-admin: \\"true\\"
@@ -1276,11 +1276,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: system:RELEASE-NAME-metrics-server
+  name: system:system-snapshot-test-metrics-server
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 rules:
@@ -1304,14 +1304,14 @@ kind: ClusterRole
 metadata:
   annotations:
     meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+    meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
-    app: RELEASE-NAME-reloader
+    app: system-snapshot-test-reloader
     chart: \\"reloader-v0.0.104\\"
-    release: \\"RELEASE-NAME\\"
+    release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
-  name: RELEASE-NAME-reloader-role
+  name: system-snapshot-test-reloader-role
   namespace: default
 rules:
   - apiGroups:
@@ -1353,7 +1353,7 @@ metadata:
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 rules:
@@ -1393,11 +1393,11 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: RELEASE-NAME-metrics-server:system:auth-delegator
+  name: system-snapshot-test-metrics-server:system:auth-delegator
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 roleRef:
@@ -1406,27 +1406,27 @@ roleRef:
   name: system:auth-delegator
 subjects:
   - kind: ServiceAccount
-    name: RELEASE-NAME-metrics-server
+    name: system-snapshot-test-metrics-server
     namespace: default
 ---
 # Source: system/charts/metrics-server/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: system:RELEASE-NAME-metrics-server
+  name: system:system-snapshot-test-metrics-server
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: system:RELEASE-NAME-metrics-server
+  name: system:system-snapshot-test-metrics-server
 subjects:
   - kind: ServiceAccount
-    name: RELEASE-NAME-metrics-server
+    name: system-snapshot-test-metrics-server
     namespace: default
 ---
 # Source: system/charts/reloader/templates/clusterrolebinding.yaml
@@ -1436,33 +1436,33 @@ kind: ClusterRoleBinding
 metadata:
   annotations:
     meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+    meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
-    app: RELEASE-NAME-reloader
+    app: system-snapshot-test-reloader
     chart: \\"reloader-v0.0.104\\"
-    release: \\"RELEASE-NAME\\"
+    release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
-  name: RELEASE-NAME-reloader-role-binding
+  name: system-snapshot-test-reloader-role-binding
   namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: RELEASE-NAME-reloader-role
+  name: system-snapshot-test-reloader-role
 subjects:
   - kind: ServiceAccount
-    name: RELEASE-NAME-reloader
+    name: system-snapshot-test-reloader
     namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/cluster-role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: RELEASE-NAME-sealed-secrets
+  name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 roleRef:
@@ -1472,19 +1472,19 @@ roleRef:
 subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
-    name: RELEASE-NAME-sealed-secrets
+    name: system-snapshot-test-sealed-secrets
     namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: RELEASE-NAME-sealed-secrets-key-admin
+  name: system-snapshot-test-sealed-secrets-key-admin
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 rules:
@@ -1508,12 +1508,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: RELEASE-NAME-sealed-secrets-service-proxier
+  name: system-snapshot-test-sealed-secrets-service-proxier
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 rules:
@@ -1526,8 +1526,8 @@ rules:
   - apiGroups:
       - \\"\\"
     resourceNames:
-      - 'http:RELEASE-NAME-sealed-secrets:'
-      - RELEASE-NAME-sealed-secrets
+      - 'http:system-snapshot-test-sealed-secrets:'
+      - system-snapshot-test-sealed-secrets
     resources:
       - services/proxy
     verbs:
@@ -1538,12 +1538,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: RELEASE-NAME-metrics-server-auth-reader
+  name: system-snapshot-test-metrics-server-auth-reader
   namespace: kube-system
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 roleRef:
@@ -1552,47 +1552,47 @@ roleRef:
   name: extension-apiserver-authentication-reader
 subjects:
   - kind: ServiceAccount
-    name: RELEASE-NAME-metrics-server
+    name: system-snapshot-test-metrics-server
     namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: RELEASE-NAME-sealed-secrets-key-admin
+  name: system-snapshot-test-sealed-secrets-key-admin
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: RELEASE-NAME-sealed-secrets-key-admin
+  name: system-snapshot-test-sealed-secrets-key-admin
 subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
-    name: RELEASE-NAME-sealed-secrets
+    name: system-snapshot-test-sealed-secrets
     namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: RELEASE-NAME-sealed-secrets-service-proxier
+  name: system-snapshot-test-sealed-secrets-service-proxier
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: RELEASE-NAME-sealed-secrets-service-proxier
+  name: system-snapshot-test-sealed-secrets-service-proxier
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
@@ -1602,11 +1602,11 @@ subjects:
 apiVersion: v1
 kind: Service
 metadata:
-  name: RELEASE-NAME-metrics-server
+  name: system-snapshot-test-metrics-server
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -1618,18 +1618,18 @@ spec:
       targetPort: https
   selector:
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
 ---
 # Source: system/charts/sealed-secrets/templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: RELEASE-NAME-sealed-secrets
+  name: system-snapshot-test-sealed-secrets
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 spec:
@@ -1641,17 +1641,17 @@ spec:
       nodePort: null
   selector:
     app.kubernetes.io/name: sealed-secrets
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
 ---
 # Source: system/charts/metrics-server/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-metrics-server
+  name: system-snapshot-test-metrics-server
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -1659,14 +1659,14 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: metrics-server
-      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/instance: system-snapshot-test
   template:
     metadata:
       labels:
         app.kubernetes.io/name: metrics-server
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: system-snapshot-test
     spec:
-      serviceAccountName: RELEASE-NAME-metrics-server
+      serviceAccountName: system-snapshot-test-metrics-server
       priorityClassName: \\"system-cluster-critical\\"
       containers:
         - name: metrics-server
@@ -1716,31 +1716,31 @@ kind: Deployment
 metadata:
   annotations:
     meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"RELEASE-NAME\\"
+    meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
-    app: RELEASE-NAME-reloader
+    app: system-snapshot-test-reloader
     chart: \\"reloader-v0.0.104\\"
-    release: \\"RELEASE-NAME\\"
+    release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
     group: com.stakater.platform
     provider: stakater
     version: v0.0.104
-  name: RELEASE-NAME-reloader
+  name: system-snapshot-test-reloader
   namespace: default
 spec:
   replicas: 1
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: RELEASE-NAME-reloader
-      release: \\"RELEASE-NAME\\"
+      app: system-snapshot-test-reloader
+      release: \\"system-snapshot-test\\"
   template:
     metadata:
       labels:
-        app: RELEASE-NAME-reloader
+        app: system-snapshot-test-reloader
         chart: \\"reloader-v0.0.104\\"
-        release: \\"RELEASE-NAME\\"
+        release: \\"system-snapshot-test\\"
         heritage: \\"Helm\\"
         app.kubernetes.io/managed-by: \\"Helm\\"
         group: com.stakater.platform
@@ -1750,7 +1750,7 @@ spec:
       containers:
       - image: \\"stakater/reloader:v0.0.104\\"
         imagePullPolicy: IfNotPresent
-        name: RELEASE-NAME-reloader
+        name: system-snapshot-test-reloader
 
         ports:
         - name: http
@@ -1774,34 +1774,34 @@ spec:
       securityContext: 
         runAsNonRoot: true
         runAsUser: 65534
-      serviceAccountName: RELEASE-NAME-reloader
+      serviceAccountName: system-snapshot-test-reloader
 ---
 # Source: system/charts/sealed-secrets/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-sealed-secrets
+  name: system-snapshot-test-sealed-secrets
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.1.2
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.17.3
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: sealed-secrets
-      app.kubernetes.io/instance: RELEASE-NAME
+      app.kubernetes.io/instance: system-snapshot-test
   template:
     metadata:
       labels:
         app.kubernetes.io/name: sealed-secrets
-        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/instance: system-snapshot-test
     spec:
       securityContext:
         fsGroup: 65534
-      serviceAccountName: RELEASE-NAME-sealed-secrets
+      serviceAccountName: system-snapshot-test-sealed-secrets
       containers:
         - name: controller
           command:
@@ -1845,7 +1845,7 @@ metadata:
   labels:
     helm.sh/chart: metrics-server-3.7.0
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 spec:
@@ -1853,7 +1853,7 @@ spec:
   groupPriorityMinimum: 100
   insecureSkipTLSVerify: true
   service:
-    name: RELEASE-NAME-metrics-server
+    name: system-snapshot-test-metrics-server
     namespace: default
   version: v1beta1
   versionPriority: 100
