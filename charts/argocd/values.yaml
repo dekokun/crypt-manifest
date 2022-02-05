@@ -11,3 +11,6 @@ argo-cd:
   server:
     extraArgs:
       - --insecure
+  controller:
+    metrics:
+      enabled: true
