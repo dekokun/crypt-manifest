@@ -355,6 +355,28 @@ subjects:
   name: argocd-server
   namespace: default
 ---
+# Source: argocd/charts/argo-cd/templates/argocd-application-controller/metrics-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    helm.sh/chart: argo-cd-3.33.3
+    app.kubernetes.io/name: argocd-metrics
+    app.kubernetes.io/instance: argocd-snapshot-test
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-snapshot-test-application-controller-metrics
+spec:
+  ports:
+  - name: metrics
+    protocol: TCP
+    port: 8082
+    targetPort: controller
+  selector:
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/instance: argocd-snapshot-test
+---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/service.yaml
 apiVersion: v1
 kind: Service
