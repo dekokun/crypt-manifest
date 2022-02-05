@@ -33,3 +33,12 @@ jobs:
       run: npm ci
     - name: test
       run: npm run test
+  validate-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install helm dep
+        run: make helm-dep
+      - uses: lra/setup-kubeval@v1
+      - name: test
+        run: make validate
