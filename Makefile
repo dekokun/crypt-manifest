@@ -16,3 +16,7 @@ helm-dep:
 .PHONY: npm-test
 npm-test:
 	npm run test
+
+.PHONE: update-snapshot
+update-snapshot:
+	npm run update-snapshot
