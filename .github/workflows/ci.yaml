@@ -36,9 +36,17 @@ jobs:
   validate-manifest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: install helm dep
-        run: make helm-dep
-      - uses: lra/setup-kubeval@v1
-      - name: test
-        run: make validate
+    - uses: actions/checkout@v2
+    - name: install kubeconform
+      uses: giantswarm/install-binary-action@master
+      with:
+        binary: "kubeconform"
+        download_url: https://github.com/yannh/${binary}/releases/download/${version}/kubeconform-linux-amd64.tar.gz
+        version: "v0.4.12"
+        tarball_binary_path: "${binary}"
+        smoke_test: "${binary} -h"
+    - name: update helm dep
+      run: make helm-dep
+    - name: test
+      run: make validate
+
