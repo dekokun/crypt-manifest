@@ -4,7 +4,7 @@ err_dirs=()
 for dir in charts/*
 do
     echo "$dir"
-    if ! helm template test "${dir}" | kubeconform  --ignore-missing-schemas --strict --summary; then
+    if ! helm template test "${dir}" | kubeconform  --ignore-missing-schemas --strict --summary -schema-location default -schema-location 'schemas/{{ .ResourceKind }}.json'; then
         n=${#err_dirs[@]}
         err_dirs[$n]=${dir}
     fi
