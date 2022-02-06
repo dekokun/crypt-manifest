@@ -3,10 +3,12 @@
 err_dirs=()
 for dir in charts/*
 do
-    if ! helm template test "${dir}" | kubeval  --ignore-missing-schemas --strict; then
+    echo "$dir"
+    if ! helm template test "${dir}" | kubeconform  --ignore-missing-schemas --strict --summary; then
         n=${#err_dirs[@]}
         err_dirs[$n]=${dir}
     fi
+    echo
 done
 
 if [ ${#err_dirs[@]} -gt 0 ] ;then
