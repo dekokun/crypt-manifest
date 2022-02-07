@@ -1240,6 +1240,21 @@ metadata:
     app.kubernetes.io/version: \\"0.5.2\\"
     app.kubernetes.io/managed-by: Helm
 ---
+# Source: system/charts/polaris/templates/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: system-snapshot-test-polaris
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+---
 # Source: system/charts/reloader/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -1318,6 +1333,39 @@ rules:
       - get
       - list
       - watch
+---
+# Source: system/charts/polaris/templates/rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: system-snapshot-test-polaris
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+rules:
+  # required by controller-runtime code doing a cluster wide lookup
+  # when it seems namespace would suffice
+  - apiGroups:
+      - ''
+    resources:
+      - 'nodes'
+    verbs:
+      - 'get'
+      - 'list'
+  - apiGroups:
+      - 'monitoring.coreos.com'
+    resources:
+      - 'prometheuses'
+      - 'alertmanagers'
+    verbs:
+      - 'get'
+      - 'list'
 ---
 # Source: system/charts/reloader/templates/clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1449,6 +1497,52 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: system-snapshot-test-metrics-server
+    namespace: default
+---
+# Source: system/charts/polaris/templates/rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system-snapshot-test-polaris-view
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+  - kind: ServiceAccount
+    name: system-snapshot-test-polaris
+    namespace: default
+---
+# Source: system/charts/polaris/templates/rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system-snapshot-test-polaris
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system-snapshot-test-polaris
+subjects:
+  - kind: ServiceAccount
+    name: system-snapshot-test-polaris
     namespace: default
 ---
 # Source: system/charts/reloader/templates/clusterrolebinding.yaml
@@ -1642,6 +1736,34 @@ spec:
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
 ---
+# Source: system/charts/polaris/templates/dashboard.service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: system-snapshot-test-polaris-dashboard
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+  annotations:
+spec:
+  ports:
+  - name: http-dashboard
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: polaris
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/instance: system-snapshot-test
+    component: dashboard
+  type: ClusterIP
+---
 # Source: system/charts/sealed-secrets/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -1731,6 +1853,79 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
+---
+# Source: system/charts/polaris/templates/dashboard.deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: system-snapshot-test-polaris-dashboard
+  labels:
+    app: polaris
+    app.kubernetes.io/component: dashboard
+    app.kubernetes.io/instance: system-snapshot-test
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: polaris
+    app.kubernetes.io/part-of: polaris 
+    app.kubernetes.io/version: \\"4.2.3\\"
+    helm.sh/chart: polaris-4.2.3
+    component: dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: polaris
+      app.kubernetes.io/name: polaris
+      app.kubernetes.io/instance: system-snapshot-test
+      component: dashboard
+  template:
+    metadata:
+      labels:
+        app: polaris
+        app.kubernetes.io/name: polaris
+        app.kubernetes.io/instance: system-snapshot-test
+        component: dashboard
+    spec:
+      containers:
+      - command:
+        - polaris
+        - dashboard
+        - --port
+        - \\"8080\\"
+        image: 'quay.io/fairwinds/polaris:4.2'
+        imagePullPolicy: 'Always'
+        name: dashboard
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 20
+        resources:
+          limits:
+            cpu: 150m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+      serviceAccountName: system-snapshot-test-polaris
+      nodeSelector:
+      tolerations:
 ---
 # Source: system/charts/reloader/templates/deployment.yaml
 apiVersion: apps/v1
