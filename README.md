@@ -23,3 +23,11 @@ vi ./mackerel-container-agent/mackerel-config-template
 $ kubectl create secret generic mackerel --dry-run=client --from-file=config=./mackerel-container-agent/mackerel-config-template --from-literal=apikey=<your mackerel api key> -o json -n bitcoin \
 | kubeseal --controller-name=system-sealed-secrets -o yaml --scope cluster-wide > charts/bitcoin/templates/sealedsecret.yaml
 ```
+
+## how to add new schema for kubefonform
+
+argocd application example:
+```
+git clone https://github.com/yannh/kubeconform
+./kubeconform/scripts/openapi2jsonschema.py https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/crds/application-crd.yaml
+```
