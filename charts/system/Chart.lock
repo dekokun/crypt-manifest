@@ -8,8 +8,5 @@ dependencies:
 - name: reloader
   repository: https://stakater.github.io/stakater-charts/
   version: v0.0.104
-- name: polaris
-  repository: https://charts.fairwinds.com/stable
-  version: 4.2.3
-digest: sha256:3b79adcaba8a4d2c4bcdbaf21e38f97c6a26e71c21b03a504f831b773a9eff20
-generated: "2022-02-07T09:21:05.655963+09:00"
+digest: sha256:0a4942811b7f4a8591c1dbc799260d641b437cd045b7136b758d2272e13cbd1c
+generated: "2022-01-28T09:35:00.485322964Z"
