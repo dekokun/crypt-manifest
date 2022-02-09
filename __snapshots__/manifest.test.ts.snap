@@ -133,15 +133,9 @@ data:
       metrics:
         bitcoin:
           command:
-            - mackerel-plugin-bitcoin-core
-            - -host
-            - localhost
-            - -port
-            - 8332
-            - -user
-            - dekokun
-            - -password
-            - JHcXCN5CeBtXceJww9GSZ4kr4TsHoakiYGcv6xrmd5E=
+            - mackerel-plugin-prometheus-exporter
+            - --target
+            - argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics
           timeoutSeconds: 30
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/clusterrole.yaml
