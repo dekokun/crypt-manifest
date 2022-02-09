@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mackerel
+data:
+  config: |
+    plugin:
+      metrics:
+        bitcoin:
+          command:
+            - mackerel-plugin-bitcoin-core
+            - -host
+            - localhost
+            - -port
+            - 8332
+            - -user
+            - dekokun
+            - -password
+            - JHcXCN5CeBtXceJww9GSZ4kr4TsHoakiYGcv6xrmd5E=
+          timeoutSeconds: 30
