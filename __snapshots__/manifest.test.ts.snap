@@ -131,11 +131,11 @@ data:
   config: |
     plugin:
       metrics:
-        bitcoin:
+        prome:
           command:
-            - mackerel-plugin-prometheus-exporter
-            - --target
-            - http://argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics
+            - \\"/bin/sh\\"
+            - \\"-c\\"
+            - \\"mackerel-plugin-prometheus-exporter --target http://argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics | grep argocd_app_info | sed 's/argocd_app_info-dest_namespace_//g' | sed 's/dest_server_https_kubernetes_default_svc_//g' | sed 's/operation_project_default_repo_https_github_com_dekokun_crypt-manifest_//g' | sed 's/sync_status_//g'\\"
           timeoutSeconds: 30
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/clusterrole.yaml
