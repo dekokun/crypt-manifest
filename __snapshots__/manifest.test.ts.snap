@@ -880,18 +880,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: mackerel-deployment
   labels:
-    app: nginx
+    app: mackerel
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: mackerel
   template:
     metadata:
       labels:
-        app: nginx
+        app: mackerel
     spec:
       containers:
       - name: mackerel
@@ -1340,6 +1340,20 @@ subjects:
 - kind: ServiceAccount
   name: default
   namespace: bitcoin-staging
+---
+# Source: clusterrole/templates/clusterrolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: argocd-with-mackerel-agent-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: mackerel-container-agent-clusterrole
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: argocd
 "
 `;
 
