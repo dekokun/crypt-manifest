@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: mackerel-deployment
   labels:
-    app: nginx
+    app: mackerel
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: mackerel
   template:
     metadata:
       labels:
-        app: nginx
+        app: mackerel
     spec:
       containers:
       - name: mackerel
