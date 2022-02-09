@@ -45,7 +45,7 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         - name: MACKEREL_ROLES
-          value: bitcoin:full-node
+          value: bitcoin:argocd
         - name: MACKEREL_APIKEY
           valueFrom:
             secretKeyRef:
