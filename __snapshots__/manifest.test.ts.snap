@@ -135,7 +135,7 @@ data:
           command:
             - mackerel-plugin-prometheus-exporter
             - --target
-            - argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics
+            - http://argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics
           timeoutSeconds: 30
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/clusterrole.yaml
