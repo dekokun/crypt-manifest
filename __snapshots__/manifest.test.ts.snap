@@ -877,6 +877,8 @@ metadata:
   name: mackerel-deployment
   labels:
     app: mackerel
+  annotations:
+    reloader.stakater.com/auto: \\"true\\"
 spec:
   replicas: 1
   selector:
