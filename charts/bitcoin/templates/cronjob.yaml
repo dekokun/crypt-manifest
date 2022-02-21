@@ -36,3 +36,5 @@ spec:
               configMap:
                 name: mackerel
                 defaultMode: 0700
+          nodeSelector:
+            kubernetes.io/arch: arm64

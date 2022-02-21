@@ -568,6 +568,8 @@ spec:
           name: argocd-repo-server-tls
         resources:
           {}
+      nodeSelector:
+        kubernetes.io/arch: arm64
       serviceAccountName: argocd-application-controller
       volumes:
       - emptyDir: {}
@@ -799,6 +801,8 @@ spec:
           failureThreshold: 3
         resources:
           {}
+      nodeSelector:
+        kubernetes.io/arch: arm64
       serviceAccountName: argocd-server
       volumes:
       - emptyDir: {}
@@ -869,6 +873,8 @@ spec:
           name: redis
         resources:
           {}
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 # Source: argocd/templates/mackerel.yaml
 apiVersion: apps/v1
@@ -1219,6 +1225,9 @@ spec:
         - name: mackerel-config
           secret:
             secretName: mackerel
+      nodeSelector:
+        kubernetes.io/arch: arm64
+
   volumeClaimTemplates:
   - metadata:
       name: bitcoinclaim
@@ -1269,6 +1278,8 @@ spec:
               configMap:
                 name: mackerel
                 defaultMode: 0700
+          nodeSelector:
+            kubernetes.io/arch: arm64
 ---
 # Source: bitcoin/templates/sealedsecret.yaml
 apiVersion: bitnami.com/v1alpha1
