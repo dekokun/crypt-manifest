@@ -2063,6 +2063,7 @@ spec:
               - ALL
       serviceAccountName: system-snapshot-test-polaris
       nodeSelector:
+        kubernetes.io/arch: amd64
       tolerations:
 ---
 # Source: system/charts/reloader/templates/deployment.yaml
