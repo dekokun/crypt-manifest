@@ -89,6 +89,9 @@ spec:
         - name: mackerel-config
           secret:
             secretName: mackerel
+      nodeSelector:
+        kubernetes.io/arch: arm64
+
   volumeClaimTemplates:
   - metadata:
       name: bitcoinclaim

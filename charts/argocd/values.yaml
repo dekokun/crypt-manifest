@@ -6,11 +6,23 @@ global:
     tag:
       v2.2.2
 argo-cd:
+  sepoServer:
+    nodeSelector:
+      kubernetes.io/arch: arm64
   dex:
     enabled: false
+    nodeSelector:
+      kubernetes.io/arch: arm64
   server:
     extraArgs:
       - --insecure
+    nodeSelector:
+      kubernetes.io/arch: arm64
   controller:
     metrics:
       enabled: true
+    nodeSelector:
+      kubernetes.io/arch: arm64
+  redis:
+    nodeSelector:
+      kubernetes.io/arch: arm64
