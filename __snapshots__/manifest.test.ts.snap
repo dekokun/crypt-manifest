@@ -973,30 +973,6 @@ spec:
     syncOptions:
       - CreateNamespace=true
 ---
-# Source: argocd/templates/bitcoin-staging.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: bitcoin-staging
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/dekokun/crypt-manifest.git
-    targetRevision: staging
-    path: charts/bitcoin
-    helm:
-      valueFiles:
-      - values-staging.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: bitcoin-staging
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
----
 # Source: argocd/templates/bitcoin.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
