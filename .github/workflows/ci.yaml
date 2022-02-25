@@ -16,7 +16,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: setup node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '12'
     # https://github.com/actions/cache/blob/master/examples.md#node---npm
