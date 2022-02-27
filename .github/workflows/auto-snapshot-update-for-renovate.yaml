@@ -14,13 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12'
-      # https://github.com/actions/cache/blob/master/examples.md#node---npm
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: npm
       - name: Install Dependencies
         run: npm ci
       - name: Update snapshot
