@@ -19,16 +19,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '12'
+        cache: npm
     # https://github.com/actions/cache/blob/master/examples.md#node---npm
     - uses: azure/setup-helm@v1
       with:
         version: v3.7.1
-    - uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
     - name: Install Dependencies
       run: npm ci
     - name: test
