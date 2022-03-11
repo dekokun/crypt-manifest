@@ -1366,8 +1366,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
 ---
 # Source: system/charts/reloader/templates/serviceaccount.yaml
 apiVersion: v1
@@ -1460,8 +1460,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
 rules:
   # required by controller-runtime code doing a cluster wide lookup
   # when it seems namespace would suffice
@@ -1625,8 +1625,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -1648,8 +1648,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -1862,8 +1862,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
   annotations:
 spec:
   ports:
@@ -1980,11 +1980,11 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: polaris
     app.kubernetes.io/part-of: polaris 
-    app.kubernetes.io/version: \\"4.2.3\\"
-    helm.sh/chart: polaris-4.2.3
+    app.kubernetes.io/version: \\"5.0.0\\"
+    helm.sh/chart: polaris-5.0.0
     component: dashboard
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: polaris
@@ -2005,7 +2005,7 @@ spec:
         - dashboard
         - --port
         - \\"8080\\"
-        image: 'quay.io/fairwinds/polaris:4.2'
+        image: 'quay.io/fairwinds/polaris:5.0'
         imagePullPolicy: 'Always'
         name: dashboard
         ports:
