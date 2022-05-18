@@ -24,7 +24,7 @@ spec:
             command:
               - /usr/local/bin/mackerel/bitnodes-script
             args:
-              - 168.138.219.140
+              - 158.101.139.58
               - "8333"
               - bitcoin-fullnode-0
             volumeMounts:

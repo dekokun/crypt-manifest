@@ -24,7 +24,7 @@ spec:
         image: ruimarinho/bitcoin-core:22
         args: [
           "-printtoconsole",
-          "-externalip=168.138.219.140",
+          "-externalip=158.101.139.58",
           "-dbcache=2000",
           "-prune=30000",
           "-rpcallowip=127.0.0.1",
