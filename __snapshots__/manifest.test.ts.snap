@@ -1091,6 +1091,22 @@ metadata:
   creationTimestamp: null
   name: mackerel
 ---
+# Source: bitcoin/templates/nlb.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nlb
+  labels:
+    app: fullnode
+  annotations:
+    oci.oraclecloud.com/load-balancer-type: \\"nlb\\"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8333
+  selector:
+    app: fullnode
+---
 # Source: bitcoin/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -1136,7 +1152,7 @@ spec:
         image: ruimarinho/bitcoin-core:22
         args: [
           \\"-printtoconsole\\",
-          \\"-externalip=168.138.219.140\\",
+          \\"-externalip=158.101.139.58\\",
           \\"-dbcache=2000\\",
           \\"-prune=30000\\",
           \\"-rpcallowip=127.0.0.1\\",
@@ -1242,7 +1258,7 @@ spec:
             command:
               - /usr/local/bin/mackerel/bitnodes-script
             args:
-              - 168.138.219.140
+              - 158.101.139.58
               - \\"8333\\"
               - bitcoin-fullnode-0
             volumeMounts:
