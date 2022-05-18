@@ -1,18 +1,14 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: bitcoin-svc
+  name: nlb
   labels:
     app: fullnode
+  annotations:
+    oci.oraclecloud.com/load-balancer-type: "nlb"
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8333
-    protocol: "TCP"
-    name: "bitcoin-port"
-    targetPort: 8333
-    nodePort: {{.Values.service.nodePort}}
   selector:
     app: fullnode
-
