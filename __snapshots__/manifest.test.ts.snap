@@ -892,7 +892,7 @@ metadata:
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.2.2\\"
+    app.kubernetes.io/version: \\"v2.3.4\\"
 spec:
   strategy:
     type: Recreate
@@ -909,14 +909,14 @@ spec:
         app.kubernetes.io/component: notifications-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.2.2\\"
+        app.kubernetes.io/version: \\"v2.3.4\\"
     spec:
       serviceAccountName: argocd-notifications-controller
       securityContext:
         runAsNonRoot: true
       containers:
         - name: notifications-controller
-          image: alinbalutoiu/argocd:v2.2.2
+          image: quay.io/argoproj/argocd:v2.3.4
           imagePullPolicy: IfNotPresent
           resources:
             {}
@@ -963,7 +963,7 @@ metadata:
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.2.2\\"
+    app.kubernetes.io/version: \\"v2.3.4\\"
 spec:
   selector:
     matchLabels:
@@ -980,11 +980,11 @@ spec:
         app.kubernetes.io/component: repo-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.2.2\\"
+        app.kubernetes.io/version: \\"v2.3.4\\"
     spec:
       containers:
       - name: repo-server
-        image: alinbalutoiu/argocd:v2.2.2
+        image: quay.io/argoproj/argocd:v2.3.4
         imagePullPolicy: IfNotPresent
         command:
         - entrypoint.sh
@@ -1082,7 +1082,7 @@ spec:
         - -n
         - /usr/local/bin/argocd
         - /var/run/argocd/argocd-cmp-server
-        image: alinbalutoiu/argocd:v2.2.2
+        image: quay.io/argoproj/argocd:v2.3.4
         imagePullPolicy: IfNotPresent
         name: copyutil
         resources:
@@ -1103,7 +1103,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.2.2\\"
+    app.kubernetes.io/version: \\"v2.3.4\\"
 spec:
   selector:
     matchLabels:
@@ -1120,11 +1120,11 @@ spec:
         app.kubernetes.io/component: server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.2.2\\"
+        app.kubernetes.io/version: \\"v2.3.4\\"
     spec:
       containers:
       - name: server
-        image: alinbalutoiu/argocd:v2.2.2
+        image: quay.io/argoproj/argocd:v2.3.4
         imagePullPolicy: IfNotPresent
         command:
         - argocd-server
@@ -1341,7 +1341,7 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.2.2\\"
+    app.kubernetes.io/version: \\"v2.3.4\\"
 spec:
   selector:
     matchLabels:
@@ -1359,7 +1359,7 @@ spec:
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.2.2\\"
+        app.kubernetes.io/version: \\"v2.3.4\\"
     spec:
       containers:
       - command:
@@ -1382,7 +1382,7 @@ spec:
         - info
         - --redis
         - argocd-snapshot-test-redis:6379
-        image: alinbalutoiu/argocd:v2.2.2
+        image: quay.io/argoproj/argocd:v2.3.4
         imagePullPolicy: IfNotPresent
         name: application-controller
         ports:
