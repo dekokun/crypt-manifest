@@ -1437,10 +1437,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 ---
 # Source: system/charts/metrics-server/templates/clusterrole-aggregated-reader.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -1547,10 +1547,10 @@ metadata:
   name: secrets-unsealer
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 rules:
   - apiGroups:
       - bitnami.com
@@ -1656,10 +1656,10 @@ metadata:
   name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -1678,10 +1678,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 rules:
   - apiGroups:
       - \\"\\"
@@ -1707,13 +1707,15 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 rules:
   - apiGroups:
       - \\"\\"
+    resourceNames:
+      - system-snapshot-test-sealed-secrets
     resources:
       - services
     verbs:
@@ -1722,6 +1724,7 @@ rules:
       - \\"\\"
     resourceNames:
       - 'http:system-snapshot-test-sealed-secrets:'
+      - 'http:system-snapshot-test-sealed-secrets:http'
       - system-snapshot-test-sealed-secrets
     resources:
       - services/proxy
@@ -1758,10 +1761,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -1780,10 +1783,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -1823,10 +1826,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 spec:
   type: ClusterIP
   ports:
@@ -1979,10 +1982,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.1.2
+    helm.sh/chart: sealed-secrets-2.2.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.17.3
+    app.kubernetes.io/version: v0.18.0
 spec:
   selector:
     matchLabels:
@@ -2005,16 +2008,26 @@ spec:
             - --update-status
             - --key-prefix
             - \\"sealed-secrets-key\\"
-          image: quay.io/bitnami/sealed-secrets-controller:v0.17.3
+          image: docker.io/bitnami/sealed-secrets-controller:v0.18.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               name: http
           livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 0
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
             httpGet:
               path: /healthz
               port: http
           readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 0
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
             httpGet:
               path: /healthz
               port: http
