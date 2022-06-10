@@ -8,7 +8,7 @@ kubenetes manifests for Cryptocurrency full nodes
 
 ```
 $ helm dep build charts/argocd
-$ helm upgrade --install --create-namespace argocd ./argocd/ -n argocd
+$ helm upgrade --install --create-namespace argocd ./charts/argocd/ -n argocd
 $ kubectl port-forward svc/argocd-server -n argocd 8080:80
 $ argocd login localhost:8080
  user: admin
