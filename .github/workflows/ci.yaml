@@ -21,7 +21,7 @@ jobs:
         node-version: '12'
         cache: npm
     # https://github.com/actions/cache/blob/master/examples.md#node---npm
-    - uses: azure/setup-helm@v1
+    - uses: azure/setup-helm@v2
       with:
         version: v3.7.1
     - name: Install Dependencies
