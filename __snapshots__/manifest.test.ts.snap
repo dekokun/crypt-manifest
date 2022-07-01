@@ -808,7 +808,7 @@ metadata:
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.4.3\\"
+    app.kubernetes.io/version: \\"v0.4.0\\"
 spec:
   replicas: 1
   selector:
@@ -824,7 +824,7 @@ spec:
         app.kubernetes.io/component: applicationset-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.4.3\\"
+        app.kubernetes.io/version: \\"v0.4.0\\"
     spec:
       serviceAccountName: argocd-snapshot-test-applicationset-controller
       securityContext:
@@ -843,7 +843,7 @@ spec:
             - --policy=sync
             - --debug=false
             - --dry-run=false
-          image: quay.io/argoproj/argocd:v2.4.3
+          image: ghcr.io/jr64/argocd-applicationset:v0.3.0:v0.4.0
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

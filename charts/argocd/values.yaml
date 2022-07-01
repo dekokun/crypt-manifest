@@ -20,3 +20,8 @@ argo-cd:
   redis:
     nodeSelector:
       kubernetes.io/arch: arm64
+  applicationSet:
+    image:
+      repository: ghcr.io/jr64/argocd-applicationset:v0.3.0
+      tag: v0.4.0
+
