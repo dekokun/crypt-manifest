@@ -843,7 +843,7 @@ spec:
             - --policy=sync
             - --debug=false
             - --dry-run=false
-          image: ghcr.io/jr64/argocd-applicationset:v0.3.0:v0.4.0
+          image: ghcr.io/jr64/argocd-applicationset:v0.4.0
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
