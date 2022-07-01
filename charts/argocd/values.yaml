@@ -22,6 +22,6 @@ argo-cd:
       kubernetes.io/arch: arm64
   applicationSet:
     image:
-      repository: ghcr.io/jr64/argocd-applicationset:v0.3.0
+      repository: ghcr.io/jr64/argocd-applicationset
       tag: v0.4.0
 
