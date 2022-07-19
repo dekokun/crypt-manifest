@@ -1844,7 +1844,7 @@ metadata:
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.117\\"
+    chart: \\"reloader-v0.0.118\\"
     release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
@@ -1929,7 +1929,7 @@ metadata:
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.117\\"
+    chart: \\"reloader-v0.0.118\\"
     release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
@@ -2061,7 +2061,7 @@ metadata:
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.117\\"
+    chart: \\"reloader-v0.0.118\\"
     release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
@@ -2344,13 +2344,13 @@ metadata:
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.117\\"
+    chart: \\"reloader-v0.0.118\\"
     release: \\"system-snapshot-test\\"
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
     group: com.stakater.platform
     provider: stakater
-    version: v0.0.117
+    version: v0.0.118
   name: system-snapshot-test-reloader
   namespace: default
 spec:
@@ -2364,16 +2364,16 @@ spec:
     metadata:
       labels:
         app: system-snapshot-test-reloader
-        chart: \\"reloader-v0.0.117\\"
+        chart: \\"reloader-v0.0.118\\"
         release: \\"system-snapshot-test\\"
         heritage: \\"Helm\\"
         app.kubernetes.io/managed-by: \\"Helm\\"
         group: com.stakater.platform
         provider: stakater
-        version: v0.0.117
+        version: v0.0.118
     spec:
       containers:
-      - image: \\"stakater/reloader:v0.0.117\\"
+      - image: \\"stakater/reloader:v0.0.118\\"
         imagePullPolicy: IfNotPresent
         name: system-snapshot-test-reloader
 
