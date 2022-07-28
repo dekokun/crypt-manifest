@@ -6,7 +6,7 @@ dependencies:
     version: 3.8.2
     repository: https://kubernetes-sigs.github.io/metrics-server/
   - name: sealed-secrets
-    version: 2.4.0
+    version: 2.5.1
     repository: https://bitnami-labs.github.io/sealed-secrets/
   - name: reloader
     version: v0.0.118
