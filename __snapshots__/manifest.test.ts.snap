@@ -808,7 +808,7 @@ metadata:
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: \\"v2.4.3\\"
+    app.kubernetes.io/version: \\"v2.4.4\\"
 spec:
   replicas: 1
   selector:
@@ -824,7 +824,7 @@ spec:
         app.kubernetes.io/component: applicationset-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: \\"v2.4.3\\"
+        app.kubernetes.io/version: \\"v2.4.4\\"
     spec:
       serviceAccountName: argocd-snapshot-test-applicationset-controller
       securityContext:
@@ -843,7 +843,7 @@ spec:
             - --policy=sync
             - --debug=false
             - --dry-run=false
-          image: quay.io/argoproj/argocd:v2.4.3
+          image: quay.io/argoproj/argocd:v2.4.4
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -1859,7 +1859,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -1974,7 +1974,7 @@ metadata:
   name: secrets-unsealer
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2083,7 +2083,7 @@ metadata:
   name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2105,7 +2105,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2134,7 +2134,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2188,7 +2188,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2210,7 +2210,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2253,7 +2253,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
@@ -2409,7 +2409,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.5.1
+    helm.sh/chart: sealed-secrets-2.5.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.1
