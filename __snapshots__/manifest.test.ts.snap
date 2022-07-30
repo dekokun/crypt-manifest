@@ -291,7 +291,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -312,7 +312,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-server
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -576,7 +576,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-application-controller
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-applicationset/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -597,7 +597,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: argocd-snapshot-test-applicationset-controller
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-notifications/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -618,7 +618,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: argocd-notifications-controller
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-repo-server/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -639,7 +639,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-snapshot-test-repo-server
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -660,7 +660,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: argocd-server
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-application-controller/metrics-service.yaml
 apiVersion: v1
@@ -838,7 +838,7 @@ spec:
             - argocd-applicationset-controller
             - --metrics-addr=:8080
             - --probe-addr=:8081
-            - --namespace=bitcoin
+            - --namespace=default
             - --argocd-repo-server=argocd-snapshot-test-repo-server:8081
             - --policy=sync
             - --debug=false
@@ -927,7 +927,7 @@ spec:
             - argocd-notifications
             - --loglevel=info
             - --logformat=text
-            - --namespace=bitcoin
+            - --namespace=default
             - --argocd-repo-server=argocd-snapshot-test-repo-server:8081
             - --secret-name=argocd-snapshot-test-notifications-controller-secret
             - --config-map-name=argocd-snapshot-test-notifications-controller-cm
@@ -1840,7 +1840,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"bitcoin\\"
+    meta.helm.sh/release-namespace: \\"default\\"
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
@@ -1849,14 +1849,14 @@ metadata:
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
   name: system-snapshot-test-reloader
-  namespace: bitcoin
+  namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: system-snapshot-test-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -1925,7 +1925,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"bitcoin\\"
+    meta.helm.sh/release-namespace: \\"default\\"
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
@@ -1934,7 +1934,7 @@ metadata:
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
   name: system-snapshot-test-reloader-role
-  namespace: bitcoin
+  namespace: default
 rules:
   - apiGroups:
       - \\"\\"
@@ -2029,7 +2029,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: system-snapshot-test-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/metrics-server/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2049,7 +2049,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: system-snapshot-test-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/reloader/templates/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2057,7 +2057,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"bitcoin\\"
+    meta.helm.sh/release-namespace: \\"default\\"
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
@@ -2066,7 +2066,7 @@ metadata:
     heritage: \\"Helm\\"
     app.kubernetes.io/managed-by: \\"Helm\\"
   name: system-snapshot-test-reloader-role-binding
-  namespace: bitcoin
+  namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -2074,7 +2074,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: system-snapshot-test-reloader
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/cluster-role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2095,14 +2095,14 @@ subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
     name: system-snapshot-test-sealed-secrets
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: system-snapshot-test-sealed-secrets-key-admin
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2131,7 +2131,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: system-snapshot-test-sealed-secrets-service-proxier
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2178,14 +2178,14 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: system-snapshot-test-metrics-server
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: system-snapshot-test-sealed-secrets-key-admin
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2200,14 +2200,14 @@ subjects:
   - apiGroup: \\"\\"
     kind: ServiceAccount
     name: system-snapshot-test-sealed-secrets
-    namespace: bitcoin
+    namespace: default
 ---
 # Source: system/charts/sealed-secrets/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: system-snapshot-test-sealed-secrets-service-proxier
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2250,7 +2250,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: system-snapshot-test-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2340,7 +2340,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"bitcoin\\"
+    meta.helm.sh/release-namespace: \\"default\\"
     meta.helm.sh/release-name: \\"system-snapshot-test\\"
   labels:
     app: system-snapshot-test-reloader
@@ -2352,7 +2352,7 @@ metadata:
     provider: stakater
     version: v0.0.118
   name: system-snapshot-test-reloader
-  namespace: bitcoin
+  namespace: default
 spec:
   replicas: 1
   revisionHistoryLimit: 2
@@ -2406,7 +2406,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: system-snapshot-test-sealed-secrets
-  namespace: bitcoin
+  namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
     helm.sh/chart: sealed-secrets-2.4.0
@@ -2489,7 +2489,7 @@ spec:
   insecureSkipTLSVerify: true
   service:
     name: system-snapshot-test-metrics-server
-    namespace: bitcoin
+    namespace: default
   version: v1beta1
   versionPriority: 100
 "

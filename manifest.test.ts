@@ -12,7 +12,7 @@ describe('snapshot test for k8s manifest', () =>{
         const target = `${baseDir}/${dir}`
         test(target, async () => {
             await execPromise(`helm dep update ${target}`);
-          const {stdout} = await execPromise(`helm template ${target} --name-template=${dir}-snapshot-test`);
+          const {stdout} = await execPromise(`helm template ${target} --name-template=${dir}-snapshot-test -n default`);
           expect(stdout).toMatchSnapshot();
         });
     });
