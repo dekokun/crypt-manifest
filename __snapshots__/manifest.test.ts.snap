@@ -11346,7 +11346,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11461,7 +11461,7 @@ metadata:
   name: secrets-unsealer
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11570,7 +11570,7 @@ metadata:
   name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11592,7 +11592,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11621,7 +11621,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11675,7 +11675,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11697,7 +11697,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11740,7 +11740,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
@@ -11896,7 +11896,7 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.6.2
+    helm.sh/chart: sealed-secrets-2.6.4
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v0.18.2
