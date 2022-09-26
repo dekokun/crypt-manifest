@@ -114,11 +114,11 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
 data:
-    admin.enabled: \\"true\\"
+    admin.enabled: "true"
     application.instanceLabelKey: argocd.argoproj.io/instance
-    exec.enabled: \\"false\\"
-    server.rbac.log.enforce.enable: \\"false\\"
-    url: \\"\\"
+    exec.enabled: "false"
+    server.rbac.log.enforce.enable: "false"
+    url: ""
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-gpg-keys-cm.yaml
 apiVersion: v1
@@ -209,9 +209,9 @@ data:
       metrics:
         prome:
           command:
-            - \\"/bin/sh\\"
-            - \\"-c\\"
-            - \\"mackerel-plugin-prometheus-exporter --target http://argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics | grep argocd_app_info | sed 's/argocd_app_info-dest_namespace_//g' | sed 's/dest_server_https_kubernetes_default_svc_//g' | sed 's/operation_project_default_repo_https_github_com_dekokun_crypt-manifest_//g' | sed 's/sync_status_//g'\\"
+            - "/bin/sh"
+            - "-c"
+            - "mackerel-plugin-prometheus-exporter --target http://argocd-application-controller-metrics.argocd.svc.cluster.local:8082/metrics | grep argocd_app_info | sed 's/argocd_app_info-dest_namespace_//g' | sed 's/dest_server_https_kubernetes_default_svc_//g' | sed 's/operation_project_default_repo_https_github_com_dekokun_crypt-manifest_//g' | sed 's/sync_status_//g'"
           timeoutSeconds: 30
 ---
 # Source: argocd/charts/argo-cd/templates/crds/crd-application.yaml
@@ -219,7 +219,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    \\"helm.sh/resource-policy\\": keep
+    "helm.sh/resource-policy": keep
   labels:
     app.kubernetes.io/name: applications.argoproj.io
     app.kubernetes.io/part-of: argocd
@@ -303,7 +303,7 @@ spec:
                     properties:
                       duration:
                         description: Duration is the amount to back off. Default unit
-                          is seconds, but could also be a duration (e.g. \\"2m\\", \\"1h\\")
+                          is seconds, but could also be a duration (e.g. "2m", "1h")
                         type: string
                       factor:
                         description: Factor is a factor to multiply the base duration
@@ -501,7 +501,7 @@ spec:
                             type: string
                           version:
                             description: Version is the Helm version to use for templating
-                              (\\"3\\")
+                              ("3")
                             type: string
                         type: object
                       kustomize:
@@ -848,7 +848,7 @@ spec:
                         type: string
                       version:
                         description: Version is the Helm version to use for templating
-                          (\\"3\\")
+                          ("3")
                         type: string
                     type: object
                   kustomize:
@@ -969,7 +969,7 @@ spec:
                           duration:
                             description: Duration is the amount to back off. Default
                               unit is seconds, but could also be a duration (e.g.
-                              \\"2m\\", \\"1h\\")
+                              "2m", "1h")
                             type: string
                           factor:
                             description: Factor is a factor to multiply the base duration
@@ -1202,7 +1202,7 @@ spec:
                               type: string
                             version:
                               description: Version is the Helm version to use for
-                                templating (\\"3\\")
+                                templating ("3")
                               type: string
                           type: object
                         kustomize:
@@ -1359,7 +1359,7 @@ spec:
                               duration:
                                 description: Duration is the amount to back off. Default
                                   unit is seconds, but could also be a duration (e.g.
-                                  \\"2m\\", \\"1h\\")
+                                  "2m", "1h")
                                 type: string
                               factor:
                                 description: Factor is a factor to multiply the base
@@ -1573,7 +1573,7 @@ spec:
                                     type: string
                                   version:
                                     description: Version is the Helm version to use
-                                      for templating (\\"3\\")
+                                      for templating ("3")
                                     type: string
                                 type: object
                               kustomize:
@@ -1918,7 +1918,7 @@ spec:
                                 type: string
                               version:
                                 description: Version is the Helm version to use for
-                                  templating (\\"3\\")
+                                  templating ("3")
                                 type: string
                             type: object
                           kustomize:
@@ -2252,7 +2252,7 @@ spec:
                                 type: string
                               version:
                                 description: Version is the Helm version to use for
-                                  templating (\\"3\\")
+                                  templating ("3")
                                 type: string
                             type: object
                           kustomize:
@@ -2373,7 +2373,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    \\"helm.sh/resource-policy\\": keep
+    "helm.sh/resource-policy": keep
     controller-gen.kubebuilder.io/version: v0.3.0
   labels:
     app.kubernetes.io/name: applicationsets.argoproj.io
@@ -8905,7 +8905,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    \\"helm.sh/resource-policy\\": keep
+    "helm.sh/resource-policy": keep
     controller-gen.kubebuilder.io/version: v0.4.1
   labels:
     app.kubernetes.io/name: argocdextensions.argoproj.io
@@ -9004,7 +9004,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    \\"helm.sh/resource-policy\\": keep
+    "helm.sh/resource-policy": keep
   labels:
     app.kubernetes.io/name: appprojects.argoproj.io
     app.kubernetes.io/part-of: argocd
@@ -9361,13 +9361,13 @@ rules:
       - get
       - patch
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - events
     verbs:
       - list
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - pods
       - pods/log
@@ -9430,7 +9430,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 rules:
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - secrets
   - configmaps
@@ -9452,7 +9452,7 @@ rules:
   - patch
   - delete
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - events
   verbs:
@@ -9496,7 +9496,7 @@ rules:
     - patch
     - update
   - apiGroups:
-    - \\"\\"
+    - ""
     resources:
     - events
     verbs:
@@ -9508,7 +9508,7 @@ rules:
     - update
     - watch
   - apiGroups:
-    - \\"\\"
+    - ""
     resources:
     - secrets
     verbs:
@@ -9516,7 +9516,7 @@ rules:
     - list
     - watch
   - apiGroups:
-    - \\"\\"
+    - ""
     resources:
     - configmaps
     verbs:
@@ -9574,7 +9574,7 @@ rules:
   - update
   - patch
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - configmaps
   - secrets
@@ -9582,7 +9582,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - \\"\\"
+  - ""
   resourceNames:
   - argocd-notifications-cm
   resources:
@@ -9590,7 +9590,7 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - \\"\\"
+  - ""
   resourceNames:
   - argocd-notifications-secret
   resources:
@@ -9626,7 +9626,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 rules:
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - secrets
   - configmaps
@@ -9652,7 +9652,7 @@ rules:
   - delete
   - patch
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - events
   verbs:
@@ -10337,9 +10337,9 @@ spec:
       - name: argocd-snapshot-test-redis
         args:
         - --save
-        - \\"\\"
+        - ""
         - --appendonly
-        - \\"no\\"
+        - "no"
         image: public.ecr.aws/docker/library/redis:7.0.4-alpine
         imagePullPolicy: IfNotPresent
         ports:
@@ -10358,7 +10358,7 @@ metadata:
   labels:
     app: mackerel
   annotations:
-    reloader.stakater.com/auto: \\"true\\"
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 1
   selector:
@@ -10407,7 +10407,7 @@ spec:
               name: mackerel
               key: apikey
         volumeMounts:
-          - mountPath: \\"/etc/mackerel\\"
+          - mountPath: "/etc/mackerel"
             name: mackerel-config
             readOnly: true
         lifecycle:
@@ -10460,19 +10460,19 @@ spec:
       - command:
         - argocd-application-controller
         - --status-processors
-        - \\"20\\"
+        - "20"
         - --operation-processors
-        - \\"10\\"
+        - "10"
         - --app-resync
-        - \\"180\\"
+        - "180"
         - --app-hard-resync
-        - \\"0\\"
+        - "0"
         - --self-heal-timeout-seconds
-        - \\"5\\"
+        - "5"
         - --repo-server
         - argocd-snapshot-test-repo-server:8081
         - --repo-server-timeout-seconds
-        - \\"60\\"
+        - "60"
         - --logformat
         - text
         - --loglevel
@@ -10484,7 +10484,7 @@ spec:
         name: application-controller
         env:
           - name: ARGOCD_CONTROLLER_REPLICAS
-            value: \\"1\\"
+            value: "1"
           
         ports:
         - name: controller
@@ -10621,7 +10621,7 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   annotations:
-    sealedsecrets.bitnami.com/cluster-wide: \\"true\\"
+    sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: mackerel
   namespace: argocd
@@ -10632,7 +10632,7 @@ spec:
     data: null
     metadata:
       annotations:
-        sealedsecrets.bitnami.com/cluster-wide: \\"true\\"
+        sealedsecrets.bitnami.com/cluster-wide: "true"
       creationTimestamp: null
       name: mackerel
       namespace: argocd
@@ -10653,18 +10653,18 @@ data:
     PORT=$2
     HOSTNAME=$3
     
-    HOST_ID=$(mkr hosts --name \\"$HOSTNAME\\" | jq -r '.[0].id')
+    HOST_ID=$(mkr hosts --name "$HOSTNAME" | jq -r '.[0].id')
     (
-        leaderboard=$(curl \\"https://bitnodes.io/api/v1/nodes/leaderboard/\${IP}-\${PORT}\\"/ 2>/dev/null)
+        leaderboard=$(curl "https://bitnodes.io/api/v1/nodes/leaderboard/\${IP}-\${PORT}"/ 2>/dev/null)
         timestamp=$(date +%s)
-        rank=$(echo \\"$leaderboard\\" | jq '.rank')
-        echo  -e \\"bitcoin.bitnodes.rank\\\\t\${rank}\\\\t\${timestamp}\\"
+        rank=$(echo "$leaderboard" | jq '.rank')
+        echo  -e "bitcoin.bitnodes.rank\\t\${rank}\\t\${timestamp}"
         names=(ai bi dli dui hi mli mui ni nsi peer_index pi si vi wli wui)
-        for name in \\"\${names[@]}\\"
+        for name in "\${names[@]}"
         do
-          echo  -e \\"bitcoin.bitnodes_score.\${name}\\\\t$(echo \\"$leaderboard\\" | jq -r \\".\${name}\\")\\\\t\${timestamp}\\"
+          echo  -e "bitcoin.bitnodes_score.\${name}\\t$(echo "$leaderboard" | jq -r ".\${name}")\\t\${timestamp}"
         done
-    ) | mkr throw --host \\"$HOST_ID\\"
+    ) | mkr throw --host "$HOST_ID"
     
     
 kind: ConfigMap
@@ -10680,7 +10680,7 @@ metadata:
   labels:
     app: fullnode
   annotations:
-    oci.oraclecloud.com/load-balancer-type: \\"nlb\\"
+    oci.oraclecloud.com/load-balancer-type: "nlb"
 spec:
   type: LoadBalancer
   ports:
@@ -10696,9 +10696,9 @@ metadata:
   labels:
     app: fullnode
   annotations:
-    reloader.stakater.com/auto: \\"true\\"
+    reloader.stakater.com/auto: "true"
 spec:
-  serviceName: \\"bitcoin-service\\"
+  serviceName: "bitcoin-service"
   replicas: 1
   selector:
     matchLabels:
@@ -10714,16 +10714,16 @@ spec:
       - name: bitcoin-core
         image: ruimarinho/bitcoin-core:22
         args: [
-          \\"-printtoconsole\\",
-          \\"-externalip=158.101.139.58\\",
-          \\"-dbcache=2000\\",
-          \\"-prune=30000\\",
-          \\"-rpcallowip=127.0.0.1\\",
-          \\"-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3\\"
+          "-printtoconsole",
+          "-externalip=158.101.139.58",
+          "-dbcache=2000",
+          "-prune=30000",
+          "-rpcallowip=127.0.0.1",
+          "-rpcauth=dekokun:9eee90da9d6874c4d592cfab86e3ecd9$5e70818cf9df9add2a23637abf5da2da57da21f3f5ffe0d02ef3d253c53ff9f3"
         ]
         env:
         - name: BITCOIN_DATA
-          value: \\"/var/lib/bitcoin\\"
+          value: "/var/lib/bitcoin"
         ports:
         - containerPort: 8333
         volumeMounts:
@@ -10772,7 +10772,7 @@ spec:
               name: mackerel
               key: apikey
         volumeMounts:
-          - mountPath: \\"/etc/mackerel\\"
+          - mountPath: "/etc/mackerel"
             name: mackerel-config
             readOnly: true
       terminationGracePeriodSeconds: 60
@@ -10787,7 +10787,7 @@ spec:
   - metadata:
       name: bitcoinclaim
     spec:
-      storageClassName: \\"oci-bv\\"
+      storageClassName: "oci-bv"
       accessModes:
         - ReadWriteOnce
       resources:
@@ -10800,7 +10800,7 @@ kind: CronJob
 metadata:
   name: mackerel-throw-bitnodes-bitcoin-fullnode-0
 spec:
-  schedule: \\"*/10 * * * *\\"
+  schedule: "*/10 * * * *"
   startingDeadlineSeconds: 300
   concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 3
@@ -10822,7 +10822,7 @@ spec:
               - /usr/local/bin/mackerel/bitnodes-script
             args:
               - 158.101.139.58
-              - \\"8333\\"
+              - "8333"
               - bitcoin-fullnode-0
             volumeMounts:
               - name: mackerel-volume
@@ -10841,7 +10841,7 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   annotations:
-    sealedsecrets.bitnami.com/cluster-wide: \\"true\\"
+    sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: mackerel
 spec:
@@ -10852,7 +10852,7 @@ spec:
     data: null
     metadata:
       annotations:
-        sealedsecrets.bitnami.com/cluster-wide: \\"true\\"
+        sealedsecrets.bitnami.com/cluster-wide: "true"
       creationTimestamp: null
       name: mackerel
     type: Opaque
@@ -10868,7 +10868,7 @@ metadata:
   name: mackerel-container-agent-clusterrole
 rules:
 - apiGroups:
-  - \\"\\"
+  - ""
   resources:
   - nodes/proxy
   - nodes/stats
@@ -10930,7 +10930,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 ---
 # Source: system/charts/reloader/templates/serviceaccount.yaml
@@ -10938,14 +10938,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"system-snapshot-test\\"
+    meta.helm.sh/release-namespace: "default"
+    meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.118\\"
-    release: \\"system-snapshot-test\\"
-    heritage: \\"Helm\\"
-    app.kubernetes.io/managed-by: \\"Helm\\"
+    chart: "reloader-v0.0.118"
+    release: "system-snapshot-test"
+    heritage: "Helm"
+    app.kubernetes.io/managed-by: "Helm"
   name: system-snapshot-test-reloader
   namespace: default
 ---
@@ -10971,11 +10971,11 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
-    rbac.authorization.k8s.io/aggregate-to-admin: \\"true\\"
-    rbac.authorization.k8s.io/aggregate-to-edit: \\"true\\"
-    rbac.authorization.k8s.io/aggregate-to-view: \\"true\\"
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
 rules:
   - apiGroups:
       - metrics.k8s.io
@@ -10996,17 +10996,17 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 rules:
   - apiGroups:
-    - \\"\\"
+    - ""
     resources:
     - nodes/metrics
     verbs:
     - get
   - apiGroups:
-    - \\"\\"
+    - ""
     resources:
       - pods
       - nodes
@@ -11023,19 +11023,19 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"system-snapshot-test\\"
+    meta.helm.sh/release-namespace: "default"
+    meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.118\\"
-    release: \\"system-snapshot-test\\"
-    heritage: \\"Helm\\"
-    app.kubernetes.io/managed-by: \\"Helm\\"
+    chart: "reloader-v0.0.118"
+    release: "system-snapshot-test"
+    heritage: "Helm"
+    app.kubernetes.io/managed-by: "Helm"
   name: system-snapshot-test-reloader-role
   namespace: default
 rules:
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - secrets
       - configmaps
@@ -11044,7 +11044,7 @@ rules:
       - get
       - watch
   - apiGroups:
-      - \\"apps\\"
+      - "apps"
     resources:
       - deployments
       - daemonsets
@@ -11055,7 +11055,7 @@ rules:
       - update
       - patch
   - apiGroups:
-      - \\"extensions\\"
+      - "extensions"
     resources:
       - deployments
       - daemonsets
@@ -11092,7 +11092,7 @@ rules:
     verbs:
       - update
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - secrets
     verbs:
@@ -11102,7 +11102,7 @@ rules:
       - update
       - delete
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - events
     verbs:
@@ -11118,7 +11118,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -11138,7 +11138,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -11155,14 +11155,14 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"system-snapshot-test\\"
+    meta.helm.sh/release-namespace: "default"
+    meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.118\\"
-    release: \\"system-snapshot-test\\"
-    heritage: \\"Helm\\"
-    app.kubernetes.io/managed-by: \\"Helm\\"
+    chart: "reloader-v0.0.118"
+    release: "system-snapshot-test"
+    heritage: "Helm"
+    app.kubernetes.io/managed-by: "Helm"
   name: system-snapshot-test-reloader-role-binding
   namespace: default
 roleRef:
@@ -11190,7 +11190,7 @@ roleRef:
   kind: ClusterRole
   name: secrets-unsealer
 subjects:
-  - apiGroup: \\"\\"
+  - apiGroup: ""
     kind: ServiceAccount
     name: system-snapshot-test-sealed-secrets
     namespace: default
@@ -11209,7 +11209,7 @@ metadata:
     app.kubernetes.io/version: v0.18.2
 rules:
   - apiGroups:
-      - \\"\\"
+      - ""
     resourceNames:
       - sealed-secrets-key
     resources:
@@ -11217,7 +11217,7 @@ rules:
     verbs:
       - get
   - apiGroups:
-      - \\"\\"
+      - ""
     resources:
       - secrets
     verbs:
@@ -11238,7 +11238,7 @@ metadata:
     app.kubernetes.io/version: v0.18.2
 rules:
   - apiGroups:
-      - \\"\\"
+      - ""
     resourceNames:
       - system-snapshot-test-sealed-secrets
     resources:
@@ -11246,7 +11246,7 @@ rules:
     verbs:
       - get
   - apiGroups:
-      - \\"\\"
+      - ""
     resourceNames:
       - 'http:system-snapshot-test-sealed-secrets:'
       - 'http:system-snapshot-test-sealed-secrets:http'
@@ -11267,7 +11267,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -11295,7 +11295,7 @@ roleRef:
   kind: Role
   name: system-snapshot-test-sealed-secrets-key-admin
 subjects:
-  - apiGroup: \\"\\"
+  - apiGroup: ""
     kind: ServiceAccount
     name: system-snapshot-test-sealed-secrets
     namespace: default
@@ -11330,7 +11330,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -11375,7 +11375,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -11390,7 +11390,7 @@ spec:
         app.kubernetes.io/instance: system-snapshot-test
     spec:
       serviceAccountName: system-snapshot-test-metrics-server
-      priorityClassName: \\"system-cluster-critical\\"
+      priorityClassName: "system-cluster-critical"
       containers:
         - name: metrics-server
           securityContext:
@@ -11438,14 +11438,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    meta.helm.sh/release-namespace: \\"default\\"
-    meta.helm.sh/release-name: \\"system-snapshot-test\\"
+    meta.helm.sh/release-namespace: "default"
+    meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: \\"reloader-v0.0.118\\"
-    release: \\"system-snapshot-test\\"
-    heritage: \\"Helm\\"
-    app.kubernetes.io/managed-by: \\"Helm\\"
+    chart: "reloader-v0.0.118"
+    release: "system-snapshot-test"
+    heritage: "Helm"
+    app.kubernetes.io/managed-by: "Helm"
     group: com.stakater.platform
     provider: stakater
     version: v0.0.118
@@ -11457,21 +11457,21 @@ spec:
   selector:
     matchLabels:
       app: system-snapshot-test-reloader
-      release: \\"system-snapshot-test\\"
+      release: "system-snapshot-test"
   template:
     metadata:
       labels:
         app: system-snapshot-test-reloader
-        chart: \\"reloader-v0.0.118\\"
-        release: \\"system-snapshot-test\\"
-        heritage: \\"Helm\\"
-        app.kubernetes.io/managed-by: \\"Helm\\"
+        chart: "reloader-v0.0.118"
+        release: "system-snapshot-test"
+        heritage: "Helm"
+        app.kubernetes.io/managed-by: "Helm"
         group: com.stakater.platform
         provider: stakater
         version: v0.0.118
     spec:
       containers:
-      - image: \\"stakater/reloader:v0.0.118\\"
+      - image: "stakater/reloader:v0.0.118"
         imagePullPolicy: IfNotPresent
         name: system-snapshot-test-reloader
 
@@ -11532,7 +11532,7 @@ spec:
           args:
             - --update-status
             - --key-prefix
-            - \\"sealed-secrets-key\\"
+            - "sealed-secrets-key"
           image: docker.io/bitnami/sealed-secrets-controller:v0.18.2
           imagePullPolicy: IfNotPresent
           ports:
@@ -11579,7 +11579,7 @@ metadata:
     helm.sh/chart: metrics-server-3.8.2
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
-    app.kubernetes.io/version: \\"0.6.1\\"
+    app.kubernetes.io/version: "0.6.1"
     app.kubernetes.io/managed-by: Helm
 spec:
   group: metrics.k8s.io
