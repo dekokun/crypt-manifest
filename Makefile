@@ -1,3 +1,7 @@
+.PHONY: install
+install:
+	npm ci
+
 .PHONY: test
 test: lint npm-test validate
 
