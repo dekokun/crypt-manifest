@@ -18,7 +18,7 @@ jobs:
     - name: setup node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version-file: '.node-version'
         cache: npm
     # https://github.com/actions/cache/blob/master/examples.md#node---npm
     - uses: azure/setup-helm@v3
