@@ -3,7 +3,7 @@ name: system
 version: 1.0.0
 dependencies:
   - name: metrics-server
-    version: 3.8.4
+    version: 3.9.0
     repository: https://kubernetes-sigs.github.io/metrics-server/
   - name: sealed-secrets
     version: 2.8.1
