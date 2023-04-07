@@ -17671,7 +17671,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-v1.0.18"
+    chart: "reloader-v1.0.22"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -17758,7 +17758,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-v1.0.18"
+    chart: "reloader-v1.0.22"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -17898,7 +17898,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-v1.0.18"
+    chart: "reloader-v1.0.22"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -18189,13 +18189,13 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-v1.0.18"
+    chart: "reloader-v1.0.22"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
     group: com.stakater.platform
     provider: stakater
-    version: v1.0.18
+    version: v1.0.22
   name: system-snapshot-test-reloader
   namespace: default
 spec:
@@ -18209,16 +18209,16 @@ spec:
     metadata:
       labels:
         app: system-snapshot-test-reloader
-        chart: "reloader-v1.0.18"
+        chart: "reloader-v1.0.22"
         release: "system-snapshot-test"
         heritage: "Helm"
         app.kubernetes.io/managed-by: "Helm"
         group: com.stakater.platform
         provider: stakater
-        version: v1.0.18
+        version: v1.0.22
     spec:
       containers:
-      - image: "stakater/reloader:v1.0.18"
+      - image: "ghcr.io/stakater/reloader:v1.0.22"
         imagePullPolicy: IfNotPresent
         name: system-snapshot-test-reloader
 
@@ -18233,6 +18233,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10
           successThreshold: 1
+          initialDelaySeconds: 10
         readinessProbe:
           httpGet:
             path: /metrics
@@ -18241,6 +18242,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10
           successThreshold: 1
+          initialDelaySeconds: 10
 
         securityContext:
           {}
