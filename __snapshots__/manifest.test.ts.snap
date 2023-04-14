@@ -17656,7 +17656,7 @@ metadata:
   name: system-snapshot-test-metrics-server
   namespace: default
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -17699,7 +17699,7 @@ kind: ClusterRole
 metadata:
   name: system:metrics-server-aggregated-reader
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -17724,7 +17724,7 @@ kind: ClusterRole
 metadata:
   name: system:system-snapshot-test-metrics-server
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -17854,7 +17854,7 @@ kind: ClusterRoleBinding
 metadata:
   name: system-snapshot-test-metrics-server:system:auth-delegator
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -17874,7 +17874,7 @@ kind: ClusterRoleBinding
 metadata:
   name: system:system-snapshot-test-metrics-server
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -18003,9 +18003,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: system-snapshot-test-metrics-server-auth-reader
-  namespace: default
+  namespace: kube-system
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -18071,7 +18071,7 @@ metadata:
   name: system-snapshot-test-metrics-server
   namespace: default
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -18118,7 +18118,7 @@ metadata:
   name: system-snapshot-test-metrics-server
   namespace: default
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
@@ -18142,13 +18142,18 @@ spec:
         - name: metrics-server
           securityContext:
             allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
             readOnlyRootFilesystem: true
             runAsNonRoot: true
             runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
           image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
           imagePullPolicy: IfNotPresent
           args:
-            - --secure-port=4443
+            - --secure-port=10250
             - --cert-dir=/tmp
             - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
             - --kubelet-use-node-status-port
@@ -18156,7 +18161,7 @@ spec:
           ports:
           - name: https
             protocol: TCP
-            containerPort: 4443
+            containerPort: 10250
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -18333,7 +18338,7 @@ kind: APIService
 metadata:
   name: v1beta1.metrics.k8s.io
   labels:
-    helm.sh/chart: metrics-server-3.9.0
+    helm.sh/chart: metrics-server-3.10.0
     app.kubernetes.io/name: metrics-server
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/version: "0.6.3"
