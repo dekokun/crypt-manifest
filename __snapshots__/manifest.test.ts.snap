@@ -17716,16 +17716,15 @@ metadata:
 # Source: system/charts/sealed-secrets/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
-automountServiceAccountToken: true
 metadata:
   name: system-snapshot-test-sealed-secrets
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 ---
 # Source: system/charts/metrics-server/templates/clusterrole-aggregated-reader.yaml
@@ -17844,10 +17843,10 @@ metadata:
   name: secrets-unsealer
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 rules:
   - apiGroups:
@@ -17954,10 +17953,10 @@ metadata:
   name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -17977,10 +17976,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 rules:
   - apiGroups:
@@ -18007,10 +18006,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 rules:
   - apiGroups:
@@ -18062,10 +18061,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -18085,10 +18084,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -18130,10 +18129,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 spec:
   type: ClusterIP
@@ -18299,10 +18298,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.8.1
+    helm.sh/chart: sealed-secrets-2.8.2
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: v0.20.2
+    app.kubernetes.io/version: v0.20.5
     app.kubernetes.io/part-of: sealed-secrets
 spec:
   selector:
@@ -18318,7 +18317,6 @@ spec:
       securityContext:
         fsGroup: 65534
       serviceAccountName: system-snapshot-test-sealed-secrets
-      automountServiceAccountToken: true
       containers:
         - name: controller
           command:
@@ -18327,7 +18325,7 @@ spec:
             - --update-status
             - --key-prefix
             - "sealed-secrets-key"
-          image: docker.io/bitnami/sealed-secrets-controller:v0.20.2
+          image: docker.io/bitnami/sealed-secrets-controller:v0.20.5
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
