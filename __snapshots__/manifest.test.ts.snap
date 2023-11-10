@@ -10,13 +10,13 @@ metadata:
   name: argocd-application-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-applicationset/serviceaccount.yaml
 apiVersion: v1
@@ -26,13 +26,13 @@ metadata:
   name: argocd-applicationset-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-notifications/serviceaccount.yaml
 apiVersion: v1
@@ -42,13 +42,13 @@ metadata:
   name: argocd-notifications-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-repo-server/serviceaccount.yaml
 apiVersion: v1
@@ -58,13 +58,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/serviceaccount.yaml
 apiVersion: v1
@@ -74,13 +74,13 @@ metadata:
   name: argocd-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-secret.yaml
 apiVersion: v1
@@ -89,13 +89,13 @@ metadata:
   name: argocd-notifications-secret
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 type: Opaque
 stringData:
 ---
@@ -106,13 +106,13 @@ metadata:
   name: argocd-secret
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 type: Opaque
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-cm.yaml
@@ -122,13 +122,13 @@ metadata:
   name: argocd-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 data:
   admin.enabled: "true"
   application.instanceLabelKey: argocd.argoproj.io/instance
@@ -144,14 +144,15 @@ metadata:
   name: argocd-cmd-params-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 data:
+  application.namespaces: ""
   applicationsetcontroller.enable.leader.election: "false"
   applicationsetcontroller.enable.progressive.syncs: "false"
   applicationsetcontroller.log.format: text
@@ -187,12 +188,12 @@ metadata:
   name: argocd-gpg-keys-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-cm.yaml
 apiVersion: v1
@@ -201,13 +202,13 @@ metadata:
   name: argocd-notifications-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 data:
   context: |
     argocdUrl:
@@ -219,13 +220,13 @@ metadata:
   name: argocd-rbac-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 data:
   policy.csv: ""
   policy.default: ""
@@ -238,12 +239,12 @@ metadata:
   name: argocd-ssh-known-hosts-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 data:
   ssh_known_hosts: |
     [ssh.github.com]:443 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
@@ -268,12 +269,12 @@ metadata:
   name: argocd-tls-certs-cm
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 ---
 # Source: argocd/templates/mackerel_conf.yaml
 apiVersion: v1
@@ -644,6 +645,37 @@ spec:
                             description: Namespace sets the namespace that Kustomize
                               adds to all resources
                             type: string
+                          patches:
+                            description: Patches is a list of Kustomize patches
+                            items:
+                              properties:
+                                options:
+                                  additionalProperties:
+                                    type: boolean
+                                  type: object
+                                patch:
+                                  type: string
+                                path:
+                                  type: string
+                                target:
+                                  properties:
+                                    annotationSelector:
+                                      type: string
+                                    group:
+                                      type: string
+                                    kind:
+                                      type: string
+                                    labelSelector:
+                                      type: string
+                                    name:
+                                      type: string
+                                    namespace:
+                                      type: string
+                                    version:
+                                      type: string
+                                  type: object
+                              type: object
+                            type: array
                           replicas:
                             description: Replicas is a list of Kustomize Replicas
                               override specifications
@@ -942,6 +974,37 @@ spec:
                               description: Namespace sets the namespace that Kustomize
                                 adds to all resources
                               type: string
+                            patches:
+                              description: Patches is a list of Kustomize patches
+                              items:
+                                properties:
+                                  options:
+                                    additionalProperties:
+                                      type: boolean
+                                    type: object
+                                  patch:
+                                    type: string
+                                  path:
+                                    type: string
+                                  target:
+                                    properties:
+                                      annotationSelector:
+                                        type: string
+                                      group:
+                                        type: string
+                                      kind:
+                                        type: string
+                                      labelSelector:
+                                        type: string
+                                      name:
+                                        type: string
+                                      namespace:
+                                        type: string
+                                      version:
+                                        type: string
+                                    type: object
+                                type: object
+                              type: array
                             replicas:
                               description: Replicas is a list of Kustomize Replicas
                                 override specifications
@@ -1082,7 +1145,8 @@ spec:
                 properties:
                   name:
                     description: Name is an alternate way of specifying the target
-                      cluster by its symbolic name
+                      cluster by its symbolic name. This must be set if Server is
+                      not set.
                     type: string
                   namespace:
                     description: Namespace specifies the target namespace for the
@@ -1090,8 +1154,9 @@ spec:
                       namespace-scoped resources that have not set a value for .metadata.namespace
                     type: string
                   server:
-                    description: Server specifies the URL of the target cluster and
-                      must be set to the Kubernetes control plane API
+                    description: Server specifies the URL of the target cluster's
+                      Kubernetes control plane API. This must be set if Name is not
+                      set.
                     type: string
                 type: object
               ignoreDifferences:
@@ -1352,6 +1417,37 @@ spec:
                         description: Namespace sets the namespace that Kustomize adds
                           to all resources
                         type: string
+                      patches:
+                        description: Patches is a list of Kustomize patches
+                        items:
+                          properties:
+                            options:
+                              additionalProperties:
+                                type: boolean
+                              type: object
+                            patch:
+                              type: string
+                            path:
+                              type: string
+                            target:
+                              properties:
+                                annotationSelector:
+                                  type: string
+                                group:
+                                  type: string
+                                kind:
+                                  type: string
+                                labelSelector:
+                                  type: string
+                                name:
+                                  type: string
+                                namespace:
+                                  type: string
+                                version:
+                                  type: string
+                              type: object
+                          type: object
+                        type: array
                       replicas:
                         description: Replicas is a list of Kustomize Replicas override
                           specifications
@@ -1640,6 +1736,37 @@ spec:
                           description: Namespace sets the namespace that Kustomize
                             adds to all resources
                           type: string
+                        patches:
+                          description: Patches is a list of Kustomize patches
+                          items:
+                            properties:
+                              options:
+                                additionalProperties:
+                                  type: boolean
+                                type: object
+                              patch:
+                                type: string
+                              path:
+                                type: string
+                              target:
+                                properties:
+                                  annotationSelector:
+                                    type: string
+                                  group:
+                                    type: string
+                                  kind:
+                                    type: string
+                                  labelSelector:
+                                    type: string
+                                  name:
+                                    type: string
+                                  namespace:
+                                    type: string
+                                  version:
+                                    type: string
+                                type: object
+                            type: object
+                          type: array
                         replicas:
                           description: Replicas is a list of Kustomize Replicas override
                             specifications
@@ -2081,6 +2208,37 @@ spec:
                               description: Namespace sets the namespace that Kustomize
                                 adds to all resources
                               type: string
+                            patches:
+                              description: Patches is a list of Kustomize patches
+                              items:
+                                properties:
+                                  options:
+                                    additionalProperties:
+                                      type: boolean
+                                    type: object
+                                  patch:
+                                    type: string
+                                  path:
+                                    type: string
+                                  target:
+                                    properties:
+                                      annotationSelector:
+                                        type: string
+                                      group:
+                                        type: string
+                                      kind:
+                                        type: string
+                                      labelSelector:
+                                        type: string
+                                      name:
+                                        type: string
+                                      namespace:
+                                        type: string
+                                      version:
+                                        type: string
+                                    type: object
+                                type: object
+                              type: array
                             replicas:
                               description: Replicas is a list of Kustomize Replicas
                                 override specifications
@@ -2382,6 +2540,37 @@ spec:
                                 description: Namespace sets the namespace that Kustomize
                                   adds to all resources
                                 type: string
+                              patches:
+                                description: Patches is a list of Kustomize patches
+                                items:
+                                  properties:
+                                    options:
+                                      additionalProperties:
+                                        type: boolean
+                                      type: object
+                                    patch:
+                                      type: string
+                                    path:
+                                      type: string
+                                    target:
+                                      properties:
+                                        annotationSelector:
+                                          type: string
+                                        group:
+                                          type: string
+                                        kind:
+                                          type: string
+                                        labelSelector:
+                                          type: string
+                                        name:
+                                          type: string
+                                        namespace:
+                                          type: string
+                                        version:
+                                          type: string
+                                      type: object
+                                  type: object
+                                type: array
                               replicas:
                                 description: Replicas is a list of Kustomize Replicas
                                   override specifications
@@ -2827,6 +3016,37 @@ spec:
                                     description: Namespace sets the namespace that
                                       Kustomize adds to all resources
                                     type: string
+                                  patches:
+                                    description: Patches is a list of Kustomize patches
+                                    items:
+                                      properties:
+                                        options:
+                                          additionalProperties:
+                                            type: boolean
+                                          type: object
+                                        patch:
+                                          type: string
+                                        path:
+                                          type: string
+                                        target:
+                                          properties:
+                                            annotationSelector:
+                                              type: string
+                                            group:
+                                              type: string
+                                            kind:
+                                              type: string
+                                            labelSelector:
+                                              type: string
+                                            name:
+                                              type: string
+                                            namespace:
+                                              type: string
+                                            version:
+                                              type: string
+                                          type: object
+                                      type: object
+                                    type: array
                                   replicas:
                                     description: Replicas is a list of Kustomize Replicas
                                       override specifications
@@ -3145,6 +3365,38 @@ spec:
                                       description: Namespace sets the namespace that
                                         Kustomize adds to all resources
                                       type: string
+                                    patches:
+                                      description: Patches is a list of Kustomize
+                                        patches
+                                      items:
+                                        properties:
+                                          options:
+                                            additionalProperties:
+                                              type: boolean
+                                            type: object
+                                          patch:
+                                            type: string
+                                          path:
+                                            type: string
+                                          target:
+                                            properties:
+                                              annotationSelector:
+                                                type: string
+                                              group:
+                                                type: string
+                                              kind:
+                                                type: string
+                                              labelSelector:
+                                                type: string
+                                              name:
+                                                type: string
+                                              namespace:
+                                                type: string
+                                              version:
+                                                type: string
+                                            type: object
+                                        type: object
+                                      type: array
                                     replicas:
                                       description: Replicas is a list of Kustomize
                                         Replicas override specifications
@@ -3577,6 +3829,37 @@ spec:
                                 description: Namespace sets the namespace that Kustomize
                                   adds to all resources
                                 type: string
+                              patches:
+                                description: Patches is a list of Kustomize patches
+                                items:
+                                  properties:
+                                    options:
+                                      additionalProperties:
+                                        type: boolean
+                                      type: object
+                                    patch:
+                                      type: string
+                                    path:
+                                      type: string
+                                    target:
+                                      properties:
+                                        annotationSelector:
+                                          type: string
+                                        group:
+                                          type: string
+                                        kind:
+                                          type: string
+                                        labelSelector:
+                                          type: string
+                                        name:
+                                          type: string
+                                        namespace:
+                                          type: string
+                                        version:
+                                          type: string
+                                      type: object
+                                  type: object
+                                type: array
                               replicas:
                                 description: Replicas is a list of Kustomize Replicas
                                   override specifications
@@ -3888,6 +4171,37 @@ spec:
                                   description: Namespace sets the namespace that Kustomize
                                     adds to all resources
                                   type: string
+                                patches:
+                                  description: Patches is a list of Kustomize patches
+                                  items:
+                                    properties:
+                                      options:
+                                        additionalProperties:
+                                          type: boolean
+                                        type: object
+                                      patch:
+                                        type: string
+                                      path:
+                                        type: string
+                                      target:
+                                        properties:
+                                          annotationSelector:
+                                            type: string
+                                          group:
+                                            type: string
+                                          kind:
+                                            type: string
+                                          labelSelector:
+                                            type: string
+                                          name:
+                                            type: string
+                                          namespace:
+                                            type: string
+                                          version:
+                                            type: string
+                                        type: object
+                                    type: object
+                                  type: array
                                 replicas:
                                   description: Replicas is a list of Kustomize Replicas
                                     override specifications
@@ -4089,7 +4403,8 @@ spec:
                         properties:
                           name:
                             description: Name is an alternate way of specifying the
-                              target cluster by its symbolic name
+                              target cluster by its symbolic name. This must be set
+                              if Server is not set.
                             type: string
                           namespace:
                             description: Namespace specifies the target namespace
@@ -4098,8 +4413,9 @@ spec:
                               not set a value for .metadata.namespace
                             type: string
                           server:
-                            description: Server specifies the URL of the target cluster
-                              and must be set to the Kubernetes control plane API
+                            description: Server specifies the URL of the target cluster's
+                              Kubernetes control plane API. This must be set if Name
+                              is not set.
                             type: string
                         type: object
                       ignoreDifferences:
@@ -4341,6 +4657,37 @@ spec:
                                 description: Namespace sets the namespace that Kustomize
                                   adds to all resources
                                 type: string
+                              patches:
+                                description: Patches is a list of Kustomize patches
+                                items:
+                                  properties:
+                                    options:
+                                      additionalProperties:
+                                        type: boolean
+                                      type: object
+                                    patch:
+                                      type: string
+                                    path:
+                                      type: string
+                                    target:
+                                      properties:
+                                        annotationSelector:
+                                          type: string
+                                        group:
+                                          type: string
+                                        kind:
+                                          type: string
+                                        labelSelector:
+                                          type: string
+                                        name:
+                                          type: string
+                                        namespace:
+                                          type: string
+                                        version:
+                                          type: string
+                                      type: object
+                                  type: object
+                                type: array
                               replicas:
                                 description: Replicas is a list of Kustomize Replicas
                                   override specifications
@@ -4652,6 +4999,37 @@ spec:
                                   description: Namespace sets the namespace that Kustomize
                                     adds to all resources
                                   type: string
+                                patches:
+                                  description: Patches is a list of Kustomize patches
+                                  items:
+                                    properties:
+                                      options:
+                                        additionalProperties:
+                                          type: boolean
+                                        type: object
+                                      patch:
+                                        type: string
+                                      path:
+                                        type: string
+                                      target:
+                                        properties:
+                                          annotationSelector:
+                                            type: string
+                                          group:
+                                            type: string
+                                          kind:
+                                            type: string
+                                          labelSelector:
+                                            type: string
+                                          name:
+                                            type: string
+                                          namespace:
+                                            type: string
+                                          version:
+                                            type: string
+                                        type: object
+                                    type: object
+                                  type: array
                                 replicas:
                                   description: Replicas is a list of Kustomize Replicas
                                     override specifications
@@ -5043,6 +5421,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -5223,6 +5631,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -5562,6 +6000,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -5742,6 +6210,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -6085,6 +6583,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -6265,6 +6793,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -6588,6 +7146,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -6768,6 +7356,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -7115,6 +7733,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -7295,6 +7943,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -7634,6 +8312,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -7814,6 +8522,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -8157,6 +8895,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -8337,6 +9105,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -8660,6 +9458,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -8840,6 +9668,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -9173,6 +10031,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -9353,6 +10241,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -9866,6 +10784,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -10046,6 +10994,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -10338,6 +11316,8 @@ spec:
                                         type: string
                                       group:
                                         type: string
+                                      includeSharedProjects:
+                                        type: boolean
                                       includeSubgroups:
                                         type: boolean
                                       insecure:
@@ -10352,6 +11332,8 @@ spec:
                                         - key
                                         - secretName
                                         type: object
+                                      topic:
+                                        type: string
                                     required:
                                     - group
                                     type: object
@@ -10550,6 +11532,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -10730,6 +11742,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -11067,6 +12109,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -11247,6 +12319,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -11594,6 +12696,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -11774,6 +12906,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -12113,6 +13275,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -12293,6 +13485,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -12636,6 +13858,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -12816,6 +14068,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -13139,6 +14421,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -13319,6 +14631,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -13652,6 +14994,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -13832,6 +15204,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -14345,6 +15747,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -14525,6 +15957,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -14817,6 +16279,8 @@ spec:
                                         type: string
                                       group:
                                         type: string
+                                      includeSharedProjects:
+                                        type: boolean
                                       includeSubgroups:
                                         type: boolean
                                       insecure:
@@ -14831,6 +16295,8 @@ spec:
                                         - key
                                         - secretName
                                         type: object
+                                      topic:
+                                        type: string
                                     required:
                                     - group
                                     type: object
@@ -15029,6 +16495,36 @@ spec:
                                                     type: string
                                                   namespace:
                                                     type: string
+                                                  patches:
+                                                    items:
+                                                      properties:
+                                                        options:
+                                                          additionalProperties:
+                                                            type: boolean
+                                                          type: object
+                                                        patch:
+                                                          type: string
+                                                        path:
+                                                          type: string
+                                                        target:
+                                                          properties:
+                                                            annotationSelector:
+                                                              type: string
+                                                            group:
+                                                              type: string
+                                                            kind:
+                                                              type: string
+                                                            labelSelector:
+                                                              type: string
+                                                            name:
+                                                              type: string
+                                                            namespace:
+                                                              type: string
+                                                            version:
+                                                              type: string
+                                                          type: object
+                                                      type: object
+                                                    type: array
                                                   replicas:
                                                     items:
                                                       properties:
@@ -15209,6 +16705,36 @@ spec:
                                                       type: string
                                                     namespace:
                                                       type: string
+                                                    patches:
+                                                      items:
+                                                        properties:
+                                                          options:
+                                                            additionalProperties:
+                                                              type: boolean
+                                                            type: object
+                                                          patch:
+                                                            type: string
+                                                          path:
+                                                            type: string
+                                                          target:
+                                                            properties:
+                                                              annotationSelector:
+                                                                type: string
+                                                              group:
+                                                                type: string
+                                                              kind:
+                                                                type: string
+                                                              labelSelector:
+                                                                type: string
+                                                              name:
+                                                                type: string
+                                                              namespace:
+                                                                type: string
+                                                              version:
+                                                                type: string
+                                                            type: object
+                                                        type: object
+                                                      type: array
                                                     replicas:
                                                       items:
                                                         properties:
@@ -15550,6 +17076,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -15730,6 +17286,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -16060,6 +17646,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -16240,6 +17856,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -16753,6 +18399,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -16933,6 +18609,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -17225,6 +18931,8 @@ spec:
                               type: string
                             group:
                               type: string
+                            includeSharedProjects:
+                              type: boolean
                             includeSubgroups:
                               type: boolean
                             insecure:
@@ -17239,6 +18947,8 @@ spec:
                               - key
                               - secretName
                               type: object
+                            topic:
+                              type: string
                           required:
                           - group
                           type: object
@@ -17437,6 +19147,36 @@ spec:
                                           type: string
                                         namespace:
                                           type: string
+                                        patches:
+                                          items:
+                                            properties:
+                                              options:
+                                                additionalProperties:
+                                                  type: boolean
+                                                type: object
+                                              patch:
+                                                type: string
+                                              path:
+                                                type: string
+                                              target:
+                                                properties:
+                                                  annotationSelector:
+                                                    type: string
+                                                  group:
+                                                    type: string
+                                                  kind:
+                                                    type: string
+                                                  labelSelector:
+                                                    type: string
+                                                  name:
+                                                    type: string
+                                                  namespace:
+                                                    type: string
+                                                  version:
+                                                    type: string
+                                                type: object
+                                            type: object
+                                          type: array
                                         replicas:
                                           items:
                                             properties:
@@ -17617,6 +19357,36 @@ spec:
                                             type: string
                                           namespace:
                                             type: string
+                                          patches:
+                                            items:
+                                              properties:
+                                                options:
+                                                  additionalProperties:
+                                                    type: boolean
+                                                  type: object
+                                                patch:
+                                                  type: string
+                                                path:
+                                                  type: string
+                                                target:
+                                                  properties:
+                                                    annotationSelector:
+                                                      type: string
+                                                    group:
+                                                      type: string
+                                                    kind:
+                                                      type: string
+                                                    labelSelector:
+                                                      type: string
+                                                    name:
+                                                      type: string
+                                                    namespace:
+                                                      type: string
+                                                    version:
+                                                      type: string
+                                                  type: object
+                                              type: object
+                                            type: array
                                           replicas:
                                             items:
                                               properties:
@@ -17768,9 +19538,28 @@ spec:
                 items:
                   type: string
                 type: array
+              ignoreApplicationDifferences:
+                items:
+                  properties:
+                    jqPathExpressions:
+                      items:
+                        type: string
+                      type: array
+                    jsonPointers:
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      type: string
+                  type: object
+                type: array
               preservedFields:
                 properties:
                   annotations:
+                    items:
+                      type: string
+                    type: array
+                  labels:
                     items:
                       type: string
                     type: array
@@ -18010,6 +19799,36 @@ spec:
                                 type: string
                               namespace:
                                 type: string
+                              patches:
+                                items:
+                                  properties:
+                                    options:
+                                      additionalProperties:
+                                        type: boolean
+                                      type: object
+                                    patch:
+                                      type: string
+                                    path:
+                                      type: string
+                                    target:
+                                      properties:
+                                        annotationSelector:
+                                          type: string
+                                        group:
+                                          type: string
+                                        kind:
+                                          type: string
+                                        labelSelector:
+                                          type: string
+                                        name:
+                                          type: string
+                                        namespace:
+                                          type: string
+                                        version:
+                                          type: string
+                                      type: object
+                                  type: object
+                                type: array
                               replicas:
                                 items:
                                   properties:
@@ -18190,6 +20009,36 @@ spec:
                                   type: string
                                 namespace:
                                   type: string
+                                patches:
+                                  items:
+                                    properties:
+                                      options:
+                                        additionalProperties:
+                                          type: boolean
+                                        type: object
+                                      patch:
+                                        type: string
+                                      path:
+                                        type: string
+                                      target:
+                                        properties:
+                                          annotationSelector:
+                                            type: string
+                                          group:
+                                            type: string
+                                          kind:
+                                            type: string
+                                          labelSelector:
+                                            type: string
+                                          name:
+                                            type: string
+                                          namespace:
+                                            type: string
+                                          version:
+                                            type: string
+                                        type: object
+                                    type: object
+                                  type: array
                                 replicas:
                                   items:
                                     properties:
@@ -18695,13 +20544,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
   - apiGroups:
     - '*'
@@ -18720,13 +20569,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
   - apiGroups:
     - "argoproj.io"
@@ -18745,13 +20594,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-repo-server
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
   - apiGroups:
     - '*'
@@ -18770,13 +20619,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
   - apiGroups:
       - '*'
@@ -18803,6 +20652,7 @@ rules:
       - argoproj.io
     resources:
       - applications
+      - applicationsets
     verbs:
       - get
       - list
@@ -18829,13 +20679,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -18851,13 +20701,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -18873,13 +20723,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-repo-server
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -18895,13 +20745,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -18918,13 +20768,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
 - apiGroups:
   - ""
@@ -18963,13 +20813,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
   - apiGroups:
     - argoproj.io
@@ -19058,13 +20908,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
 - apiGroups:
   - argoproj.io
@@ -19109,13 +20959,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/role.yaml
@@ -19125,13 +20975,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 rules:
 - apiGroups:
   - ""
@@ -19175,13 +21025,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -19198,13 +21048,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -19221,13 +21071,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -19244,13 +21094,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -19267,13 +21117,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -19290,13 +21140,13 @@ metadata:
   name: argocd-snapshot-test-application-controller-metrics
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   type: ClusterIP
   ports:
@@ -19315,13 +21165,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   type: ClusterIP
   ports:
@@ -19337,13 +21187,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
   name: argocd-snapshot-test-repo-server
   namespace: "default"
 spec:
@@ -19363,13 +21213,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   type: ClusterIP
   ports:
@@ -19392,13 +21242,13 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   ports:
   - name: redis
@@ -19415,13 +21265,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -19432,21 +21282,21 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: b94aa323a7239083ca14b320ba707d263233977a503f96cfcd49c1b66669237b
+        checksum/cmd-params: 0431f85e263321ed2fa2c4d4b8ebbc87e4cc9ddb997a283d5549298d255d348e
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-applicationset-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: applicationset-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-applicationset-controller
       containers:
         - name: applicationset-controller
-          image: quay.io/argoproj/argocd:v2.8.6
+          image: quay.io/argoproj/argocd:v2.9.0
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-applicationset-controller
@@ -19458,6 +21308,18 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
+            - name: ARGOCD_APPLICATIONSET_CONTROLLER_GLOBAL_PRESERVED_ANNOTATIONS
+              valueFrom:
+                configMapKeyRef:
+                  key: applicationsetcontroller.global.preserved.annotations
+                  name: argocd-cmd-params-cm
+                  optional: true
+            - name: ARGOCD_APPLICATIONSET_CONTROLLER_GLOBAL_PRESERVED_LABELS
+              valueFrom:
+                configMapKeyRef:
+                  key: applicationsetcontroller.global.preserved.labels
+                  name: argocd-cmd-params-cm
+                  optional: true
             - name: ARGOCD_APPLICATIONSET_CONTROLLER_ENABLE_LEADER_ELECTION
               valueFrom:
                 configMapKeyRef:
@@ -19643,13 +21505,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -19662,19 +21524,19 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-notifications-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: notifications-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-notifications-controller
       containers:
         - name: notifications-controller
-          image: quay.io/argoproj/argocd:v2.8.6
+          image: quay.io/argoproj/argocd:v2.9.0
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-notifications
@@ -19756,13 +21618,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -19773,22 +21635,22 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: b94aa323a7239083ca14b320ba707d263233977a503f96cfcd49c1b66669237b
-        checksum/cm: e171d001b12b53228aab3de19075caf43d546a8a9ca4e1e63b7195c25254a15e
+        checksum/cmd-params: 0431f85e263321ed2fa2c4d4b8ebbc87e4cc9ddb997a283d5549298d255d348e
+        checksum/cm: dbb3f8146ab83a95066671eefc4f98f9c64ed718cd7fae65924610ea3ffa6bb6
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-repo-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: repo-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-snapshot-test-repo-server
       containers:
       - name: repo-server
-        image: quay.io/argoproj/argocd:v2.8.6
+        image: quay.io/argoproj/argocd:v2.9.0
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-repo-server
@@ -19933,6 +21795,18 @@ spec:
                 key: reposerver.streamed.manifest.max.extracted.size
                 name: argocd-cmd-params-cm
                 optional: true
+          - name: ARGOCD_REPO_SERVER_HELM_MANIFEST_MAX_EXTRACTED_SIZE
+            valueFrom:
+              configMapKeyRef:
+                key: reposerver.helm.manifest.max.extracted.size
+                name: argocd-cmd-params-cm
+                optional: true
+          - name: ARGOCD_REPO_SERVER_DISABLE_HELM_MANIFEST_MAX_EXTRACTED_SIZE
+            valueFrom:
+              configMapKeyRef:
+                name: argocd-cmd-params-cm
+                key: reposerver.disable.helm.manifest.max.extracted.size
+                optional: true
           - name: ARGOCD_GIT_MODULES_ENABLED
             valueFrom:
               configMapKeyRef:
@@ -20004,7 +21878,7 @@ spec:
         - -n
         - /usr/local/bin/argocd
         - /var/run/argocd/argocd-cmp-server
-        image: quay.io/argoproj/argocd:v2.8.6
+        image: quay.io/argoproj/argocd:v2.9.0
         imagePullPolicy: IfNotPresent
         name: copyutil
         securityContext:
@@ -20068,13 +21942,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -20085,21 +21959,21 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: b94aa323a7239083ca14b320ba707d263233977a503f96cfcd49c1b66669237b
+        checksum/cmd-params: 0431f85e263321ed2fa2c4d4b8ebbc87e4cc9ddb997a283d5549298d255d348e
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-server
       containers:
       - name: server
-        image: quay.io/argoproj/argocd:v2.8.6
+        image: quay.io/argoproj/argocd:v2.9.0
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-server
@@ -20429,13 +22303,13 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -20445,13 +22319,13 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-redis
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       securityContext:
         runAsNonRoot: true
@@ -20577,13 +22451,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: "default"
   labels:
-    helm.sh/chart: argo-cd-5.50.1
+    helm.sh/chart: argo-cd-5.51.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.8.6"
+    app.kubernetes.io/version: "v2.9.0"
 spec:
   replicas: 1
   # TODO: Remove for breaking release as history limit cannot be patched
@@ -20596,16 +22470,16 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: b94aa323a7239083ca14b320ba707d263233977a503f96cfcd49c1b66669237b
-        checksum/cm: e171d001b12b53228aab3de19075caf43d546a8a9ca4e1e63b7195c25254a15e
+        checksum/cmd-params: 0431f85e263321ed2fa2c4d4b8ebbc87e4cc9ddb997a283d5549298d255d348e
+        checksum/cm: dbb3f8146ab83a95066671eefc4f98f9c64ed718cd7fae65924610ea3ffa6bb6
       labels:
-        helm.sh/chart: argo-cd-5.50.1
+        helm.sh/chart: argo-cd-5.51.1
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.8.6"
+        app.kubernetes.io/version: "v2.9.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-application-controller
@@ -20613,7 +22487,7 @@ spec:
       - args:
         - /usr/local/bin/argocd-application-controller
         - --metrics-port=8082
-        image: quay.io/argoproj/argocd:v2.8.6
+        image: quay.io/argoproj/argocd:v2.9.0
         imagePullPolicy: IfNotPresent
         name: application-controller
         env:
