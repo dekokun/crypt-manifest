@@ -4,9 +4,9 @@ dependencies:
   version: 3.11.0
 - name: sealed-secrets
   repository: https://bitnami-labs.github.io/sealed-secrets/
-  version: 2.14.0
+  version: 2.14.1
 - name: reloader
   repository: https://stakater.github.io/stakater-charts/
   version: 1.0.56
-digest: sha256:0449421e4c9bb8d3183a0552cc88d43956c07f62c691a72fb896d05aebb675d4
-generated: "2023-12-22T22:37:44.942652337Z"
+digest: sha256:55f9ef010f1ba45776399f5ab5a5548909488766b380fd30d7b5c01e40746967
+generated: "2023-12-23T13:28:19.395834575Z"
