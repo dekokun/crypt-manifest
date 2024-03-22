@@ -9,6 +9,6 @@ dependencies:
     version: 2.15.2
     repository: https://bitnami-labs.github.io/sealed-secrets/
   - name: reloader
-    version: 1.0.69
+    version: 1.0.71
     repository: https://stakater.github.io/stakater-charts/
 
