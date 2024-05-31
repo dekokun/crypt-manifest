@@ -8,15 +8,15 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   name: argocd-application-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-applicationset/serviceaccount.yaml
 apiVersion: v1
@@ -24,15 +24,15 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   name: argocd-applicationset-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-notifications/serviceaccount.yaml
 apiVersion: v1
@@ -40,15 +40,15 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   name: argocd-notifications-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-repo-server/serviceaccount.yaml
 apiVersion: v1
@@ -56,15 +56,15 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   name: argocd-snapshot-test-repo-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/serviceaccount.yaml
 apiVersion: v1
@@ -72,30 +72,30 @@ kind: ServiceAccount
 automountServiceAccountToken: true
 metadata:
   name: argocd-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
   name: argocd-notifications-secret
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 type: Opaque
 stringData:
 ---
@@ -104,15 +104,15 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: argocd-secret
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 type: Opaque
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-cm.yaml
@@ -120,15 +120,15 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   admin.enabled: "true"
   application.instanceLabelKey: argocd.argoproj.io/instance
@@ -144,15 +144,15 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cmd-params-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   application.namespaces: ""
   applicationsetcontroller.enable.leader.election: "false"
@@ -189,29 +189,29 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-gpg-keys-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-cm.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   context: |
     argocdUrl: https://argocd.example.com
@@ -221,15 +221,15 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   policy.csv: ""
   policy.default: ""
@@ -241,14 +241,14 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-ssh-known-hosts-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   ssh_known_hosts: |
     [ssh.github.com]:443 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
@@ -271,33 +271,34 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-tls-certs-cm
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 ---
 # Source: argocd/charts/argo-cd/templates/redis/health-configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-snapshot-test-redis-health-configmap
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 data:
   redis_liveness.sh: |
     response=$(
       redis-cli \\
+        -a "\${REDIS_PASSWORD}" --no-auth-warning \\
         -h localhost \\
         -p 6379 \\
         ping
@@ -310,6 +311,7 @@ data:
   redis_readiness.sh: |
     response=$(
       redis-cli \\
+        -a "\${REDIS_PASSWORD}" --no-auth-warning \\
         -h localhost \\
         -p 6379 \\
         ping
@@ -683,6 +685,10 @@ spec:
                                 definition in the format [old_image_name=]<image_name>:<image_tag>
                               type: string
                             type: array
+                          labelWithoutSelector:
+                            description: LabelWithoutSelector specifies whether to
+                              apply common labels to resource selectors or not
+                            type: boolean
                           namePrefix:
                             description: NamePrefix is a prefix appended to resources
                               for Kustomize apps
@@ -1018,6 +1024,10 @@ spec:
                                   image definition in the format [old_image_name=]<image_name>:<image_tag>
                                 type: string
                               type: array
+                            labelWithoutSelector:
+                              description: LabelWithoutSelector specifies whether
+                                to apply common labels to resource selectors or not
+                              type: boolean
                             namePrefix:
                               description: NamePrefix is a prefix appended to resources
                                 for Kustomize apps
@@ -1467,6 +1477,10 @@ spec:
                             definition in the format [old_image_name=]<image_name>:<image_tag>
                           type: string
                         type: array
+                      labelWithoutSelector:
+                        description: LabelWithoutSelector specifies whether to apply
+                          common labels to resource selectors or not
+                        type: boolean
                       namePrefix:
                         description: NamePrefix is a prefix appended to resources
                           for Kustomize apps
@@ -1792,6 +1806,10 @@ spec:
                               definition in the format [old_image_name=]<image_name>:<image_tag>
                             type: string
                           type: array
+                        labelWithoutSelector:
+                          description: LabelWithoutSelector specifies whether to apply
+                            common labels to resource selectors or not
+                          type: boolean
                         namePrefix:
                           description: NamePrefix is a prefix appended to resources
                             for Kustomize apps
@@ -2066,6 +2084,19 @@ spec:
                       description: ID is an auto incrementing identifier of the RevisionHistory
                       format: int64
                       type: integer
+                    initiatedBy:
+                      description: InitiatedBy contains information about who initiated
+                        the operations
+                      properties:
+                        automated:
+                          description: Automated is set to true if operation was initiated
+                            automatically by the application controller.
+                          type: boolean
+                        username:
+                          description: Username contains the name of a user who started
+                            operation
+                          type: string
+                      type: object
                     revision:
                       description: Revision holds the revision the sync was performed
                         against
@@ -2270,6 +2301,10 @@ spec:
                                   image definition in the format [old_image_name=]<image_name>:<image_tag>
                                 type: string
                               type: array
+                            labelWithoutSelector:
+                              description: LabelWithoutSelector specifies whether
+                                to apply common labels to resource selectors or not
+                              type: boolean
                             namePrefix:
                               description: NamePrefix is a prefix appended to resources
                                 for Kustomize apps
@@ -2608,6 +2643,11 @@ spec:
                                     image definition in the format [old_image_name=]<image_name>:<image_tag>
                                   type: string
                                 type: array
+                              labelWithoutSelector:
+                                description: LabelWithoutSelector specifies whether
+                                  to apply common labels to resource selectors or
+                                  not
+                                type: boolean
                               namePrefix:
                                 description: NamePrefix is a prefix appended to resources
                                   for Kustomize apps
@@ -3091,6 +3131,11 @@ spec:
                                         image definition in the format [old_image_name=]<image_name>:<image_tag>
                                       type: string
                                     type: array
+                                  labelWithoutSelector:
+                                    description: LabelWithoutSelector specifies whether
+                                      to apply common labels to resource selectors
+                                      or not
+                                    type: boolean
                                   namePrefix:
                                     description: NamePrefix is a prefix appended to
                                       resources for Kustomize apps
@@ -3447,6 +3492,11 @@ spec:
                                           image definition in the format [old_image_name=]<image_name>:<image_tag>
                                         type: string
                                       type: array
+                                    labelWithoutSelector:
+                                      description: LabelWithoutSelector specifies
+                                        whether to apply common labels to resource
+                                        selectors or not
+                                      type: boolean
                                     namePrefix:
                                       description: NamePrefix is a prefix appended
                                         to resources for Kustomize apps
@@ -3917,6 +3967,11 @@ spec:
                                     image definition in the format [old_image_name=]<image_name>:<image_tag>
                                   type: string
                                 type: array
+                              labelWithoutSelector:
+                                description: LabelWithoutSelector specifies whether
+                                  to apply common labels to resource selectors or
+                                  not
+                                type: boolean
                               namePrefix:
                                 description: NamePrefix is a prefix appended to resources
                                   for Kustomize apps
@@ -4266,6 +4321,11 @@ spec:
                                       image definition in the format [old_image_name=]<image_name>:<image_tag>
                                     type: string
                                   type: array
+                                labelWithoutSelector:
+                                  description: LabelWithoutSelector specifies whether
+                                    to apply common labels to resource selectors or
+                                    not
+                                  type: boolean
                                 namePrefix:
                                   description: NamePrefix is a prefix appended to
                                     resources for Kustomize apps
@@ -4758,6 +4818,11 @@ spec:
                                     image definition in the format [old_image_name=]<image_name>:<image_tag>
                                   type: string
                                 type: array
+                              labelWithoutSelector:
+                                description: LabelWithoutSelector specifies whether
+                                  to apply common labels to resource selectors or
+                                  not
+                                type: boolean
                               namePrefix:
                                 description: NamePrefix is a prefix appended to resources
                                   for Kustomize apps
@@ -5107,6 +5172,11 @@ spec:
                                       image definition in the format [old_image_name=]<image_name>:<image_tag>
                                     type: string
                                   type: array
+                                labelWithoutSelector:
+                                  description: LabelWithoutSelector specifies whether
+                                    to apply common labels to resource selectors or
+                                    not
+                                  type: boolean
                                 namePrefix:
                                   description: NamePrefix is a prefix appended to
                                     resources for Kustomize apps
@@ -5539,6 +5609,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -5753,6 +5825,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -6126,6 +6200,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -6340,6 +6416,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -6717,6 +6795,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -6931,6 +7011,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -7288,6 +7370,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -7502,6 +7586,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -7881,6 +7967,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -8095,6 +8183,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -8468,6 +8558,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -8682,6 +8774,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -9059,6 +9153,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -9273,6 +9369,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -9630,6 +9728,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -9844,6 +9944,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -10209,6 +10311,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -10423,6 +10527,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -10970,6 +11076,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -11184,6 +11292,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -11726,6 +11836,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -11940,6 +12052,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -12311,6 +12425,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -12525,6 +12641,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -12906,6 +13024,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -13120,6 +13240,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -13493,6 +13615,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -13707,6 +13831,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -14084,6 +14210,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -14298,6 +14426,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -14655,6 +14785,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -14869,6 +15001,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -15234,6 +15368,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -15448,6 +15584,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -15995,6 +16133,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -16209,6 +16349,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -16751,6 +16893,8 @@ spec:
                                                     items:
                                                       type: string
                                                     type: array
+                                                  labelWithoutSelector:
+                                                    type: boolean
                                                   namePrefix:
                                                     type: string
                                                   nameSuffix:
@@ -16965,6 +17109,8 @@ spec:
                                                       items:
                                                         type: string
                                                       type: array
+                                                    labelWithoutSelector:
+                                                      type: boolean
                                                     namePrefix:
                                                       type: string
                                                     nameSuffix:
@@ -17340,6 +17486,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -17554,6 +17702,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -17918,6 +18068,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -18132,6 +18284,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -18679,6 +18833,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -18893,6 +19049,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -19435,6 +19593,8 @@ spec:
                                           items:
                                             type: string
                                           type: array
+                                        labelWithoutSelector:
+                                          type: boolean
                                         namePrefix:
                                           type: string
                                         nameSuffix:
@@ -19649,6 +19809,8 @@ spec:
                                             items:
                                               type: string
                                             type: array
+                                          labelWithoutSelector:
+                                            type: boolean
                                           namePrefix:
                                             type: string
                                           nameSuffix:
@@ -20095,6 +20257,8 @@ spec:
                                 items:
                                   type: string
                                 type: array
+                              labelWithoutSelector:
+                                type: boolean
                               namePrefix:
                                 type: string
                               nameSuffix:
@@ -20309,6 +20473,8 @@ spec:
                                   items:
                                     type: string
                                   type: array
+                                labelWithoutSelector:
+                                  type: boolean
                                 namePrefix:
                                   type: string
                                 nameSuffix:
@@ -20854,13 +21020,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
   - apiGroups:
     - '*'
@@ -20879,13 +21045,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
   - apiGroups:
     - argoproj.io
@@ -20929,13 +21095,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
   - apiGroups:
       - '*'
@@ -20989,13 +21155,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21011,13 +21177,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21033,13 +21199,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21054,15 +21220,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: argocd-snapshot-test-application-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
 - apiGroups:
   - ""
@@ -21107,15 +21273,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: argocd-snapshot-test-applicationset-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
   - apiGroups:
     - argoproj.io
@@ -21202,15 +21368,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: argocd-snapshot-test-notifications-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
 - apiGroups:
   - argoproj.io
@@ -21253,15 +21419,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: argocd-snapshot-test-repo-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/role.yaml
@@ -21269,15 +21435,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: argocd-snapshot-test-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 rules:
 - apiGroups:
   - ""
@@ -21319,38 +21485,38 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: argocd-snapshot-test-application-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
   name: argocd-snapshot-test-application-controller
 subjects:
-- kind: ServiceAccount
-  name: argocd-application-controller
-  namespace: default
+  - kind: ServiceAccount
+    name: argocd-application-controller
+    namespace: default
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-applicationset/rolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: argocd-snapshot-test-applicationset-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21365,15 +21531,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: argocd-snapshot-test-notifications-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21388,15 +21554,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: argocd-snapshot-test-repo-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21411,15 +21577,15 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: argocd-snapshot-test-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21434,17 +21600,17 @@ apiVersion: v1
 kind: Service
 metadata:
   name: argocd-snapshot-test-application-controller-metrics
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
-  type: ClusterIP
+  type: ClusterIP  
   ports:
   - name: http-metrics
     protocol: TCP
@@ -21459,17 +21625,17 @@ apiVersion: v1
 kind: Service
 metadata:
   name: argocd-snapshot-test-applicationset-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
-  type: ClusterIP
+  type: ClusterIP  
   ports:
   - name: http-webhook
     port: 7000
@@ -21483,16 +21649,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
   name: argocd-snapshot-test-repo-server
-  namespace: "default"
-spec:
+  namespace: default
+spec:  
   ports:
   - name: tcp-repo-server
     protocol: TCP
@@ -21507,17 +21673,18 @@ apiVersion: v1
 kind: Service
 metadata:
   name: argocd-snapshot-test-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
-  type: ClusterIP
+  type: ClusterIP  
+  sessionAffinity: None
   ports:
   - name: http
     protocol: TCP
@@ -21536,16 +21703,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: argocd-snapshot-test-redis
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
-spec:
+    app.kubernetes.io/version: "v2.11.2"
+spec:  
   ports:
   - name: redis
     port: 6379
@@ -21559,15 +21726,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argocd-snapshot-test-applicationset-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21578,22 +21745,22 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 623cd202dd197aecb6c9edcb245c39fcaddb320c815fb6b5a199a20e03a472bc
+        checksum/cmd-params: 77623ebd43a3f146f6a8ef5cbc0ed4934ed564bbf5fb1b1a570443bb5c39d55c
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-applicationset-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: applicationset-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-applicationset-controller
       automountServiceAccountToken: true
       containers:
         - name: applicationset-controller
-          image: quay.io/argoproj/argocd:v2.10.9
+          image: quay.io/argoproj/argocd:v2.11.2
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-applicationset-controller
@@ -21806,15 +21973,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argocd-snapshot-test-notifications-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21827,20 +21994,20 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-notifications-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: notifications-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-notifications-controller
       automountServiceAccountToken: true
       containers:
         - name: notifications-controller
-          image: quay.io/argoproj/argocd:v2.10.9
+          image: quay.io/argoproj/argocd:v2.11.2
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-notifications
@@ -21927,15 +22094,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argocd-snapshot-test-repo-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21946,23 +22113,23 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 623cd202dd197aecb6c9edcb245c39fcaddb320c815fb6b5a199a20e03a472bc
-        checksum/cm: 1e7dce36f99b64de08c89eaa909c379d2fc1e4dceb7c53113826a341135be793
+        checksum/cmd-params: 77623ebd43a3f146f6a8ef5cbc0ed4934ed564bbf5fb1b1a570443bb5c39d55c
+        checksum/cm: 983512ec325ad75d1df6093cf0c092972f8b5b16949cd5e473c2e3d62c36295f
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-repo-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: repo-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-snapshot-test-repo-server
       automountServiceAccountToken: true
       containers:
       - name: repo-server
-        image: quay.io/argoproj/argocd:v2.10.9
+        image: quay.io/argoproj/argocd:v2.11.2
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-repo-server
@@ -22058,15 +22225,14 @@ spec:
           - name: REDIS_USERNAME
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
+                name: argocd-redis
                 key: redis-username
                 optional: true
           - name: REDIS_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
-                key: redis-password
-                optional: true
+                name: argocd-redis
+                key: auth
           - name: ARGOCD_DEFAULT_CACHE_EXPIRATION
             valueFrom:
               configMapKeyRef:
@@ -22151,6 +22317,12 @@ spec:
                 key: reposerver.git.request.timeout
                 name: argocd-cmd-params-cm
                 optional: true
+          - name: ARGOCD_REVISION_CACHE_LOCK_TIMEOUT
+            valueFrom:
+              configMapKeyRef:
+                key: reposerver.revision.cache.lock.timeout
+                name: argocd-cmd-params-cm
+                optional: true
           - name: HELM_CACHE_HOME
             value: /helm-working-dir
           - name: HELM_CONFIG_HOME
@@ -22216,7 +22388,7 @@ spec:
         - -n
         - /usr/local/bin/argocd
         - /var/run/argocd/argocd-cmp-server
-        image: quay.io/argoproj/argocd:v2.10.9
+        image: quay.io/argoproj/argocd:v2.11.2
         imagePullPolicy: IfNotPresent
         name: copyutil
         securityContext:
@@ -22278,15 +22450,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argocd-snapshot-test-server
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -22297,23 +22469,23 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 623cd202dd197aecb6c9edcb245c39fcaddb320c815fb6b5a199a20e03a472bc
-        checksum/cm: 1e7dce36f99b64de08c89eaa909c379d2fc1e4dceb7c53113826a341135be793
+        checksum/cmd-params: 77623ebd43a3f146f6a8ef5cbc0ed4934ed564bbf5fb1b1a570443bb5c39d55c
+        checksum/cm: 983512ec325ad75d1df6093cf0c092972f8b5b16949cd5e473c2e3d62c36295f
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-server
       automountServiceAccountToken: true
       containers:
       - name: server
-        image: quay.io/argoproj/argocd:v2.10.9
+        image: quay.io/argoproj/argocd:v2.11.2
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-server
@@ -22488,15 +22660,14 @@ spec:
           - name: REDIS_USERNAME
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
+                name: argocd-redis
                 key: redis-username
                 optional: true
           - name: REDIS_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
-                key: redis-password
-                optional: true
+                name: argocd-redis
+                key: auth
           - name: ARGOCD_DEFAULT_CACHE_EXPIRATION
             valueFrom:
               configMapKeyRef:
@@ -22673,15 +22844,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argocd-snapshot-test-redis
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -22691,13 +22862,13 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-redis
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       securityContext:
         runAsNonRoot: true
@@ -22716,6 +22887,13 @@ spec:
         - ""
         - --appendonly
         - "no"
+        - --requirepass $(REDIS_PASSWORD)
+        env:
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: argocd-redis
+              key: auth
         ports:
         - name: redis
           containerPort: 6379
@@ -22830,15 +23008,15 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: argocd-snapshot-test-application-controller
-  namespace: "default"
+  namespace: default
   labels:
-    helm.sh/chart: argo-cd-6.7.18
+    helm.sh/chart: argo-cd-7.1.0
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.10.9"
+    app.kubernetes.io/version: "v2.11.2"
 spec:
   replicas: 1
   revisionHistoryLimit: 5
@@ -22850,16 +23028,16 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 623cd202dd197aecb6c9edcb245c39fcaddb320c815fb6b5a199a20e03a472bc
-        checksum/cm: 1e7dce36f99b64de08c89eaa909c379d2fc1e4dceb7c53113826a341135be793
+        checksum/cmd-params: 77623ebd43a3f146f6a8ef5cbc0ed4934ed564bbf5fb1b1a570443bb5c39d55c
+        checksum/cm: 983512ec325ad75d1df6093cf0c092972f8b5b16949cd5e473c2e3d62c36295f
       labels:
-        helm.sh/chart: argo-cd-6.7.18
+        helm.sh/chart: argo-cd-7.1.0
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.10.9"
+        app.kubernetes.io/version: "v2.11.2"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-application-controller
@@ -22868,7 +23046,7 @@ spec:
       - args:
         - /usr/local/bin/argocd-application-controller
         - --metrics-port=8082
-        image: quay.io/argoproj/argocd:v2.10.9
+        image: quay.io/argoproj/argocd:v2.11.2
         imagePullPolicy: IfNotPresent
         name: application-controller
         env:
@@ -22993,15 +23171,14 @@ spec:
           - name: REDIS_USERNAME
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
+                name: argocd-redis
                 key: redis-username
                 optional: true
           - name: REDIS_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: argocd-snapshot-test-redis
-                key: redis-password
-                optional: true
+                name: argocd-redis
+                key: auth
           - name: ARGOCD_DEFAULT_CACHE_EXPIRATION
             valueFrom:
               configMapKeyRef:
@@ -23228,6 +23405,134 @@ spec:
       creationTimestamp: null
       name: mackerel
       namespace: argocd
+---
+# Source: argocd/charts/argo-cd/templates/redis-secret-init/serviceaccount.yaml
+apiVersion: v1
+kind: ServiceAccount
+automountServiceAccountToken: true
+metadata:
+  name: argocd-snapshot-test-redis-secret-init
+  namespace: "default"
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+  labels:
+    helm.sh/chart: argo-cd-7.1.0
+    app.kubernetes.io/name: argocd-redis-secret-init
+    app.kubernetes.io/instance: argocd-snapshot-test
+    app.kubernetes.io/component: redis-secret-init
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: "v2.11.2"
+---
+# Source: argocd/charts/argo-cd/templates/redis-secret-init/role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+  labels:
+    helm.sh/chart: argo-cd-7.1.0
+    app.kubernetes.io/name: argocd-redis-secret-init
+    app.kubernetes.io/instance: argocd-snapshot-test
+    app.kubernetes.io/component: redis-secret-init
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: "v2.11.2"
+  name: argocd-snapshot-test-redis-secret-init
+  namespace: "default"
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    resourceNames:
+      - argocd-redis
+    verbs:
+      - get
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - create
+---
+# Source: argocd/charts/argo-cd/templates/redis-secret-init/rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+  labels:
+    helm.sh/chart: argo-cd-7.1.0
+    app.kubernetes.io/name: argocd-redis-secret-init
+    app.kubernetes.io/instance: argocd-snapshot-test
+    app.kubernetes.io/component: redis-secret-init
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: "v2.11.2"
+  name: argocd-snapshot-test-redis-secret-init
+  namespace: "default"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: argocd-snapshot-test-redis-secret-init
+subjects:
+  - kind: ServiceAccount
+    name: argocd-snapshot-test-redis-secret-init
+---
+# Source: argocd/charts/argo-cd/templates/redis-secret-init/job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: argocd-snapshot-test-redis-secret-init
+  namespace: "default"
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": before-hook-creation
+  labels:
+    helm.sh/chart: argo-cd-7.1.0
+    app.kubernetes.io/name: argocd-redis-secret-init
+    app.kubernetes.io/instance: argocd-snapshot-test
+    app.kubernetes.io/component: redis-secret-init
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/version: "v2.11.2"
+spec:
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: argo-cd-7.1.0
+        app.kubernetes.io/name: argocd-redis-secret-init
+        app.kubernetes.io/instance: argocd-snapshot-test
+        app.kubernetes.io/component: redis-secret-init
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/part-of: argocd
+        app.kubernetes.io/version: "v2.11.2"
+    spec:
+      containers:
+      - command:
+          - argocd
+          - admin
+          - redis-initial-password
+        image: quay.io/argoproj/argocd:v2.11.2
+        imagePullPolicy: IfNotPresent
+        name: secret-init
+        resources:
+          {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+      restartPolicy: OnFailure
+      serviceAccountName: argocd-snapshot-test-redis-secret-init
 "
 `;
 
