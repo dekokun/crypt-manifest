@@ -10,13 +10,13 @@ metadata:
   name: argocd-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-applicationset/serviceaccount.yaml
 apiVersion: v1
@@ -26,13 +26,13 @@ metadata:
   name: argocd-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-notifications/serviceaccount.yaml
 apiVersion: v1
@@ -42,13 +42,13 @@ metadata:
   name: argocd-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-repo-server/serviceaccount.yaml
 apiVersion: v1
@@ -58,13 +58,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/serviceaccount.yaml
 apiVersion: v1
@@ -74,13 +74,13 @@ metadata:
   name: argocd-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-secret.yaml
 apiVersion: v1
@@ -89,13 +89,13 @@ metadata:
   name: argocd-notifications-secret
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 type: Opaque
 stringData:
 ---
@@ -106,13 +106,13 @@ metadata:
   name: argocd-secret
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 type: Opaque
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-cm.yaml
@@ -122,13 +122,13 @@ metadata:
   name: argocd-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   admin.enabled: "true"
   application.instanceLabelKey: argocd.argoproj.io/instance
@@ -146,13 +146,13 @@ metadata:
   name: argocd-cmd-params-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   application.namespaces: ""
   applicationsetcontroller.enable.leader.election: "false"
@@ -191,12 +191,12 @@ metadata:
   name: argocd-gpg-keys-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-configs/argocd-notifications-cm.yaml
 apiVersion: v1
@@ -205,13 +205,13 @@ metadata:
   name: argocd-notifications-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   context: |
     argocdUrl: https://argocd.example.com
@@ -223,13 +223,13 @@ metadata:
   name: argocd-rbac-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   policy.csv: ""
   policy.default: ""
@@ -243,12 +243,12 @@ metadata:
   name: argocd-ssh-known-hosts-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   ssh_known_hosts: |
     [ssh.github.com]:443 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
@@ -273,12 +273,12 @@ metadata:
   name: argocd-tls-certs-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/redis/health-configmap.yaml
 apiVersion: v1
@@ -287,13 +287,13 @@ metadata:
   name: argocd-snapshot-test-redis-health-configmap
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 data:
   redis_liveness.sh: |
     response=$(
@@ -371,20 +371,29 @@ spec:
       name: Revision
       priority: 10
       type: string
+    - jsonPath: .spec.project
+      name: Project
+      priority: 10
+      type: string
     name: v1alpha1
     schema:
       openAPIV3Schema:
         description: Application is a definition of Application resource.
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
             type: string
           metadata:
             type: object
@@ -482,22 +491,21 @@ spec:
                       type: object
                     type: array
                   revision:
-                    description: Revision is the revision (Git) or chart version (Helm)
-                      which to sync the application to If omitted, will use the revision
-                      specified in app spec.
+                    description: |-
+                      Revision is the revision (Git) or chart version (Helm) which to sync the application to
+                      If omitted, will use the revision specified in app spec.
                     type: string
                   revisions:
-                    description: Revisions is the list of revision (Git) or chart
-                      version (Helm) which to sync each source in sources field for
-                      the application to If omitted, will use the revision specified
-                      in app spec.
+                    description: |-
+                      Revisions is the list of revision (Git) or chart version (Helm) which to sync each source in sources field for the application to
+                      If omitted, will use the revision specified in app spec.
                     items:
                       type: string
                     type: array
                   source:
-                    description: Source overrides the source definition set in the
-                      application. This is typically set in a Rollback operation and
-                      is nil during a Sync operation
+                    description: |-
+                      Source overrides the source definition set in the application.
+                      This is typically set in a Rollback operation and is nil during a Sync operation
                     properties:
                       chart:
                         description: Chart is a Helm chart name, and must be specified
@@ -818,18 +826,18 @@ spec:
                           Helm) that contains the application manifests
                         type: string
                       targetRevision:
-                        description: TargetRevision defines the revision of the source
-                          to sync the application to. In case of Git, this can be
-                          commit, tag, or branch. If omitted, will equal to HEAD.
+                        description: |-
+                          TargetRevision defines the revision of the source to sync the application to.
+                          In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
                           In case of Helm, this is a semver tag for the Chart's version.
                         type: string
                     required:
                     - repoURL
                     type: object
                   sources:
-                    description: Sources overrides the source definition set in the
-                      application. This is typically set in a Rollback operation and
-                      is nil during a Sync operation
+                    description: |-
+                      Sources overrides the source definition set in the application.
+                      This is typically set in a Rollback operation and is nil during a Sync operation
                     items:
                       description: ApplicationSource contains all required information
                         about the source of an application
@@ -1157,11 +1165,10 @@ spec:
                             Helm) that contains the application manifests
                           type: string
                         targetRevision:
-                          description: TargetRevision defines the revision of the
-                            source to sync the application to. In case of Git, this
-                            can be commit, tag, or branch. If omitted, will equal
-                            to HEAD. In case of Helm, this is a semver tag for the
-                            Chart's version.
+                          description: |-
+                            TargetRevision defines the revision of the source to sync the application to.
+                            In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                            In case of Helm, this is a semver tag for the Chart's version.
                           type: string
                       required:
                       - repoURL
@@ -1180,10 +1187,10 @@ spec:
                           the sync.
                         properties:
                           force:
-                            description: Force indicates whether or not to supply
-                              the --force flag to \`kubectl apply\`. The --force flag
-                              deletes and re-create the resource, when PATCH encounters
-                              conflict and has retried for 5 times.
+                            description: |-
+                              Force indicates whether or not to supply the --force flag to \`kubectl apply\`.
+                              The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
+                              retried for 5 times.
                             type: boolean
                         type: object
                       hook:
@@ -1191,10 +1198,10 @@ spec:
                           perform the sync. This is the default strategy
                         properties:
                           force:
-                            description: Force indicates whether or not to supply
-                              the --force flag to \`kubectl apply\`. The --force flag
-                              deletes and re-create the resource, when PATCH encounters
-                              conflict and has retried for 5 times.
+                            description: |-
+                              Force indicates whether or not to supply the --force flag to \`kubectl apply\`.
+                              The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
+                              retried for 5 times.
                             type: boolean
                         type: object
                     type: object
@@ -1215,9 +1222,9 @@ spec:
                       not set.
                     type: string
                   namespace:
-                    description: Namespace specifies the target namespace for the
-                      application's resources. The namespace will only be set for
-                      namespace-scoped resources that have not set a value for .metadata.namespace
+                    description: |-
+                      Namespace specifies the target namespace for the application's resources.
+                      The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
                     type: string
                   server:
                     description: Server specifies the URL of the target cluster's
@@ -1246,10 +1253,9 @@ spec:
                     kind:
                       type: string
                     managedFieldsManagers:
-                      description: ManagedFieldsManagers is a list of trusted managers.
-                        Fields mutated by those managers will take precedence over
-                        the desired state defined in the SCM and won't be displayed
-                        in diffs
+                      description: |-
+                        ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the
+                        desired state defined in the SCM and won't be displayed in diffs
                       items:
                         type: string
                       type: array
@@ -1276,18 +1282,17 @@ spec:
                   type: object
                 type: array
               project:
-                description: Project is a reference to the project this application
-                  belongs to. The empty string means that application belongs to the
-                  'default' project.
+                description: |-
+                  Project is a reference to the project this application belongs to.
+                  The empty string means that application belongs to the 'default' project.
                 type: string
               revisionHistoryLimit:
-                description: RevisionHistoryLimit limits the number of items kept
-                  in the application's revision history, which is used for informational
-                  purposes as well as for rollbacks to previous versions. This should
-                  only be changed in exceptional circumstances. Setting to zero will
-                  store no history. This will reduce storage used. Increasing will
-                  increase the space used to store the history, so we do not recommend
-                  increasing it. Default is 10.
+                description: |-
+                  RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for informational purposes as well as for rollbacks to previous versions.
+                  This should only be changed in exceptional circumstances.
+                  Setting to zero will store no history. This will reduce storage used.
+                  Increasing will increase the space used to store the history, so we do not recommend increasing it.
+                  Default is 10.
                 format: int64
                 type: integer
               source:
@@ -1606,10 +1611,10 @@ spec:
                       that contains the application manifests
                     type: string
                   targetRevision:
-                    description: TargetRevision defines the revision of the source
-                      to sync the application to. In case of Git, this can be commit,
-                      tag, or branch. If omitted, will equal to HEAD. In case of Helm,
-                      this is a semver tag for the Chart's version.
+                    description: |-
+                      TargetRevision defines the revision of the source to sync the application to.
+                      In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                      In case of Helm, this is a semver tag for the Chart's version.
                     type: string
                 required:
                 - repoURL
@@ -1938,10 +1943,10 @@ spec:
                         that contains the application manifests
                       type: string
                     targetRevision:
-                      description: TargetRevision defines the revision of the source
-                        to sync the application to. In case of Git, this can be commit,
-                        tag, or branch. If omitted, will equal to HEAD. In case of
-                        Helm, this is a semver tag for the Chart's version.
+                      description: |-
+                        TargetRevision defines the revision of the source to sync the application to.
+                        In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                        In case of Helm, this is a semver tag for the Chart's version.
                       type: string
                   required:
                   - repoURL
@@ -2434,11 +2439,10 @@ spec:
                             Helm) that contains the application manifests
                           type: string
                         targetRevision:
-                          description: TargetRevision defines the revision of the
-                            source to sync the application to. In case of Git, this
-                            can be commit, tag, or branch. If omitted, will equal
-                            to HEAD. In case of Helm, this is a semver tag for the
-                            Chart's version.
+                          description: |-
+                            TargetRevision defines the revision of the source to sync the application to.
+                            In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                            In case of Helm, this is a semver tag for the Chart's version.
                           type: string
                       required:
                       - repoURL
@@ -2780,11 +2784,10 @@ spec:
                               or Helm) that contains the application manifests
                             type: string
                           targetRevision:
-                            description: TargetRevision defines the revision of the
-                              source to sync the application to. In case of Git, this
-                              can be commit, tag, or branch. If omitted, will equal
-                              to HEAD. In case of Helm, this is a semver tag for the
-                              Chart's version.
+                            description: |-
+                              TargetRevision defines the revision of the source to sync the application to.
+                              In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                              In case of Helm, this is a semver tag for the Chart's version.
                             type: string
                         required:
                         - repoURL
@@ -2796,9 +2799,9 @@ spec:
                   type: object
                 type: array
               observedAt:
-                description: 'ObservedAt indicates when the application state was
-                  updated without querying latest git state Deprecated: controller
-                  no longer updates ObservedAt field'
+                description: |-
+                  ObservedAt indicates when the application state was updated without querying latest git state
+                  Deprecated: controller no longer updates ObservedAt field
                 format: date-time
                 type: string
               operationState:
@@ -2911,22 +2914,21 @@ spec:
                               type: object
                             type: array
                           revision:
-                            description: Revision is the revision (Git) or chart version
-                              (Helm) which to sync the application to If omitted,
-                              will use the revision specified in app spec.
+                            description: |-
+                              Revision is the revision (Git) or chart version (Helm) which to sync the application to
+                              If omitted, will use the revision specified in app spec.
                             type: string
                           revisions:
-                            description: Revisions is the list of revision (Git) or
-                              chart version (Helm) which to sync each source in sources
-                              field for the application to If omitted, will use the
-                              revision specified in app spec.
+                            description: |-
+                              Revisions is the list of revision (Git) or chart version (Helm) which to sync each source in sources field for the application to
+                              If omitted, will use the revision specified in app spec.
                             items:
                               type: string
                             type: array
                           source:
-                            description: Source overrides the source definition set
-                              in the application. This is typically set in a Rollback
-                              operation and is nil during a Sync operation
+                            description: |-
+                              Source overrides the source definition set in the application.
+                              This is typically set in a Rollback operation and is nil during a Sync operation
                             properties:
                               chart:
                                 description: Chart is a Helm chart name, and must
@@ -3269,19 +3271,18 @@ spec:
                                   (Git or Helm) that contains the application manifests
                                 type: string
                               targetRevision:
-                                description: TargetRevision defines the revision of
-                                  the source to sync the application to. In case of
-                                  Git, this can be commit, tag, or branch. If omitted,
-                                  will equal to HEAD. In case of Helm, this is a semver
-                                  tag for the Chart's version.
+                                description: |-
+                                  TargetRevision defines the revision of the source to sync the application to.
+                                  In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                                  In case of Helm, this is a semver tag for the Chart's version.
                                 type: string
                             required:
                             - repoURL
                             type: object
                           sources:
-                            description: Sources overrides the source definition set
-                              in the application. This is typically set in a Rollback
-                              operation and is nil during a Sync operation
+                            description: |-
+                              Sources overrides the source definition set in the application.
+                              This is typically set in a Rollback operation and is nil during a Sync operation
                             items:
                               description: ApplicationSource contains all required
                                 information about the source of an application
@@ -3632,11 +3633,10 @@ spec:
                                     (Git or Helm) that contains the application manifests
                                   type: string
                                 targetRevision:
-                                  description: TargetRevision defines the revision
-                                    of the source to sync the application to. In case
-                                    of Git, this can be commit, tag, or branch. If
-                                    omitted, will equal to HEAD. In case of Helm,
-                                    this is a semver tag for the Chart's version.
+                                  description: |-
+                                    TargetRevision defines the revision of the source to sync the application to.
+                                    In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                                    In case of Helm, this is a semver tag for the Chart's version.
                                   type: string
                               required:
                               - repoURL
@@ -3657,11 +3657,10 @@ spec:
                                   to perform the sync.
                                 properties:
                                   force:
-                                    description: Force indicates whether or not to
-                                      supply the --force flag to \`kubectl apply\`.
-                                      The --force flag deletes and re-create the resource,
-                                      when PATCH encounters conflict and has retried
-                                      for 5 times.
+                                    description: |-
+                                      Force indicates whether or not to supply the --force flag to \`kubectl apply\`.
+                                      The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
+                                      retried for 5 times.
                                     type: boolean
                                 type: object
                               hook:
@@ -3669,11 +3668,10 @@ spec:
                                   to perform the sync. This is the default strategy
                                 properties:
                                   force:
-                                    description: Force indicates whether or not to
-                                      supply the --force flag to \`kubectl apply\`.
-                                      The --force flag deletes and re-create the resource,
-                                      when PATCH encounters conflict and has retried
-                                      for 5 times.
+                                    description: |-
+                                      Force indicates whether or not to supply the --force flag to \`kubectl apply\`.
+                                      The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
+                                      retried for 5 times.
                                     type: boolean
                                 type: object
                             type: object
@@ -3717,9 +3715,9 @@ spec:
                               description: Group specifies the API group of the resource
                               type: string
                             hookPhase:
-                              description: HookPhase contains the state of any operation
-                                associated with this resource OR hook This can also
-                                contain values for non-hook resources.
+                              description: |-
+                                HookPhase contains the state of any operation associated with this resource OR hook
+                                This can also contain values for non-hook resources.
                               type: string
                             hookType:
                               description: HookType specifies the type of the hook.
@@ -4104,11 +4102,10 @@ spec:
                               or Helm) that contains the application manifests
                             type: string
                           targetRevision:
-                            description: TargetRevision defines the revision of the
-                              source to sync the application to. In case of Git, this
-                              can be commit, tag, or branch. If omitted, will equal
-                              to HEAD. In case of Helm, this is a semver tag for the
-                              Chart's version.
+                            description: |-
+                              TargetRevision defines the revision of the source to sync the application to.
+                              In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                              In case of Helm, this is a semver tag for the Chart's version.
                             type: string
                         required:
                         - repoURL
@@ -4459,11 +4456,10 @@ spec:
                                 or Helm) that contains the application manifests
                               type: string
                             targetRevision:
-                              description: TargetRevision defines the revision of
-                                the source to sync the application to. In case of
-                                Git, this can be commit, tag, or branch. If omitted,
-                                will equal to HEAD. In case of Helm, this is a semver
-                                tag for the Chart's version.
+                              description: |-
+                                TargetRevision defines the revision of the source to sync the application to.
+                                In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                                In case of Helm, this is a semver tag for the Chart's version.
                               type: string
                           required:
                           - repoURL
@@ -4490,8 +4486,9 @@ spec:
                 description: Resources is a list of Kubernetes resources managed by
                   this application
                 items:
-                  description: 'ResourceStatus holds the current sync and health status
-                    of a resource TODO: describe members of this type'
+                  description: |-
+                    ResourceStatus holds the current sync and health status of a resource
+                    TODO: describe members of this type
                   properties:
                     group:
                       type: string
@@ -4574,10 +4571,9 @@ spec:
                               if Server is not set.
                             type: string
                           namespace:
-                            description: Namespace specifies the target namespace
-                              for the application's resources. The namespace will
-                              only be set for namespace-scoped resources that have
-                              not set a value for .metadata.namespace
+                            description: |-
+                              Namespace specifies the target namespace for the application's resources.
+                              The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
                             type: string
                           server:
                             description: Server specifies the URL of the target cluster's
@@ -4606,10 +4602,9 @@ spec:
                             kind:
                               type: string
                             managedFieldsManagers:
-                              description: ManagedFieldsManagers is a list of trusted
-                                managers. Fields mutated by those managers will take
-                                precedence over the desired state defined in the SCM
-                                and won't be displayed in diffs
+                              description: |-
+                                ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the
+                                desired state defined in the SCM and won't be displayed in diffs
                               items:
                                 type: string
                               type: array
@@ -4955,11 +4950,10 @@ spec:
                               or Helm) that contains the application manifests
                             type: string
                           targetRevision:
-                            description: TargetRevision defines the revision of the
-                              source to sync the application to. In case of Git, this
-                              can be commit, tag, or branch. If omitted, will equal
-                              to HEAD. In case of Helm, this is a semver tag for the
-                              Chart's version.
+                            description: |-
+                              TargetRevision defines the revision of the source to sync the application to.
+                              In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                              In case of Helm, this is a semver tag for the Chart's version.
                             type: string
                         required:
                         - repoURL
@@ -5310,11 +5304,10 @@ spec:
                                 or Helm) that contains the application manifests
                               type: string
                             targetRevision:
-                              description: TargetRevision defines the revision of
-                                the source to sync the application to. In case of
-                                Git, this can be commit, tag, or branch. If omitted,
-                                will equal to HEAD. In case of Helm, this is a semver
-                                tag for the Chart's version.
+                              description: |-
+                                TargetRevision defines the revision of the source to sync the application to.
+                                In case of Git, this can be commit, tag, or branch. If omitted, will equal to HEAD.
+                                In case of Helm, this is a semver tag for the Chart's version.
                               type: string
                           required:
                           - repoURL
@@ -5414,6 +5407,7 @@ spec:
                                 type: string
                               type: object
                           type: object
+                          x-kubernetes-map-type: atomic
                         name:
                           type: string
                         requeueAfterSeconds:
@@ -6010,6 +6004,7 @@ spec:
                                 type: string
                               type: object
                           type: object
+                          x-kubernetes-map-type: atomic
                         template:
                           properties:
                             metadata:
@@ -7772,6 +7767,7 @@ spec:
                                           type: string
                                         type: object
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   name:
                                     type: string
                                   requeueAfterSeconds:
@@ -8368,6 +8364,7 @@ spec:
                                           type: string
                                         type: object
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   template:
                                     properties:
                                       metadata:
@@ -12233,6 +12230,7 @@ spec:
                                       type: string
                                     type: object
                                 type: object
+                                x-kubernetes-map-type: atomic
                             type: object
                           type: array
                         template:
@@ -12829,6 +12827,7 @@ spec:
                                           type: string
                                         type: object
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   name:
                                     type: string
                                   requeueAfterSeconds:
@@ -13425,6 +13424,7 @@ spec:
                                           type: string
                                         type: object
                                     type: object
+                                    x-kubernetes-map-type: atomic
                                   template:
                                     properties:
                                       metadata:
@@ -17290,6 +17290,7 @@ spec:
                                       type: string
                                     type: object
                                 type: object
+                                x-kubernetes-map-type: atomic
                             type: object
                           type: array
                         mergeKeys:
@@ -19990,6 +19991,7 @@ spec:
                             type: string
                           type: object
                       type: object
+                      x-kubernetes-map-type: atomic
                   type: object
                 type: array
               goTemplate:
@@ -20648,11 +20650,16 @@ spec:
                       type: string
                     step:
                       type: string
+                    targetRevisions:
+                      items:
+                        type: string
+                      type: array
                   required:
                   - application
                   - message
                   - status
                   - step
+                  - targetRevisions
                   type: object
                 type: array
               conditions:
@@ -20674,6 +20681,37 @@ spec:
                   - reason
                   - status
                   - type
+                  type: object
+                type: array
+              resources:
+                items:
+                  properties:
+                    group:
+                      type: string
+                    health:
+                      properties:
+                        message:
+                          type: string
+                        status:
+                          type: string
+                      type: object
+                    hook:
+                      type: boolean
+                    kind:
+                      type: string
+                    name:
+                      type: string
+                    namespace:
+                      type: string
+                    requiresPruning:
+                      type: boolean
+                    status:
+                      type: string
+                    syncWave:
+                      format: int64
+                      type: integer
+                    version:
+                      type: string
                   type: object
                 type: array
             type: object
@@ -20711,22 +20749,28 @@ spec:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: 'AppProject provides a logical grouping of applications, providing
-          controls for: * where the apps may deploy to (cluster whitelist) * what
-          may be deployed (repository whitelist, resource whitelist/blacklist) * who
-          can access these applications (roles, OIDC group claims bindings) * and
-          what they can do (RBAC policies) * automation access to these roles (JWT
-          tokens)'
+        description: |-
+          AppProject provides a logical grouping of applications, providing controls for:
+          * where the apps may deploy to (cluster whitelist)
+          * what may be deployed (repository whitelist, resource whitelist/blacklist)
+          * who can access these applications (roles, OIDC group claims bindings)
+          * and what they can do (RBAC policies)
+          * automation access to these roles (JWT tokens)
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
             type: string
           metadata:
             type: object
@@ -20737,9 +20781,9 @@ spec:
                 description: ClusterResourceBlacklist contains list of blacklisted
                   cluster level resources
                 items:
-                  description: GroupKind specifies a Group and a Kind, but does not
-                    force a version.  This is useful for identifying concepts during
-                    lookup stages without having partially valid types
+                  description: |-
+                    GroupKind specifies a Group and a Kind, but does not force a version.  This is useful for identifying
+                    concepts during lookup stages without having partially valid types
                   properties:
                     group:
                       type: string
@@ -20754,9 +20798,9 @@ spec:
                 description: ClusterResourceWhitelist contains list of whitelisted
                   cluster level resources
                 items:
-                  description: GroupKind specifies a Group and a Kind, but does not
-                    force a version.  This is useful for identifying concepts during
-                    lookup stages without having partially valid types
+                  description: |-
+                    GroupKind specifies a Group and a Kind, but does not force a version.  This is useful for identifying
+                    concepts during lookup stages without having partially valid types
                   properties:
                     group:
                       type: string
@@ -20783,9 +20827,9 @@ spec:
                         not set.
                       type: string
                     namespace:
-                      description: Namespace specifies the target namespace for the
-                        application's resources. The namespace will only be set for
-                        namespace-scoped resources that have not set a value for .metadata.namespace
+                      description: |-
+                        Namespace specifies the target namespace for the application's resources.
+                        The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
                       type: string
                     server:
                       description: Server specifies the URL of the target cluster's
@@ -20798,9 +20842,9 @@ spec:
                 description: NamespaceResourceBlacklist contains list of blacklisted
                   namespace level resources
                 items:
-                  description: GroupKind specifies a Group and a Kind, but does not
-                    force a version.  This is useful for identifying concepts during
-                    lookup stages without having partially valid types
+                  description: |-
+                    GroupKind specifies a Group and a Kind, but does not force a version.  This is useful for identifying
+                    concepts during lookup stages without having partially valid types
                   properties:
                     group:
                       type: string
@@ -20815,9 +20859,9 @@ spec:
                 description: NamespaceResourceWhitelist contains list of whitelisted
                   namespace level resources
                 items:
-                  description: GroupKind specifies a Group and a Kind, but does not
-                    force a version.  This is useful for identifying concepts during
-                    lookup stages without having partially valid types
+                  description: |-
+                    GroupKind specifies a Group and a Kind, but does not force a version.  This is useful for identifying
+                    concepts during lookup stages without having partially valid types
                   properties:
                     group:
                       type: string
@@ -21020,13 +21064,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
   - apiGroups:
     - '*'
@@ -21045,13 +21089,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
   - apiGroups:
     - argoproj.io
@@ -21095,13 +21139,13 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
   - apiGroups:
       - '*'
@@ -21155,13 +21199,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21177,13 +21221,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21199,13 +21243,13 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -21222,13 +21266,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
 - apiGroups:
   - ""
@@ -21275,13 +21319,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
   - apiGroups:
     - argoproj.io
@@ -21311,6 +21355,8 @@ rules:
     - appprojects
     verbs:
     - get
+    - list
+    - watch
   - apiGroups:
     - ""
     resources:
@@ -21370,13 +21416,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
 - apiGroups:
   - argoproj.io
@@ -21421,13 +21467,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
 ---
 # Source: argocd/charts/argo-cd/templates/argocd-server/role.yaml
@@ -21437,13 +21483,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 rules:
 - apiGroups:
   - ""
@@ -21487,13 +21533,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21510,13 +21556,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21533,13 +21579,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21556,13 +21602,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21579,13 +21625,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -21602,13 +21648,13 @@ metadata:
   name: argocd-snapshot-test-application-controller-metrics
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   type: ClusterIP  
   ports:
@@ -21627,13 +21673,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   type: ClusterIP  
   ports:
@@ -21649,13 +21695,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
   name: argocd-snapshot-test-repo-server
   namespace: default
 spec:  
@@ -21675,13 +21721,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   type: ClusterIP  
   sessionAffinity: None
@@ -21705,13 +21751,13 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:  
   ports:
   - name: redis
@@ -21728,13 +21774,13 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21745,22 +21791,22 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 703d4706639fcb4a0953a56783157c563fb36af3869976e406271056df32e65c
+        checksum/cmd-params: b614587fccd4b270e93c457fc894c0b01924e0ad666bc93ff3901ed1df2c6843
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-applicationset-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: applicationset-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-applicationset-controller
       automountServiceAccountToken: true
       containers:
         - name: applicationset-controller
-          image: quay.io/argoproj/argocd:v2.11.7
+          image: quay.io/argoproj/argocd:v2.12.0
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-applicationset-controller
@@ -21975,13 +22021,13 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21994,20 +22040,20 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-notifications-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: notifications-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-notifications-controller
       automountServiceAccountToken: true
       containers:
         - name: notifications-controller
-          image: quay.io/argoproj/argocd:v2.11.7
+          image: quay.io/argoproj/argocd:v2.12.0
           imagePullPolicy: IfNotPresent
           args:
             - /usr/local/bin/argocd-notifications
@@ -22096,13 +22142,13 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -22113,23 +22159,23 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 703d4706639fcb4a0953a56783157c563fb36af3869976e406271056df32e65c
-        checksum/cm: 32aa4edac8f6fedb7cda18d802a6740c81439aa7ef29d3666a9829f5c5d0b9a4
+        checksum/cmd-params: b614587fccd4b270e93c457fc894c0b01924e0ad666bc93ff3901ed1df2c6843
+        checksum/cm: 2a4fbd55d64ec1dc55a4b733e4e1d721d50175d0974a7b435ee6223c5725032f
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-repo-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: repo-server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-snapshot-test-repo-server
       automountServiceAccountToken: true
       containers:
       - name: repo-server
-        image: quay.io/argoproj/argocd:v2.11.7
+        image: quay.io/argoproj/argocd:v2.12.0
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-repo-server
@@ -22232,7 +22278,6 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: argocd-redis
-                optional: true
                 key: auth
           - name: REDIS_SENTINEL_USERNAME
             valueFrom:
@@ -22336,6 +22381,12 @@ spec:
                 key: reposerver.revision.cache.lock.timeout
                 name: argocd-cmd-params-cm
                 optional: true
+          - name: ARGOCD_REPO_SERVER_INCLUDE_HIDDEN_DIRECTORIES
+            valueFrom:
+              configMapKeyRef:
+                key: reposerver.include.hidden.directories
+                name: argocd-cmd-params-cm
+                optional: true
           - name: HELM_CACHE_HOME
             value: /helm-working-dir
           - name: HELM_CONFIG_HOME
@@ -22401,7 +22452,7 @@ spec:
         - -n
         - /usr/local/bin/argocd
         - /var/run/argocd/argocd-cmp-server
-        image: quay.io/argoproj/argocd:v2.11.7
+        image: quay.io/argoproj/argocd:v2.12.0
         imagePullPolicy: IfNotPresent
         name: copyutil
         resources:
@@ -22467,13 +22518,13 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -22484,23 +22535,23 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 703d4706639fcb4a0953a56783157c563fb36af3869976e406271056df32e65c
-        checksum/cm: 32aa4edac8f6fedb7cda18d802a6740c81439aa7ef29d3666a9829f5c5d0b9a4
+        checksum/cmd-params: b614587fccd4b270e93c457fc894c0b01924e0ad666bc93ff3901ed1df2c6843
+        checksum/cm: 2a4fbd55d64ec1dc55a4b733e4e1d721d50175d0974a7b435ee6223c5725032f
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: server
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-server
       automountServiceAccountToken: true
       containers:
       - name: server
-        image: quay.io/argoproj/argocd:v2.11.7
+        image: quay.io/argoproj/argocd:v2.12.0
         imagePullPolicy: IfNotPresent
         args:
         - /usr/local/bin/argocd-server
@@ -22682,7 +22733,6 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: argocd-redis
-                optional: true
                 key: auth
           - name: REDIS_SENTINEL_USERNAME
             valueFrom:
@@ -22874,13 +22924,13 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -22890,13 +22940,13 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-redis
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       securityContext:
         runAsNonRoot: true
@@ -23038,13 +23088,13 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
   replicas: 1
   revisionHistoryLimit: 5
@@ -23056,16 +23106,16 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 703d4706639fcb4a0953a56783157c563fb36af3869976e406271056df32e65c
-        checksum/cm: 32aa4edac8f6fedb7cda18d802a6740c81439aa7ef29d3666a9829f5c5d0b9a4
+        checksum/cmd-params: b614587fccd4b270e93c457fc894c0b01924e0ad666bc93ff3901ed1df2c6843
+        checksum/cm: 2a4fbd55d64ec1dc55a4b733e4e1d721d50175d0974a7b435ee6223c5725032f
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       terminationGracePeriodSeconds: 30
       serviceAccountName: argocd-application-controller
@@ -23074,7 +23124,7 @@ spec:
       - args:
         - /usr/local/bin/argocd-application-controller
         - --metrics-port=8082
-        image: quay.io/argoproj/argocd:v2.11.7
+        image: quay.io/argoproj/argocd:v2.12.0
         imagePullPolicy: IfNotPresent
         name: application-controller
         env:
@@ -23207,7 +23257,6 @@ spec:
               secretKeyRef:
                 name: argocd-redis
                 key: auth
-                optional: true
           - name: REDIS_SENTINEL_USERNAME
             valueFrom:
               secretKeyRef:
@@ -23458,13 +23507,13 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 ---
 # Source: argocd/charts/argo-cd/templates/redis-secret-init/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -23474,13 +23523,13 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
   name: argocd-snapshot-test-redis-secret-init
   namespace: "default"
 rules:
@@ -23507,13 +23556,13 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
   name: argocd-snapshot-test-redis-secret-init
   namespace: "default"
 roleRef:
@@ -23534,31 +23583,32 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.3.11
+    helm.sh/chart: argo-cd-7.4.2
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: "v2.11.7"
+    app.kubernetes.io/version: "v2.12.0"
 spec:
+  ttlSecondsAfterFinished: 60
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.3.11
+        helm.sh/chart: argo-cd-7.4.2
         app.kubernetes.io/name: argocd-redis-secret-init
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis-secret-init
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: "v2.11.7"
+        app.kubernetes.io/version: "v2.12.0"
     spec:
       containers:
       - command:
           - argocd
           - admin
           - redis-initial-password
-        image: quay.io/argoproj/argocd:v2.11.7
+        image: quay.io/argoproj/argocd:v2.12.0
         imagePullPolicy: IfNotPresent
         name: secret-init
         resources:
