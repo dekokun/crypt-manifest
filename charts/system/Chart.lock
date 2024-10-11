@@ -1,12 +1,12 @@
 dependencies:
 - name: metrics-server
   repository: https://kubernetes-sigs.github.io/metrics-server/
-  version: 3.12.1
+  version: 3.12.2
 - name: sealed-secrets
   repository: https://bitnami-labs.github.io/sealed-secrets/
   version: 2.16.1
 - name: reloader
   repository: https://stakater.github.io/stakater-charts/
   version: 1.1.0
-digest: sha256:a2dd9cb27133f1df47743bca0f0e5e972fa98092ac54d260d87cce5ceacc01cb
-generated: "2024-08-30T20:08:56.874539019Z"
+digest: sha256:eb1d1fd3be2727c5261f6458ad391cd18b71f1c2aa11d378004d89fbc01ed28e
+generated: "2024-10-11T15:52:30.578644559Z"
