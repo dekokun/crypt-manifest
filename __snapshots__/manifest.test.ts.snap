@@ -10,7 +10,7 @@ metadata:
   name: argocd-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -26,7 +26,7 @@ metadata:
   name: argocd-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
@@ -42,7 +42,7 @@ metadata:
   name: argocd-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -58,7 +58,7 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
@@ -74,7 +74,7 @@ metadata:
   name: argocd-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -89,7 +89,7 @@ metadata:
   name: argocd-notifications-secret
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -106,7 +106,7 @@ metadata:
   name: argocd-secret
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-secret
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -122,7 +122,7 @@ metadata:
   name: argocd-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -146,7 +146,7 @@ metadata:
   name: argocd-cmd-params-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -193,7 +193,7 @@ metadata:
   name: argocd-gpg-keys-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-gpg-keys-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
@@ -207,7 +207,7 @@ metadata:
   name: argocd-notifications-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -225,7 +225,7 @@ metadata:
   name: argocd-rbac-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -245,7 +245,7 @@ metadata:
   name: argocd-ssh-known-hosts-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-ssh-known-hosts-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
@@ -275,7 +275,7 @@ metadata:
   name: argocd-tls-certs-cm
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-tls-certs-cm
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/managed-by: Helm
@@ -289,7 +289,7 @@ metadata:
   name: argocd-snapshot-test-redis-health-configmap
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
@@ -22351,7 +22351,7 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -22376,7 +22376,7 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -22426,7 +22426,7 @@ kind: ClusterRole
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -22488,7 +22488,7 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-application-controller
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -22510,7 +22510,7 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-notifications-controller
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -22532,7 +22532,7 @@ kind: ClusterRoleBinding
 metadata:
   name: argocd-snapshot-test-server
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -22555,7 +22555,7 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -22608,7 +22608,7 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
@@ -22705,7 +22705,7 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -22756,7 +22756,7 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
@@ -22772,7 +22772,7 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -22822,7 +22822,7 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -22845,7 +22845,7 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
@@ -22868,7 +22868,7 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -22891,7 +22891,7 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
@@ -22914,7 +22914,7 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -22937,7 +22937,7 @@ metadata:
   name: argocd-snapshot-test-application-controller-metrics
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-metrics
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -22962,7 +22962,7 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
@@ -22984,7 +22984,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
@@ -23010,7 +23010,7 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -23040,7 +23040,7 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
@@ -23063,7 +23063,7 @@ metadata:
   name: argocd-snapshot-test-applicationset-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-applicationset-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: applicationset-controller
@@ -23080,9 +23080,9 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 73955ca51c94dd5d856fd9f1f9dfe6093a79b2fbe45f954ef2708cde2464203a
+        checksum/cmd-params: 1f04e589b0b0452483e78e9b492c6c611d062794e149f9cc0cc7b348eaa32f3b
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-applicationset-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: applicationset-controller
@@ -23316,7 +23316,7 @@ metadata:
   name: argocd-snapshot-test-notifications-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: notifications-controller
@@ -23335,7 +23335,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-notifications-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: notifications-controller
@@ -23443,7 +23443,7 @@ metadata:
   name: argocd-snapshot-test-repo-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: repo-server
@@ -23460,10 +23460,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 73955ca51c94dd5d856fd9f1f9dfe6093a79b2fbe45f954ef2708cde2464203a
-        checksum/cm: 387821d6eefe37c732bf31cd75bbf33c45d5cabae0afe791f1d0b53801ad0475
+        checksum/cmd-params: 1f04e589b0b0452483e78e9b492c6c611d062794e149f9cc0cc7b348eaa32f3b
+        checksum/cm: d8e89a5d1cbd18d93747b99d7e09d2a67fa51cf482e4cc53a6470e0b7a585ce9
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-repo-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: repo-server
@@ -23819,7 +23819,7 @@ metadata:
   name: argocd-snapshot-test-server
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: server
@@ -23836,10 +23836,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 73955ca51c94dd5d856fd9f1f9dfe6093a79b2fbe45f954ef2708cde2464203a
-        checksum/cm: 387821d6eefe37c732bf31cd75bbf33c45d5cabae0afe791f1d0b53801ad0475
+        checksum/cmd-params: 1f04e589b0b0452483e78e9b492c6c611d062794e149f9cc0cc7b348eaa32f3b
+        checksum/cm: d8e89a5d1cbd18d93747b99d7e09d2a67fa51cf482e4cc53a6470e0b7a585ce9
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-server
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: server
@@ -24264,7 +24264,7 @@ metadata:
   name: argocd-snapshot-test-redis
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis
@@ -24280,7 +24280,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-redis
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis
@@ -24428,7 +24428,7 @@ metadata:
   name: argocd-snapshot-test-application-controller
   namespace: default
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: application-controller
@@ -24446,10 +24446,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 73955ca51c94dd5d856fd9f1f9dfe6093a79b2fbe45f954ef2708cde2464203a
-        checksum/cm: 387821d6eefe37c732bf31cd75bbf33c45d5cabae0afe791f1d0b53801ad0475
+        checksum/cmd-params: 1f04e589b0b0452483e78e9b492c6c611d062794e149f9cc0cc7b348eaa32f3b
+        checksum/cm: d8e89a5d1cbd18d93747b99d7e09d2a67fa51cf482e4cc53a6470e0b7a585ce9
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: application-controller
@@ -24874,7 +24874,7 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
@@ -24890,7 +24890,7 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
@@ -24923,7 +24923,7 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
@@ -24950,7 +24950,7 @@ metadata:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": before-hook-creation
   labels:
-    helm.sh/chart: argo-cd-7.7.0
+    helm.sh/chart: argo-cd-7.7.1
     app.kubernetes.io/name: argocd-redis-secret-init
     app.kubernetes.io/instance: argocd-snapshot-test
     app.kubernetes.io/component: redis-secret-init
@@ -24962,7 +24962,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: argo-cd-7.7.0
+        helm.sh/chart: argo-cd-7.7.1
         app.kubernetes.io/name: argocd-redis-secret-init
         app.kubernetes.io/instance: argocd-snapshot-test
         app.kubernetes.io/component: redis-secret-init
