@@ -25307,7 +25307,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.1.0"
+    chart: "reloader-1.2.0"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25393,7 +25393,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.1.0"
+    chart: "reloader-1.2.0"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25414,16 +25414,6 @@ rules:
       - deployments
       - daemonsets
       - statefulsets
-    verbs:
-      - list
-      - get
-      - update
-      - patch
-  - apiGroups:
-      - "extensions"
-    resources:
-      - deployments
-      - daemonsets
     verbs:
       - list
       - get
@@ -25547,7 +25537,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.1.0"
+    chart: "reloader-1.2.0"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25876,13 +25866,13 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.1.0"
+    chart: "reloader-1.2.0"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
     group: com.stakater.platform
     provider: stakater
-    version: v1.1.0
+    version: v1.2.0
   name: system-snapshot-test-reloader
   namespace: default
 spec:
@@ -25896,16 +25886,16 @@ spec:
     metadata:
       labels:
         app: system-snapshot-test-reloader
-        chart: "reloader-1.1.0"
+        chart: "reloader-1.2.0"
         release: "system-snapshot-test"
         heritage: "Helm"
         app.kubernetes.io/managed-by: "Helm"
         group: com.stakater.platform
         provider: stakater
-        version: v1.1.0
+        version: v1.2.0
     spec:
       containers:
-      - image: "ghcr.io/stakater/reloader:v1.1.0"
+      - image: "ghcr.io/stakater/reloader:v1.2.0"
         imagePullPolicy: IfNotPresent
         name: system-snapshot-test-reloader
         env:
@@ -25913,10 +25903,12 @@ spec:
           valueFrom:
             resourceFieldRef:
               resource: limits.cpu
+              divisor: '1'
         - name: GOMEMLIMIT
           valueFrom:
             resourceFieldRef:
               resource: limits.memory
+              divisor: '1'
         ports:
         - name: http
           containerPort: 9090
@@ -25941,6 +25933,8 @@ spec:
 
         securityContext:
           {}
+        args:
+          - "--log-level=info"
       securityContext: 
         runAsNonRoot: true
         runAsUser: 65534
