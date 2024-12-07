@@ -25335,10 +25335,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
 ---
 # Source: system/charts/metrics-server/templates/clusterrole-aggregated-reader.yaml
@@ -25460,10 +25460,10 @@ metadata:
   name: secrets-unsealer
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 rules:
@@ -25571,10 +25571,10 @@ metadata:
   name: system-snapshot-test-sealed-secrets
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 roleRef:
@@ -25595,10 +25595,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 rules:
@@ -25626,10 +25626,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
 rules:
   - apiGroups:
@@ -25681,10 +25681,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 roleRef:
@@ -25705,10 +25705,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 roleRef:
@@ -25752,10 +25752,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
 spec:
   type: ClusterIP
@@ -25776,10 +25776,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
     app.kubernetes.io/component: metrics
 spec:
@@ -25963,10 +25963,10 @@ metadata:
   namespace: default
   labels:
     app.kubernetes.io/name: sealed-secrets
-    helm.sh/chart: sealed-secrets-2.16.1
+    helm.sh/chart: sealed-secrets-2.17.0
     app.kubernetes.io/instance: system-snapshot-test
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 0.27.1
+    app.kubernetes.io/version: 0.27.3
     app.kubernetes.io/part-of: sealed-secrets
   annotations:
 spec:
@@ -25992,14 +25992,18 @@ spec:
             - --update-status
             - --key-prefix
             - "sealed-secrets-key"
-          image: docker.io/bitnami/sealed-secrets-controller:0.27.1
+            - --listen-addr
+            - :8080
+            - --listen-metrics-addr
+            - :8081
+          image: docker.io/bitnami/sealed-secrets-controller:0.27.3
           imagePullPolicy: IfNotPresent
           env:
           ports:
-            - containerPort: 8080
-              name: http
-            - containerPort: 8081
-              name: metrics
+            - name: http
+              containerPort: 8080
+            - name: metrics
+              containerPort: 8081
           livenessProbe:
             failureThreshold: 3
             initialDelaySeconds: 0
