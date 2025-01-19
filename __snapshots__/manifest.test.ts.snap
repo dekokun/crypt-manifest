@@ -25319,7 +25319,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.2.0"
+    chart: "reloader-1.2.1"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25405,7 +25405,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.2.0"
+    chart: "reloader-1.2.1"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25549,7 +25549,7 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.2.0"
+    chart: "reloader-1.2.1"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
@@ -25878,13 +25878,13 @@ metadata:
     meta.helm.sh/release-name: "system-snapshot-test"
   labels:
     app: system-snapshot-test-reloader
-    chart: "reloader-1.2.0"
+    chart: "reloader-1.2.1"
     release: "system-snapshot-test"
     heritage: "Helm"
     app.kubernetes.io/managed-by: "Helm"
     group: com.stakater.platform
     provider: stakater
-    version: v1.2.0
+    version: v1.2.1
   name: system-snapshot-test-reloader
   namespace: default
 spec:
@@ -25898,16 +25898,16 @@ spec:
     metadata:
       labels:
         app: system-snapshot-test-reloader
-        chart: "reloader-1.2.0"
+        chart: "reloader-1.2.1"
         release: "system-snapshot-test"
         heritage: "Helm"
         app.kubernetes.io/managed-by: "Helm"
         group: com.stakater.platform
         provider: stakater
-        version: v1.2.0
+        version: v1.2.1
     spec:
       containers:
-      - image: "ghcr.io/stakater/reloader:v1.2.0"
+      - image: "ghcr.io/stakater/reloader:v1.2.1"
         imagePullPolicy: IfNotPresent
         name: system-snapshot-test-reloader
         env:
