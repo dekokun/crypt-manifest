@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Lint Helm
-        uses: WyriHaximus/github-action-helm3@v4
+        uses: WyriHaximus/github-action-helm3@e3894d973c282349e3d41d3347767f2b2545b583 # v4
         with:
           exec: helm lint ./charts/*
   snapshot-test:
@@ -21,7 +21,7 @@ jobs:
         node-version-file: '.node-version'
         cache: npm
     # https://github.com/actions/cache/blob/master/examples.md#node---npm
-    - uses: azure/setup-helm@v4
+    - uses: azure/setup-helm@b9e51907a09c216f16ebe8536097933489208112 # v4
       with:
         version: v3.9.2
     - name: Install Dependencies
@@ -33,7 +33,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: install kubeconform
-      uses: giantswarm/install-binary-action@v3
+      uses: giantswarm/install-binary-action@c37eb401e5092993fc76d545030b1d1769e61237 # v3
       with:
         binary: "kubeconform"
         download_url: https://github.com/yannh/${binary}/releases/download/${version}/kubeconform-linux-amd64.tar.gz
