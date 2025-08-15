@@ -19,7 +19,7 @@
   "homepage": "https://github.com/dekokun/crypt-manifest#readme",
   "devDependencies": {
     "@types/jest": "30.0.0",
-    "@types/node": "22.16.5",
+    "@types/node": "22.17.2",
     "jest": "30.0.5",
     "ts-jest": "29.4.0",
     "typescript": "5.8.3"
