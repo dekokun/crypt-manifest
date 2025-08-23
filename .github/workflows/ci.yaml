@@ -33,7 +33,7 @@ jobs:
     steps:
     - uses: actions/checkout@v5
     - name: install kubeconform
-      uses: giantswarm/install-binary-action@c37eb401e5092993fc76d545030b1d1769e61237 # v3
+      uses: giantswarm/install-binary-action@0797deb878056114fa54ee30c519f617716e8c69 # v3
       with:
         binary: "kubeconform"
         download_url: https://github.com/yannh/${binary}/releases/download/${version}/kubeconform-linux-amd64.tar.gz
